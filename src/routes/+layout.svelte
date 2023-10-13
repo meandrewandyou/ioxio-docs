@@ -1,0 +1,101 @@
+<script>
+  import Header from "$lib/Header.svelte"
+
+  import "@fontsource/poppins"
+
+  import "./styles.css"
+  import "svelte-highlight/styles/github.css"
+</script>
+
+<div class="app">
+  <div class="content">
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>Visit <a href="https://ioxio.com">ioxio.com</a> to learn more about IOXIO&reg;</p>
+    </footer>
+  </div>
+</div>
+
+<style lang="scss">
+  $targetOpacity: 0.85;
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("/background.jpg");
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 4rem;
+    max-width: 64rem;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    background: rgba(233, 240, 250, $targetOpacity);
+  }
+
+  .content:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -4rem;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      rgba(233, 240, 250, 0),
+      rgba(233, 240, 250, $targetOpacity)
+    );
+    height: 100%;
+    width: 4rem;
+  }
+
+  .content:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -4rem;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to left,
+      rgba(233, 240, 250, 0),
+      rgba(233, 240, 250, $targetOpacity)
+    );
+    height: 100%;
+    width: 4rem;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+
+  footer a {
+    font-weight: bold;
+  }
+
+  @media (min-width: 480px) {
+    footer {
+      padding: 12px 0;
+    }
+  }
+</style>
