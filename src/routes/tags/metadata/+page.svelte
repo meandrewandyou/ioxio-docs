@@ -5,6 +5,7 @@
   import json from "svelte-highlight/languages/json"
   import A from "$lib/A.svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Title from "$lib/Title.svelte"
 
   const productPassportSchema = [
     {
@@ -124,7 +125,7 @@
   ]}
 />
 
-<h1>IOXIO Tags&trade; metadata</h1>
+<Title>IOXIO Tags&trade; metadata</Title>
 
 <p>Technical details about the metadata files for IOXIO Tags&trade;.</p>
 

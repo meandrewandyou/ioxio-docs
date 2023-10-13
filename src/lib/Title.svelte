@@ -1,6 +1,4 @@
 <script lang="ts">
-  export let type: "main" | "large" = "main"
-
   let container
   let titleText = ""
 
@@ -13,20 +11,14 @@
 
 <svelte:head>
   {#if titleText}
-    <title>{titleText}</title>
+    <title>{titleText} - IOXIO Docs</title>
     <meta property="og:title" content={titleText} />
   {/if}
 </svelte:head>
 
-{#if type === "main"}
-  <h2 bind:this={container}>
-    <slot />
-  </h2>
-{:else if type === "large"}
-  <h3>
-    <slot />
-  </h3>
-{/if}
+<h1 bind:this={container}>
+  <slot />
+</h1>
 
 <style lang="css">
 </style>

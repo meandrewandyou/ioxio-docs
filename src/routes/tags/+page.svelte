@@ -2,6 +2,7 @@
   import SectionTitle from "$lib/SectionTitle.svelte"
   import A from "$lib/A.svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Title from "$lib/Title.svelte"
 </script>
 
 <Breadcrumbs
@@ -17,7 +18,7 @@
   ]}
 />
 
-<h1>IOXIO Tags&trade;</h1>
+<Title>IOXIO Tags&trade;</Title>
 
 <h2>Technical details</h2>
 <ul>

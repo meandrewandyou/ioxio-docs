@@ -1,5 +1,6 @@
 <script>
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Title from "$lib/Title.svelte"
 </script>
 
 <Breadcrumbs
@@ -11,9 +12,9 @@
   ]}
 />
 
-<h1>IOXIO Docs</h1>
+<Title>Documentation portal</Title>
 <p>
-  Documentation portal for <a href="https://ioxio.com">IOXIO&reg;</a>.
+  Documentation for various <a href="https://ioxio.com">IOXIO&reg;</a> technologies.
 </p>
 
 <div class="cards">

@@ -4,6 +4,7 @@
   import json from "svelte-highlight/languages/json"
   import A from "$lib/A.svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Title from "$lib/Title.svelte"
 </script>
 
 <Breadcrumbs
@@ -23,7 +24,7 @@
   ]}
 />
 
-<h1>IOXIO Tags&trade; signatures</h1>
+<Title>IOXIO Tags&trade; signatures</Title>
 
 <p>Technical details about the signatures used with IOXIO Tags&trade;.</p>
 
