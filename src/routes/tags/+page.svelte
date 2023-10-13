@@ -3,6 +3,7 @@
   import A from "$lib/A.svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
   import Title from "$lib/Title.svelte"
+  import Miro from "$lib/Miro.svelte"
 </script>
 
 <Breadcrumbs
@@ -27,6 +28,9 @@
 </ul>
 
 <SectionTitle>Overview</SectionTitle>
+
+<Miro url="https://miro.com/app/board/uXjVNfOfDe8=/" />
+
 <p>
   IOXIO Tags&trade; are a technology with the primary goal to connect physical world things to
   standardized data on dataspaces. This is accomplished with the combination of QR Codes and

@@ -1,6 +1,6 @@
 <script lang="ts">
   export let url: string
-  const parts = url.replace(/\/$/, "").split("/")
+  const parts = url.split("?")[0].replace(/\/$/, "").split("/")
   const board = parts[parts.length - 1]
 </script>
 

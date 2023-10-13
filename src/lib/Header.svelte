@@ -3,7 +3,7 @@
 </script>
 
 <header>
-  <h2><a href="/">IOXIO Documentation portal</a></h2>
+  <h2><a href="/">IOXIO<span class="reg">&reg;</span> Documentation portal</a></h2>
   <div class="corner">
     <a href="https://github.com/ioxiocom/ioxio-docs">
       <img src={github} alt="GitHub" />
@@ -16,6 +16,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .reg {
+      font-weight: 400;
+    }
 
     a {
       color: black;
