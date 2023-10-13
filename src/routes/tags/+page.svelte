@@ -88,3 +88,34 @@
     >our sandbox environment</A
   >.
 </p>
+
+<SectionTitle>Demo</SectionTitle>
+
+<p>
+  You can check out our <A href="https://generator.tags.ioxio.dev">IOXIO Tag&trade; generator</A> and
+  as well as <A href="https://scanner.tags.ioxio.dev">IOXIO Tag&trade; scanner</A>, and their <A
+    href="https://github.com/ioxiocom/ioxio-tags">source code</A
+  > to see how these work in practice.
+</p>
+
+<p>Here's an example of how a signed IOXIO Tag&trade; could look like.</p>
+
+<img alt="example of a signed IOXIO Tag QR code" src="/ioxio-tag-example-signed.png" />
+
+<p>And here's an example of how a simple URL based IOXIO Tag&trade; could look like.</p>
+
+<img
+  class="small"
+  alt="example of a basic IOXIO Tag QR code"
+  src="/tags.ioxio.dev_example_string_simple.png"
+/>
+
+<style lang="scss">
+  img {
+    max-width: 32rem;
+  }
+
+  img.small {
+    max-width: 24rem;
+  }
+</style>

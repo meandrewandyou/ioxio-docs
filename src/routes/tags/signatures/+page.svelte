@@ -77,6 +77,53 @@
   > itself is a more efficiently packed binary friendly format similar to JSON.
 </p>
 
+<SectionTitle>Parsing process</SectionTitle>
+
+<ol>
+  <li>Scan the QR code</li>
+  <li>Verify the header - that the first 4 characters match exactly <em>IT1:</em></li>
+  <li>Remove the header from the code</li>
+  <li>Base45 decode the code</li>
+  <li>
+    Parse the <em>alg</em> and <em>kid</em> from the COSE header, as well as the COSE payload
+    <strong>without verifying the signature</strong>
+  </li>
+  <li>
+    Fetch <em>https://{"{"}payload.iss{"}"}/.well-known/product-passport.json</em>
+    <a href="/tags/metadata/#product-passport.json">metadata</a>
+  </li>
+  <li>
+    Fetch the <a href="/tags/metadata/#jwks.json">JWKS keys</a> from <em>{"{"}jwks_url{"}"}</em> in the
+    product-passport.json
+  </li>
+  <li>Verify the COSE signature matches the key provided via JWKS</li>
+  <li>
+    Fetch <em
+      >https://{"{"}payload.iss{"}"}/.well-known/product-passport/{"{"}payload.product{"}"}.json</em
+    >
+    for <a href="/tags/metadata/#%7Bproduct%7D.json">product metadata</a>
+  </li>
+  <li>
+    Fetch <em
+      >https://{"{"}product_dataspace{"}"}.well-known/dataspace/dataspace-configuration.json</em
+    >
+  </li>
+  <li>
+    Proceed to do what you wish with the <em>supported_dataproducts</em> from the
+    <a href="/tags/metadata/#product-passport.json">{"{"}payload.product{"}"}.json</a>, including
+    e.g. fetching the data products via the <em>product_gateway_url</em> from the
+    <em>dataspace-configuration.json</em>
+  </li>
+</ol>
+
+<p>
+  Check out our Sandbox's <A
+    href="https://sandbox.ioxio-dataspace.com/.well-known/dataspace/dataspace-configuration.json"
+    >dataspace-configuration.json</A
+  >
+  to see what configuration is available for IOXIO dataspaces.
+</p>
+
 <SectionTitle>Example signed code</SectionTitle>
 <p>
   The line feeds are added to make it easier to see what the code is like, but are not a part of the
@@ -85,15 +132,18 @@
 
 <Code lang={json}>
   {`
-IT1:RRQ5 8/60V500GKOG8WA6CADOPCZQE..E6$CPQEGPCKI91/DXPE6$CSED -DUPCH$DV9EV3E $EQWEI93IE
-C7WEALE4W5646D4FPX54%E5$CQX56%E:JC%JCPVC:P4WZCK-CM.CCA7H*6RW67W5VF6CA7XJC3UCAX57079460D
-CZX61:6256V50PEHZRA9A81+NMXJ0C76BJSUC**B1.VDCMQCKU47AZM52UW1K21R0VB6R55F2CXB/94+SS KBY9
-2RZMO313+P1-O44PFWFB3BYELI.BHAW%2V2*4-AEGB0GX628CCJS1OBAU0NH800JDD7UYPH+UNWL1KMH:UMAS4Q
-K:R7$.36QVO8S5YA6SRW1LFA90H7.177ZM7QQ%HVZ 0VHLJQR%VLIPU/NJO68HZNA4PA32K9153Q8EW/%PEKBRB
-NJO3ATK1WEW+P-PL.R0%MQJVTL68+FMLOFRAJ0IHR6W882.8B:EBEG24X74H9COJ:.1C89WFCL M+.C1XJ$Z3PM
-5OM754GL22D7TVXV*JH/X1U66+CHCEMXI0P274GSM.6. LBDD
+IT1:RRQ5 8/60V500GKOG8WA6E+5OPCZQEG/D5ECBPE ED0AFM2E6VCQ/EV9EV3E $E9WEB$CBECP9EY CPED$.
+CKWEZED.2DV50 NF19W:5EKV52W0TFQJ01Y%8W+6%9IRE2SJ51VEU95K:AM+61XB2UJ+/81-I0Y3YXABQ9XJQST
+CRB7G3Y%D868%$M0DE E30QNSFL64W/V473PWW0. VLK8BJO8VBTEHUDQS9HX3BCOMRFFDE560C.BHJP0000DP$
+YPCBNQ2OPPA8XD/N5Z6LNVNEJM* CL8FH7PHRUDVVO5IDEQZ$SM1U-N8U$UZ0KQPBYOSEN4: P2/7+5NECC254I
+C7BZCN.0J%BBEOMD645V2RG7+S0.5CCR2JTCCAVVOVN0OT-K63CSR14TARR%N/27AUQ9XNJMVO-0LV5DSJPH2/O
+V6MMZ1FLLG17WGDYP51T8W/06:QV43FK7RPC$-1Q+PK%I
 `}
 </Code>
+
+<p>Printed into a QR code one might look something like this:</p>
+
+<img alt="example of a signed IOXIO Tag QR code" src="/ioxio-tag-example-signed.png" />
 
 <p>
   Check out the <em>make_cose_code</em> function in <A
@@ -102,6 +152,14 @@ NJO3ATK1WEW+P-PL.R0%MQJVTL68+FMLOFRAJ0IHR6W882.8B:EBEG24X74H9COJ:.1C89WFCL M+.C1
 </p>
 
 <p>
-  You can use our <A href="https://generator.tags.ioxio.dev">IOXIO Tag&trade; generator</A> and check
-  it's source code to see how these work in practice.
+  You can check out our <A href="https://generator.tags.ioxio.dev">IOXIO Tag&trade; generator</A> and
+  as well as <A href="https://scanner.tags.ioxio.dev">IOXIO Tag&trade; scanner</A>, and their <A
+    href="https://github.com/ioxiocom/ioxio-tags">source code</A
+  > to see how these work in practice.
 </p>
+
+<style lang="scss">
+  img {
+    max-width: 32rem;
+  }
+</style>
