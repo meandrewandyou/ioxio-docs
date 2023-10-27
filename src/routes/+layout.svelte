@@ -1,10 +1,12 @@
 <script>
+  import A from "$lib/A.svelte"
   import Header from "$lib/Header.svelte"
 
   import "@fontsource/poppins"
 
   import "./styles.css"
   import "svelte-highlight/styles/github.css"
+  import Breadcrumbs from "$lib/Breadcrumbs.svelte"
 </script>
 
 <div class="app">
@@ -16,7 +18,7 @@
     </main>
 
     <footer>
-      <p>Visit <a href="https://ioxio.com">ioxio.com</a> to learn more about IOXIO&reg;</p>
+      <p>Visit <A href="https://ioxio.com">ioxio.com</A> to learn more about IOXIO&reg;</p>
     </footer>
   </div>
 </div>
@@ -95,7 +97,7 @@
     padding: 12px;
   }
 
-  footer a {
+  footer :global(a) {
     font-weight: bold;
   }
 </style>

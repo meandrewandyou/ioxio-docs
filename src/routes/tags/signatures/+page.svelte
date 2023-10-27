@@ -5,24 +5,12 @@
   import A from "$lib/A.svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
   import Title from "$lib/Title.svelte"
+
+  /** @type {import('./$types').PageData} */
+  export let data
 </script>
 
-<Breadcrumbs
-  breadcrumbs={[
-    {
-      name: "Docs",
-      link: "/",
-    },
-    {
-      name: "IOXIO Tags™",
-      link: "/tags/",
-    },
-    {
-      name: "Signatures",
-      link: "/tags/signatures/",
-    },
-  ]}
-/>
+<Breadcrumbs path={data.path} route={data.route} />
 
 <Title>IOXIO Tags&trade; signatures</Title>
 

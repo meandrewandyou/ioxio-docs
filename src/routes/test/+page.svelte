@@ -6,7 +6,13 @@
   import typescript from "svelte-highlight/languages/typescript"
   import python from "svelte-highlight/languages/python"
   import json from "svelte-highlight/languages/json"
+  import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+
+  /** @type {import('./$types').PageData} */
+  export let data
 </script>
+
+<Breadcrumbs path={data.path} route={data.route} />
 
 <Title>How to build applications</Title>
 <p>This wonderful code fetches your data.</p>

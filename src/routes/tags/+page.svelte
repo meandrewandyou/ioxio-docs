@@ -4,20 +4,12 @@
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
   import Title from "$lib/Title.svelte"
   import Miro from "$lib/Miro.svelte"
+
+  /** @type {import('./$types').PageData} */
+  export let data
 </script>
 
-<Breadcrumbs
-  breadcrumbs={[
-    {
-      name: "Docs",
-      link: "/",
-    },
-    {
-      name: "IOXIO Tags™",
-      link: "/tags/",
-    },
-  ]}
-/>
+<Breadcrumbs path={data.path} route={data.route} />
 
 <Title>IOXIO Tags&trade;</Title>
 

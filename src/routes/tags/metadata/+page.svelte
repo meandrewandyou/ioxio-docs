@@ -7,6 +7,9 @@
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
   import Title from "$lib/Title.svelte"
 
+  /** @type {import('./$types').PageData} */
+  export let data
+
   const productPassportSchema = [
     {
       type: "string",
@@ -108,22 +111,7 @@
   ]
 </script>
 
-<Breadcrumbs
-  breadcrumbs={[
-    {
-      name: "Docs",
-      link: "/",
-    },
-    {
-      name: "IOXIO Tags™",
-      link: "/tags/",
-    },
-    {
-      name: "Metadata",
-      link: "/tags/metadata/",
-    },
-  ]}
-/>
+<Breadcrumbs path={data.path} route={data.route} />
 
 <Title>IOXIO Tags&trade; metadata</Title>
 
