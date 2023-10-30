@@ -18,6 +18,11 @@
     </main>
 
     <footer>
+      <p>
+        Try out our technologies for free on the <A href="https://sandbox.ioxio-dataspace.com"
+          >IOXIO Dataspace&trade; sandbox</A
+        > and the <A href="https://testbed.fi">Finnish data economy testbed</A>.
+      </p>
       <p>Visit <A href="https://ioxio.com">ioxio.com</A> to learn more about IOXIO&reg;</p>
     </footer>
   </div>
@@ -95,6 +100,10 @@
     justify-content: center;
     align-items: center;
     padding: 12px;
+
+    p {
+      margin: 0.25rem 0;
+    }
   }
 
   footer :global(a) {
