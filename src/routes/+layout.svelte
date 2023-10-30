@@ -100,6 +100,7 @@
     justify-content: center;
     align-items: center;
     padding: 12px;
+    margin-top: 4rem;
 
     p {
       margin: 0.25rem 0;
