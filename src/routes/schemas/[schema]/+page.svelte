@@ -3,6 +3,8 @@
   import "$lib/schema_doc.css"
   import { onMount } from "svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Title from "$lib/Title.svelte"
+  import { schemas } from "$lib/schemas"
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -39,7 +41,15 @@
       })
     }
   })
+
+  const schemaRouteParts = data.path.replace(/\/$/, "").split("/")
+  const schemaRoute = schemaRouteParts[schemaRouteParts.length - 1]
+  const schema = schemas.find((i) => {
+    return i.route === schemaRoute
+  })
 </script>
+
+<Title>Schema for {schema.name}</Title>
 
 <Breadcrumbs path={data.path} route={data.route} />
 

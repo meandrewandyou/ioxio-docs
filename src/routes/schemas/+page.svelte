@@ -1,12 +1,15 @@
 <script lang="ts">
   import { schemas } from "$lib/schemas"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Title from "$lib/Title.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data
 </script>
 
 <Breadcrumbs path={data.path} route={data.route} />
+
+<Title>Data schemas used in IOXIO Dataspaces</Title>
 
 <h1>Schemas</h1>
 
