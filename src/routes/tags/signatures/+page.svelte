@@ -10,9 +10,9 @@
   export let data
 </script>
 
-<Breadcrumbs path={data.path} route={data.route} />
+<Title title={`IOXIO Tags™️ signatures`} />
 
-<Title>IOXIO Tags&trade; signatures</Title>
+<Breadcrumbs path={data.path} route={data.route} />
 
 <p>Technical details about the signatures used with IOXIO Tags&trade;.</p>
 

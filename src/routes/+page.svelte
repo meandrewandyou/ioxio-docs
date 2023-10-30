@@ -7,9 +7,10 @@
   export let data
 </script>
 
+<Title title={`IOXIO®️ Documentation portal`} />
+
 <Breadcrumbs path={data.path} route={data.route} />
 
-<Title>Documentation portal</Title>
 <p>
   Documentation for various <A href="https://ioxio.com">IOXIO&reg;</A> technologies.
 </p>

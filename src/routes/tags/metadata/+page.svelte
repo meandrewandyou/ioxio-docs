@@ -111,9 +111,9 @@
   ]
 </script>
 
-<Breadcrumbs path={data.path} route={data.route} />
+<Title title={`IOXIO Tags™️ metadata`} />
 
-<Title>IOXIO Tags&trade; metadata</Title>
+<Breadcrumbs path={data.path} route={data.route} />
 
 <p>Technical details about the metadata files for IOXIO Tags&trade;.</p>
 

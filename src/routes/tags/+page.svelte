@@ -9,9 +9,9 @@
   export let data
 </script>
 
-<Breadcrumbs path={data.path} route={data.route} />
+<Title title={`IOXIO Tags™️`} />
 
-<Title>IOXIO Tags&trade;</Title>
+<Breadcrumbs path={data.path} route={data.route} />
 
 <h2>Technical details</h2>
 <ul>

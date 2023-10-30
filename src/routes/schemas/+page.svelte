@@ -7,9 +7,9 @@
   export let data
 </script>
 
-<Breadcrumbs path={data.path} route={data.route} />
-
 <Title title="Data schemas used in IOXIO Dataspaces" />
+
+<Breadcrumbs path={data.path} route={data.route} />
 
 <h1>Schemas</h1>
 
