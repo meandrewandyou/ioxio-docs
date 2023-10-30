@@ -49,7 +49,7 @@
   })
 </script>
 
-<Title>Schema for {schema.name}</Title>
+<Title title={`Schema for ${schema.name}`} />
 
 <Breadcrumbs path={data.path} route={data.route} />
 
