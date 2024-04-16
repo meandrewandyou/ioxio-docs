@@ -1,0 +1,49 @@
+@use "./mixins" as mixins;
+@use "./variables" as vars;
+
+html,
+body {
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: vars.$body-font-weight;
+  line-height: vars.$body-line-height;
+  color: vars.$color-neutral-light;
+}
+
+* {
+  &:focus-visible {
+    outline: 2px solid vars.$color-success-main;
+    border-radius: 0.3125rem;
+    outline-offset: 2px;
+  }
+}
+
+h1 {
+  font-size: vars.$h1-font-size;
+  font-weight: vars.$h1-font-weight;
+  line-height: vars.$h1-line-height;
+}
+
+h2 {
+  font-size: vars.$h2-font-size;
+  font-weight: vars.$h2-font-weight;
+  line-height: vars.$h2-line-height;
+}
+
+h3 {
+  font-size: vars.$h3-font-size;
+  font-weight: vars.$h3-font-weight;
+  line-height: vars.$h3-line-height;
+}
+
+a {
+  @include mixins.text-body();
+  color: vars.$color-success-main;
+
+  &:hover {
+    color: vars.$color-success-main;
+  }
+}

@@ -14,6 +14,7 @@
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
+    "@poppanator/sveltekit-svg": "^4.2.1",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.20.4",
@@ -36,6 +37,9 @@
   "type": "module",
   "dependencies": {
     "@fontsource/poppins": "^5.0.8",
+    "@material/layout-grid": "^14.0.0",
+    "@smui/layout-grid": "7.0.0-beta.16",
+    "svelte-headlessui": "^0.0.33",
     "svelte-highlight": "^7.3.0"
   }
 }

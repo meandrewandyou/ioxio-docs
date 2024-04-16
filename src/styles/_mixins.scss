@@ -1,0 +1,37 @@
+@use "./variables" as vars;
+
+@mixin mobile {
+  @media (max-width: vars.$breakpoint-md - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: vars.$breakpoint-md) and (max-width: vars.$breakpoint-lg - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-and-below {
+  @media (max-width: vars.$breakpoint-lg - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: vars.$breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin text-body {
+  font-size: vars.$text-body-font-size;
+  font-weight: vars.$text-body-font-weight;
+  line-height: vars.$text-body-line-height;
+}
+
+@mixin text-body-2 {
+  font-size: vars.$text-body-2-font-size;
+  font-weight: vars.$text-body-2-font-weight;
+  line-height: vars.$text-body-2-line-height;
+}

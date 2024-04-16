@@ -12,6 +12,9 @@ const config = {
     prerender: {
       handleMissingId: "ignore",
     },
+    alias: {
+      $styles: "src/styles",
+    },
   },
 }
 

@@ -1,0 +1,87 @@
+// colors
+$color-primary-dark-hover: #20303e;
+$color-primary-main: #2f3037;
+$color-primary-dark: #101920;
+$color-primary-light: #ccd5e1;
+$color-primary-highlight: #111c25;
+
+$color-secondary-main: #0f2543;
+$color-secondary-main-hover: #1a355a;
+$color-secondary-main-clicked: #0b1c33;
+$color-secondary-light: #eeefec;
+$color-secondary-dark: #000000;
+
+$color-success-main: #3cb08e;
+$color-success-light: #53cda8;
+$color-success-dark: #319375;
+
+$color-error-main: #dd596a;
+$color-error-light: #e47987;
+$color-error-dark: #c14152;
+
+$color-info-main: #9a75e9;
+$color-info-light: #cdb7fc;
+$color-info-dark: #7c5ac5;
+
+$color-warning-main: #edc487;
+$color-warning-light: #fadaac;
+$color-warning-dark: #d0a96e;
+
+$color-neutral-main: #d9d9d9;
+$color-neutral-dark: #828282;
+$color-neutral-light: #ffffff;
+
+$color-text-primary-dark: #101920;
+
+// gradients
+$gradient-gray-dark-blue: linear-gradient(
+  68deg,
+  $color-secondary-main 14.17%,
+  $color-text-primary-dark 85.83%
+);
+
+// typography
+$h1-font-size: 2.125rem;
+$h1-font-weight: 600;
+$h1-line-height: 150%;
+
+$h2-font-size: 1.5rem;
+$h2-font-weight: 600;
+$h2-line-height: 150%;
+
+$h3-font-size: 1.125rem;
+$h3-font-weight: 600;
+$h3-line-height: 150%;
+
+$subtitle-font-size: 1rem;
+$subtitle-font-weight: 500;
+$subtitle-line-height: 150%;
+
+$body-font-size: 1rem;
+$body-font-weight: 400;
+$body-line-height: 150%;
+
+$text-body-font-size: 1rem;
+$text-body-font-weight: 400;
+$text-body-line-height: 150%;
+
+$text-body-2-font-size: 0.75rem;
+$text-body-2-font-weight: 400;
+$text-body-2-line-height: 150%;
+
+// spacing
+$spacing-01: 0.5rem; // 8px
+$spacing-02: 1rem; // 16px
+$spacing-03: 1.5rem; // 24px
+$spacing-04: 2rem; // 32px
+$spacing-05: 3rem; // 48px
+$spacing-06: 4rem; // 64px
+
+// breakpoints
+// should match the values in src/breakpointObserver.ts
+$breakpoint-sm: 0px;
+$breakpoint-md: 576px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1920px;
+
+$container-width: $breakpoint-xl;

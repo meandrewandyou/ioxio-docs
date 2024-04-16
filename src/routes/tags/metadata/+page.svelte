@@ -115,7 +115,7 @@
 
 <Breadcrumbs path={data.path} route={data.route} />
 
-<p>Technical details about the metadata files for IOXIO Tags&trade;.</p>
+<p>Technical details about the metadata files for IOXIO Tags™.</p>
 
 <SectionTitle>product-passport.json</SectionTitle>
 <p>

@@ -12,12 +12,12 @@
 <Breadcrumbs path={data.path} route={data.route} />
 
 <p>
-  Documentation for various <A href="https://ioxio.com">IOXIO&reg;</A> technologies.
+  Documentation for various <A href="https://ioxio.com">IOXIO®</A> technologies.
 </p>
 
 <div class="cards">
   <a href="/tags/">
-    <div class="card">IOXIO Tags&trade;</div>
+    <div class="card">IOXIO Tags™</div>
   </a>
   <a href="/schemas/">
     <div class="card">Schemas for data objects</div>

@@ -14,11 +14,11 @@
 
 <Breadcrumbs path={data.path} route={data.route} />
 
-<p>Technical details about the signatures used with IOXIO Tags&trade;.</p>
+<p>Technical details about the signatures used with IOXIO Tags™.</p>
 
 <SectionTitle>Header</SectionTitle>
 <p>
-  The signed codes start with an identifier to designate that they are an IOXIO Tags&trade; code,
+  The signed codes start with an identifier to designate that they are an IOXIO Tags™ code,
   including a version number. Right now the header used is the characters <em>IT1:</em>.
 </p>
 
@@ -141,8 +141,8 @@ V6MMZ1FLLG17WGDYP51T8W/06:QV43FK7RPC$-1Q+PK%I
 </p>
 
 <p>
-  You can check out our <A href="https://generator.tags.ioxio.dev">IOXIO Tag&trade; generator</A> and
-  as well as <A href="https://scanner.tags.ioxio.dev">IOXIO Tag&trade; scanner</A>, and their <A
+  You can check out our <A href="https://generator.tags.ioxio.dev">IOXIO Tags™ generator</A> and as well
+  as <A href="https://scanner.tags.ioxio.dev">IOXIO Tags™ scanner</A>, and their <A
     href="https://github.com/ioxiocom/ioxio-tags">source code</A
   > to see how these work in practice.
 </p>
