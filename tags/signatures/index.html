@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    
+		<link href="../../_app/immutable/assets/0.6627578b.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/Breadcrumbs.71d83a21.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/7.48e4edba.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/SectionTitle.094aa1e0.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/json.993ec4f1.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.dc299bc9.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.d5c18660.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.56195757.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.1a489589.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.3cf6da0a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.a4696be0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/A.5e3bc997.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/7.95b1a642.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/SectionTitle.85154a00.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/json.8b9daa76.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Title.01f33e54.js"><title>IOXIO Tags™️ signatures - IOXIO Docs</title><!-- HEAD_svelte-1bze8jb_START --><meta property="og:title" content="IOXIO Tags™️ signatures"><!-- HEAD_svelte-1bze8jb_END -->
+    <meta
+      property="og:description"
+      content="Documentation portal for various IOXIO technologies."
+    />
+    <meta property="og:image" content="https://docs.ioxio.dev/og-image.jpg" />
+    <script src="/schema_doc.js"></script>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">  <div class="app svelte-cpqfdj"><div class="content svelte-cpqfdj"><header class="svelte-1us83cp" data-svelte-h="svelte-pl5zad"><h2><a href="/" class="svelte-1us83cp">IOXIO<span class="reg svelte-1us83cp">®</span> Documentation portal</a></h2> <div class="corner svelte-1us83cp"><a href="https://github.com/ioxiocom/ioxio-docs" class="svelte-1us83cp"><img src="/_app/immutable/assets/github.f4987eee.svg" alt="GitHub" class="svelte-1us83cp"></a></div> </header> <main class="svelte-cpqfdj"> <h1>IOXIO Tags™️ signatures</h1> <div class="breadcrumbs"><span class="breadcrumb"><a href="/">Docs</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span><span class="breadcrumb"><a href="/tags/">IOXIO Tags™</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span><span class="breadcrumb"><a href="/tags/signatures/">Signatures</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span> </div> <p data-svelte-h="svelte-60ilej">Technical details about the signatures used with IOXIO Tags™.</p> <h2 id="temp-0.23104437384367515" class="svelte-x6k0oz"><a href="#temp-0.23104437384367515">Header <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <p data-svelte-h="svelte-1l7me8h">The signed codes start with an identifier to designate that they are an IOXIO Tags™ code,
+  including a version number. Right now the header used is the characters <em>IT1:</em>.</p> <h2 id="temp-0.6743083674094015" class="svelte-x6k0oz"><a href="#temp-0.6743083674094015">Encoded signed data <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <p>Following the header there is the signed data, encoded in <a href="https://datatracker.ietf.org/doc/rfc9285/" rel="noreferrer" target="_blank">Base45</a>, used commonly in e.g. the EU COVID passports and other standards where QR codes need to be used
+  to represent arbitrary binary data.</p> <p>The data is signed with <a href="https://cose-wg.github.io/cose-spec/" rel="noreferrer" target="_blank">COSE</a> (CBOR Object Signing
+  and Encryption), effectively a version of the JOSE system but for CBOR, and <a href="https://cbor.io" rel="noreferrer" target="_blank">CBOR</a> itself is a more efficiently packed binary friendly format similar to JSON.</p> <p data-svelte-h="svelte-154e11g">By parsing the COSE signature without verifying it, you should be able to get the JWKS <em>kid</em>
+  and <em>alg</em>
+  from the COSE header, as well as the payload. You can use the <em>iss</em> from the payload to
+  fetch the <a href="/tags/metadata/#product-passport.json">product-passport.json</a>, which points
+  to the <a href="/tags/metadata/#jwks.json">jwks.json</a>. Once you load that file, you can use the
+  other properties to determine the correct key to verify the signature with.</p> <p>Check out the <em data-svelte-h="svelte-18nyhwr">verify_code</em> function in <a href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/app/tag.py" rel="noreferrer" target="_blank">our demo application</a> for a full example.</p> <h2 id="temp-0.7677277714015329" class="svelte-x6k0oz"><a href="#temp-0.7677277714015329">Payload <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <p data-svelte-h="svelte-lylsvy">Once the COSE data is parsed, you will get the properties of the code, so the <em>iss</em>,
+  <em>product</em>, and <em>id</em>, from it.</p> <p>The data is signed with <a href="https://cose-wg.github.io/cose-spec/" rel="noreferrer" target="_blank">COSE</a> (CBOR Object Signing
+  and Encryption), effectively a version of the JOSE system but for CBOR, and <a href="https://cbor.io" rel="noreferrer" target="_blank">CBOR</a> itself is a more efficiently packed binary friendly format similar to JSON.</p> <h2 id="temp-0.07958155697627411" class="svelte-x6k0oz"><a href="#temp-0.07958155697627411">Parsing process <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <ol><li data-svelte-h="svelte-l9tu1u">Scan the QR code</li> <li data-svelte-h="svelte-1vuhpu2">Verify the header - that the first 4 characters match exactly <em>IT1:</em></li> <li data-svelte-h="svelte-krqm8i">Remove the header from the code</li> <li data-svelte-h="svelte-1sa707g">Base45 decode the code</li> <li data-svelte-h="svelte-1e8o5k3">Parse the <em>alg</em> and <em>kid</em> from the COSE header, as well as the COSE payload
+    <strong>without verifying the signature</strong></li> <li>Fetch <em>https://{payload.iss}/.well-known/product-passport.json</em> <a href="/tags/metadata/#product-passport.json" data-svelte-h="svelte-e0bti5">metadata</a></li> <li>Fetch the <a href="/tags/metadata/#jwks.json" data-svelte-h="svelte-11p9s5k">JWKS keys</a> from <em>{jwks_url}</em> in the
+    product-passport.json</li> <li data-svelte-h="svelte-enzzxb">Verify the COSE signature matches the key provided via JWKS</li> <li>Fetch <em>https://{payload.iss}/.well-known/product-passport/{payload.product}.json</em>
+    for <a href="/tags/metadata/#%7Bproduct%7D.json" data-svelte-h="svelte-z4jk91">product metadata</a></li> <li>Fetch <em>https://{product_dataspace}.well-known/dataspace/dataspace-configuration.json</em></li> <li>Proceed to do what you wish with the <em data-svelte-h="svelte-h1ahe9">supported_dataproducts</em> from the
+    <a href="/tags/metadata/#product-passport.json">{payload.product}.json</a>, including
+    e.g. fetching the data products via the <em data-svelte-h="svelte-rlpe4y">product_gateway_url</em> from the
+    <em data-svelte-h="svelte-5xcl2l">dataspace-configuration.json</em></li></ol> <p>Check out our Sandbox&#39;s <a href="https://sandbox.ioxio-dataspace.com/.well-known/dataspace/dataspace-configuration.json" rel="noreferrer" target="_blank">dataspace-configuration.json</a>
+  to see what configuration is available for IOXIO dataspaces.</p> <h2 id="temp-0.6364366348049146" class="svelte-x6k0oz"><a href="#temp-0.6364366348049146">Example signed code <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <p data-svelte-h="svelte-1k43z5v">The line feeds are added to make it easier to see what the code is like, but are not a part of the
+  code. Having extra linefeeds breaks the code.</p> <article class="svelte-hf5c40"><div aria-hidden="true" class="code svelte-hf5c40">
+IT1:RRQ5 8/60V500GKOG8WA6E+5OPCZQEG/D5ECBPE ED0AFM2E6VCQ/EV9EV3E $E9WEB$CBECP9EY CPED$.
+CKWEZED.2DV50 NF19W:5EKV52W0TFQJ01Y%8W+6%9IRE2SJ51VEU95K:AM+61XB2UJ+/81-I0Y3YXABQ9XJQST
+CRB7G3Y%D868%$M0DE E30QNSFL64W/V473PWW0. VLK8BJO8VBTEHUDQS9HX3BCOMRFFDE560C.BHJP0000DP$
+YPCBNQ2OPPA8XD/N5Z6LNVNEJM* CL8FH7PHRUDVVO5IDEQZ$SM1U-N8U$UZ0KQPBYOSEN4: P2/7+5NECC254I
+C7BZCN.0J%BBEOMD645V2RG7+S0.5CCR2JTCCAVVOVN0OT-K63CSR14TARR%N/27AUQ9XNJMVO-0LV5DSJPH2/O
+V6MMZ1FLLG17WGDYP51T8W/06:QV43FK7RPC$-1Q+PK%I
+</div>  </article> <p data-svelte-h="svelte-st79hk">Printed into a QR code one might look something like this:</p> <img alt="example of a signed IOXIO Tag QR code" src="/ioxio-tag-example-signed.png" class="svelte-erfzvv"> <p>Check out the <em data-svelte-h="svelte-von2wp">make_cose_code</em> function in <a href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/app/tag.py" rel="noreferrer" target="_blank">our demo application</a> for a full example.</p> <p>You can check out our <a href="https://generator.tags.ioxio.dev" rel="noreferrer" target="_blank">IOXIO Tag™ generator</a> and
+  as well as <a href="https://scanner.tags.ioxio.dev" rel="noreferrer" target="_blank">IOXIO Tag™ scanner</a>, and their <a href="https://github.com/ioxiocom/ioxio-tags" rel="noreferrer" target="_blank">source code</a> to see how these work in practice.
+</p></main> <footer class="svelte-cpqfdj"><p class="svelte-cpqfdj">Try out our technologies for free on the <a href="https://sandbox.ioxio-dataspace.com" rel="noreferrer" target="_blank">IOXIO Dataspace™ sandbox</a> and the <a href="https://testbed.fi" rel="noreferrer" target="_blank">Finnish data economy testbed</a>.</p> <p class="svelte-cpqfdj">Visit <a href="https://ioxio.com" rel="noreferrer" target="_blank">ioxio.com</a> to learn more about IOXIO®</p></footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_hkuhuc = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [{"type":"data","data":null,"uses":{},"slash":"always"},{"type":"data","data":{path:"/tags/signatures/",route:"/tags/signatures"},"uses":{"route":1,"url":1}}];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.dc299bc9.js"),
+						import("../../_app/immutable/entry/app.1a489589.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 7],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

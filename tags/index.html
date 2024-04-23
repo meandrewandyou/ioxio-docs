@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    
+		<link href="../_app/immutable/assets/0.6627578b.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/Breadcrumbs.71d83a21.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/5.db707a44.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/SectionTitle.094aa1e0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.dc299bc9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.d5c18660.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.56195757.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.1a489589.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.3cf6da0a.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.a4696be0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/A.5e3bc997.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.6c4e978b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/SectionTitle.85154a00.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Title.01f33e54.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Miro.8133335a.js"><title>IOXIO Tags™️ - IOXIO Docs</title><!-- HEAD_svelte-1bze8jb_START --><meta property="og:title" content="IOXIO Tags™️"><!-- HEAD_svelte-1bze8jb_END -->
+    <meta
+      property="og:description"
+      content="Documentation portal for various IOXIO technologies."
+    />
+    <meta property="og:image" content="https://docs.ioxio.dev/og-image.jpg" />
+    <script src="/schema_doc.js"></script>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">  <div class="app svelte-cpqfdj"><div class="content svelte-cpqfdj"><header class="svelte-1us83cp" data-svelte-h="svelte-pl5zad"><h2><a href="/" class="svelte-1us83cp">IOXIO<span class="reg svelte-1us83cp">®</span> Documentation portal</a></h2> <div class="corner svelte-1us83cp"><a href="https://github.com/ioxiocom/ioxio-docs" class="svelte-1us83cp"><img src="/_app/immutable/assets/github.f4987eee.svg" alt="GitHub" class="svelte-1us83cp"></a></div> </header> <main class="svelte-cpqfdj"> <h1>IOXIO Tags™️</h1> <div class="breadcrumbs"><span class="breadcrumb"><a href="/">Docs</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span><span class="breadcrumb"><a href="/tags/">IOXIO Tags™</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span> </div> <h2 data-svelte-h="svelte-173xjip">Technical details</h2> <ul data-svelte-h="svelte-toayag"><li><a href="/tags/metadata/">Metadata</a></li> <li><a href="/tags/signatures/">Signing</a></li></ul> <h2 id="temp-0.3420901412071946" class="svelte-x6k0oz"><a href="#temp-0.3420901412071946">Overview <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVNfOfDe8=/" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe> <p data-svelte-h="svelte-p6zaug">IOXIO Tags™ are a technology with the primary goal to connect physical world things to
+  standardized data on dataspaces. This is accomplished with the combination of QR Codes and
+  metadata hosted by those who wish to connect their items to the data. The technology is based on
+  existing standards of the Internet, leaves your data in your care in your existing systems, and
+  leaves you in control of which Dataspaces you are working with, while allowing 3rd parties to
+  freely build their own solutions using the data in the codes. These IOXIO Tags™ provide a
+  way to implement Digital Product Passports.</p> <p data-svelte-h="svelte-1cceco4">The primary contents of the QR Code include 3 properties: the issuer, product type, and unique
+  identifier of the individual unit. The issuer is a domain where further <a href="/tags/metadata/">metadata</a> can be found, typically the manufacturer of the product. The product type is typically e.g. the model
+  number, or stock keeping unit, something that identifies clearly the product that is being talked about,
+  but not the individual unit. The unique identifier is then e.g. the serial number or similar code that
+  can be used to identify the individual unit as accurately as necessary.</p> <p data-svelte-h="svelte-18eqf6e">There are two types of QR Codes that can be used with IOXIO Tags™, a signed code, and a
+  basic URL. The simpler URL based code simply links to tags.ioxio.dev/q/issuer/product/id, which
+  opens up our code scanner application, so if you scan it you can quickly read up the information.
+  Generation of the URL based codes is incredibly simple for all cases, and they can typically be
+  printed at a very small size without issues - in our testing around 2cm x 2cm is fine. Parsing of
+  the data from the URLs is also very simple for 3rd party uses.</p> <p data-svelte-h="svelte-19rd7uv">The signed code is a bit more complicated, but provides additional benefits. As the name implies,
+  it includes a
+  <a href="/tags/signatures/">digital signature</a> as a proof of authenticity of the properties. It
+  is however up to whoever is printing the code to ensure that it has adequate anti-tamper measures in
+  place to ensure it is not copied or modified in a malicious manner, and that it lasts in the environment
+  it will be stored in. The digital signature can be verified via the metadata from the issuer.</p> <h2 id="temp-0.8418325001722069" class="svelte-x6k0oz"><a href="#temp-0.8418325001722069">Metadata <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <p data-svelte-h="svelte-15lz1k5">The metadata is configuration hosted by the issuer includes information about themselves - e.g.
+  logo, as well as the necessary keys to verify their digital signatures, and which dataspace they
+  are providing data about their products on. Additionally for every product type they will have
+  another metadata file that includes the name, product picture, and which data products (and
+  sources for them) the issuer supports for them on the dataspace.</p> <p data-svelte-h="svelte-1br4vha">The data from the code can then be combined with the metadata to automatically discover data
+  products connected to the physical goods that are provided by the manufacturer.</p> <h2 data-svelte-h="svelte-suz0r0">Digital Product Passport -compatible data products</h2> <p data-svelte-h="svelte-1sqakmx">To make it easy to connect data with these properties, we designed a standard for creating data
+  product definitions that are compatible with the data in the QR codes to make connecting data to
+  them easy and convenient for most developers. This has been accomplished by limiting the input
+  parameters to always include two properties from the code: the product type, and unique ID. These
+  provide enough information to connect the necessary data in a multitude of systems.</p> <p>Check out an example of a definition at <a href="https://definitions.sandbox.ioxio-dataspace.com/definitions/DPP/Energy/Battery/ProductDataSheet_v0.1" rel="noreferrer" target="_blank">our sandbox environment</a>.</p> <h2 id="temp-0.9614857985630132" class="svelte-x6k0oz"><a href="#temp-0.9614857985630132">Demo <span class="marker svelte-x6k0oz" data-svelte-h="svelte-1vcokm2">§</span></a></h2> <p>You can check out our <a href="https://generator.tags.ioxio.dev" rel="noreferrer" target="_blank">IOXIO Tag™ generator</a> and
+  as well as <a href="https://scanner.tags.ioxio.dev" rel="noreferrer" target="_blank">IOXIO Tag™ scanner</a>, and their <a href="https://github.com/ioxiocom/ioxio-tags" rel="noreferrer" target="_blank">source code</a> to see how these work in practice.</p> <p data-svelte-h="svelte-1mzzksd">Here&#39;s an example of how a signed IOXIO Tag™ could look like.</p> <img alt="example of a signed IOXIO Tag QR code" src="/ioxio-tag-example-signed.png" class="svelte-13ne54r"> <p data-svelte-h="svelte-2yd4u8">And here&#39;s an example of how a simple URL based IOXIO Tag™ could look like.</p> <img class="small svelte-13ne54r" alt="example of a basic IOXIO Tag QR code" src="/tags.ioxio.dev_example_string_simple.png"></main> <footer class="svelte-cpqfdj"><p class="svelte-cpqfdj">Try out our technologies for free on the <a href="https://sandbox.ioxio-dataspace.com" rel="noreferrer" target="_blank">IOXIO Dataspace™ sandbox</a> and the <a href="https://testbed.fi" rel="noreferrer" target="_blank">Finnish data economy testbed</a>.</p> <p class="svelte-cpqfdj">Visit <a href="https://ioxio.com" rel="noreferrer" target="_blank">ioxio.com</a> to learn more about IOXIO®</p></footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_hkuhuc = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [{"type":"data","data":null,"uses":{},"slash":"always"},{"type":"data","data":{path:"/tags/",route:"/tags"},"uses":{"route":1,"url":1}}];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.dc299bc9.js"),
+						import("../_app/immutable/entry/app.1a489589.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

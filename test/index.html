@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    
+		<link href="../_app/immutable/assets/0.6627578b.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/Breadcrumbs.71d83a21.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/json.993ec4f1.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.dc299bc9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.d5c18660.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.56195757.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.1a489589.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.3cf6da0a.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.a4696be0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/A.5e3bc997.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/8.1a082056.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/json.8b9daa76.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Title.01f33e54.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Miro.8133335a.js"><title> - IOXIO Docs</title><!-- HEAD_svelte-1bze8jb_START --><meta property="og:title" content=""><!-- HEAD_svelte-1bze8jb_END -->
+    <meta
+      property="og:description"
+      content="Documentation portal for various IOXIO technologies."
+    />
+    <meta property="og:image" content="https://docs.ioxio.dev/og-image.jpg" />
+    <script src="/schema_doc.js"></script>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">  <div class="app svelte-cpqfdj"><div class="content svelte-cpqfdj"><header class="svelte-1us83cp" data-svelte-h="svelte-pl5zad"><h2><a href="/" class="svelte-1us83cp">IOXIO<span class="reg svelte-1us83cp">®</span> Documentation portal</a></h2> <div class="corner svelte-1us83cp"><a href="https://github.com/ioxiocom/ioxio-docs" class="svelte-1us83cp"><img src="/_app/immutable/assets/github.f4987eee.svg" alt="GitHub" class="svelte-1us83cp"></a></div> </header> <main class="svelte-cpqfdj"><div class="breadcrumbs"><span class="breadcrumb"><a href="/">Docs</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span><span class="breadcrumb"><a href="/test/">Test...</a></span> <span class="sep svelte-16gl9f1" data-svelte-h="svelte-1ofwb3u">/</span> </div>  <h1></h1> <p data-svelte-h="svelte-d7srsc">This wonderful code fetches your data.</p> <article class="svelte-hf5c40"><div aria-hidden="true" class="code svelte-hf5c40">
+import foo from "./foo";
+
+function bar(arg: string): boolean {
+  return foo(bar)
+}
+</div>  </article> <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVMANjO8Y=/" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe> <p data-svelte-h="svelte-1g4my1q">You can define data products like this in <em>src/draft/Weather/Current/Metric.py</em> in the definitions
+  repository.</p> <article class="svelte-hf5c40"><div aria-hidden="true" class="code svelte-hf5c40">
+from definition_tooling.converter import CamelCaseModel, DataProductDefinition
+from pydantic import Field
+
+
+class CurrentWeatherMetricRequest(CamelCaseModel):
+    lat: float = Field(
+        ...,
+        title="Latitude",
+        description="The latitude coordinate of the desired location",
+        ge=-90.0,
+        le=90.0,
+        example=60.192059,
+    )
+    lon: float = Field(
+        ...,
+        title="Longitude",
+        description="The longitude coordinate of the desired location",
+        ge=-180.0,
+        le=180.0,
+        example=24.945831,
+    )
+
+
+class CurrentWeatherMetricResponse(CamelCaseModel):
+    humidity: float = Field(..., title="Current relative air humidity in %", example=72)
+    pressure: float = Field(..., title="Current air pressure in hPa", example=1007)
+    # ...
+
+
+DEFINITION = DataProductDefinition(
+    title="Current weather in a given location",
+    description="Common data points about the current weather with metric units in a given location. Simplified for example use, and not following industry standards.",
+    request=CurrentWeatherMetricRequest,
+    response=CurrentWeatherMetricResponse,
+)
+}
+</div>  </article> <p data-svelte-h="svelte-1eijzgr">And then you can host this in <em>.well-known/product-passport/product-passport.json</em>:</p> <article class="svelte-hf5c40"><div aria-hidden="true" class="code svelte-hf5c40">
+{
+  "jwks_uri": "https://example.com/.well-known/jwks.json",
+  "logo_url": "https://example.com/favicon-32x32.png",
+  "product_dataspace": "sandbox.ioxio-dataspace.com"
+}
+</div>  </article></main> <footer class="svelte-cpqfdj"><p class="svelte-cpqfdj">Try out our technologies for free on the <a href="https://sandbox.ioxio-dataspace.com" rel="noreferrer" target="_blank">IOXIO Dataspace™ sandbox</a> and the <a href="https://testbed.fi" rel="noreferrer" target="_blank">Finnish data economy testbed</a>.</p> <p class="svelte-cpqfdj">Visit <a href="https://ioxio.com" rel="noreferrer" target="_blank">ioxio.com</a> to learn more about IOXIO®</p></footer></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_hkuhuc = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [{"type":"data","data":null,"uses":{},"slash":"always"},{"type":"data","data":{path:"/test/",route:"/test"},"uses":{"route":1,"url":1}}];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.dc299bc9.js"),
+						import("../_app/immutable/entry/app.1a489589.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
