@@ -10,6 +10,10 @@ You will need
 - PNPM 8.x
 
 ```shell
+pre-commit install
+```
+
+```shell
 pnpm run dev
 ```
 

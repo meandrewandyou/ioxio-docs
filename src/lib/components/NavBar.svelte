@@ -1,8 +1,9 @@
 <script lang="ts">
+  import MenuButton from "./MenuButton.svelte"
+
   import IoxioLogo from "$lib/images/ioxio-logo.svg?dataurl"
   import GitHubLogo from "$lib/images/github-icon.svg?dataurl"
   import Container from "$lib/components/Container.svelte"
-  import HamburgerIcon from "$lib/images/hamburger-icon.svg"
 
   export let popover: any
 </script>
@@ -11,9 +12,7 @@
   <Container>
     <div class="header">
       <div class="title">
-        <button use:popover.button class="hamburger-button">
-          <HamburgerIcon />
-        </button>
+        <MenuButton {popover} />
         <img src={IoxioLogo} alt="IOXIO" />
         <div class="separator" />
         <a class="title-link" href="/">Documentation portal</a>
@@ -29,7 +28,7 @@
   @import "$styles/setup";
 
   header {
-    background-color: $color-primary-dark-hover;
+    background-color: $color-primary-highlight;
   }
 
   .header {

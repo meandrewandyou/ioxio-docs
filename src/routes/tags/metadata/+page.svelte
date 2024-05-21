@@ -6,6 +6,7 @@
   import A from "$lib/A.svelte"
   import Breadcrumbs from "$lib/Breadcrumbs.svelte"
   import Title from "$lib/Title.svelte"
+  import TableOfContents from "$lib/TableOfContents.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -111,52 +112,53 @@
   ]
 </script>
 
-<Title title={`IOXIO Tags™️ metadata`} />
+<TableOfContents>
+  <Title title={`IOXIO Tags™️ metadata`} />
 
-<Breadcrumbs path={data.path} route={data.route} />
+  <Breadcrumbs path={data.path} route={data.route} />
 
-<p>Technical details about the metadata files for IOXIO Tags™.</p>
+  <p>Technical details about the metadata files for IOXIO Tags™.</p>
 
-<SectionTitle>product-passport.json</SectionTitle>
-<p>
-  The <em>/.well-known/product-passport.json</em> file hosted at the issuer domain includes the common
-  information about the issuer. This includes location of signature public keys hosted with JWKS, the
-  URL to a logo, and the base URL of the dataspace used to host the supported data products.
-</p>
+  <SectionTitle title="product-passport.json" />
+  <p>
+    The <em>/.well-known/product-passport.json</em> file hosted at the issuer domain includes the common
+    information about the issuer. This includes location of signature public keys hosted with JWKS, the
+    URL to a logo, and the base URL of the dataspace used to host the supported data products.
+  </p>
 
-<h3>Schema</h3>
-<Schema schema={productPassportSchema} />
+  <h3>Schema</h3>
+  <Schema schema={productPassportSchema} />
 
-<h3>Example product-passport.json</h3>
-<Code lang={json}>
-  {`
+  <h3>Example product-passport.json</h3>
+  <Code lang={json}>
+    {`
 {
   "jwks_uri": "https://tags.ioxio.dev/.well-known/jwks.json",
   "logo_url": "https://ioxio.com/favicon-32x32.png",
   "product_dataspace": "sandbox.ioxio-dataspace.com"
 }
 `}
-</Code>
-You can also check out <A href="https://tags.ioxio.dev/.well-known/product-passport.json"
-  >https://tags.ioxio.dev/.well-known/product-passport.json</A
->
+  </Code>
+  You can also check out <A href="https://tags.ioxio.dev/.well-known/product-passport.json"
+    >https://tags.ioxio.dev/.well-known/product-passport.json</A
+  >
 
-<SectionTitle>{"{"}product{"}"}.json</SectionTitle>
-<p>
-  E.g. if the QR code has the <em>product</em> set to the value <em>battery-100wh-super-turbo</em>
-  this is expected to be found at
-  <em>/.well-known/product-passport/products/battery-100wh-super-turbo.json</em>, and contains the
-  important data about that specific type of product.
-</p>
+  <SectionTitle title="{'{'}product{'}'}.json" />
+  <p>
+    E.g. if the QR code has the <em>product</em> set to the value <em>battery-100wh-super-turbo</em>
+    this is expected to be found at
+    <em>/.well-known/product-passport/products/battery-100wh-super-turbo.json</em>, and contains the
+    important data about that specific type of product.
+  </p>
 
-<h3>Schema</h3>
-<Schema schema={productSchema} />
-<p>Supported data products:</p>
-<Schema schema={supportedProductSchema} />
+  <h3>Schema</h3>
+  <Schema schema={productSchema} />
+  <p>Supported data products:</p>
+  <Schema schema={supportedProductSchema} />
 
-<h3>Example battery-100wh-super-turbo.json</h3>
-<Code lang={json}>
-  {`
+  <h3>Example battery-100wh-super-turbo.json</h3>
+  <Code lang={json}>
+    {`
 {
   "names": {
     "en_US": "Really good battery"
@@ -170,21 +172,21 @@ You can also check out <A href="https://tags.ioxio.dev/.well-known/product-passp
   ]
 }
 `}
-</Code>
+  </Code>
 
-<SectionTitle>jwks.json</SectionTitle>
-<p>
-  Typically hosted at <em>/.well-known/jwks.json</em>, and includes the JWKS keys.
-</p>
+  <SectionTitle title="jwks.json" />
+  <p>
+    Typically hosted at <em>/.well-known/jwks.json</em>, and includes the JWKS keys.
+  </p>
 
-<h3>Schema</h3>
-<Schema schema={jwksSchema} />
-<p>Keys:</p>
-<Schema schema={keySchema} />
+  <h3>Schema</h3>
+  <Schema schema={jwksSchema} />
+  <p>Keys:</p>
+  <Schema schema={keySchema} />
 
-<h3>Example jwks.json</h3>
-<Code lang={json}>
-  {`
+  <h3>Example jwks.json</h3>
+  <Code lang={json}>
+    {`
 {
   "keys": [
     {
@@ -197,10 +199,11 @@ You can also check out <A href="https://tags.ioxio.dev/.well-known/product-passp
   ]
 }
 `}
-</Code>
+  </Code>
 
-You can use our <A href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/make_jwks.py"
-  >Python script</A
-> to convert RSA keys generated with
-<em>openssl genrsa -out key.pem 2048; openssl rsa -in key.pem -pubout -out key.pub</em>
-to <em>jwks.json</em> format.
+  You can use our <A href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/make_jwks.py"
+    >Python script</A
+  > to convert RSA keys generated with
+  <em>openssl genrsa -out key.pem 2048; openssl rsa -in key.pem -pubout -out key.pub</em>
+  to <em>jwks.json</em> format.
+</TableOfContents>

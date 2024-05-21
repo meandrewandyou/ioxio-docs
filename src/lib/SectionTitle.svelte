@@ -1,13 +1,28 @@
-<script>
-  let id = "temp-" + Math.random()
-  let container
+<script lang="ts">
+  import { getContext, onMount } from "svelte"
 
-  $: if (container) {
-    id = container.innerText.trim().replace(" ", "-").toLowerCase()
+  let id: string
+  export let level = 1
+  export let title
+
+  $: if (title) {
+    id = title.trim().replaceAll(" ", "-").toLowerCase()
   }
+  const context = getContext("TableOfContents")
+  onMount(() => {
+    if (context) {
+      if (title && id) {
+        context.addEntry({
+          title: title,
+          level: level,
+          id: id,
+        })
+      }
+    }
+  })
 </script>
 
-<h2 {id}><a href={`#${id}`} bind:this={container}><slot /> <span class="marker">§</span></a></h2>
+<h2 {id}><a href={`#${id}`}> {title} <span class="marker">§</span></a></h2>
 
 <style lang="scss">
   h2 {

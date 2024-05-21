@@ -5,7 +5,6 @@
     name: string
     link: string
   }
-  type Breadcrumbs = Breadcrumb[]
 
   export let path = "/"
   export let route = "/"

@@ -39,10 +39,9 @@
             <div class="left-nav" />
           </Grid>
         {/if}
-        <Grid sm={12} md={7} class="content-grid">
+        <Grid sm={12} md={9} class="content-grid">
           <slot />
         </Grid>
-        <Grid sm={0} md={2} />
       {:else}
         {#if !$isSmallScreen}
           <Grid sm={0} md={2} lg={1} class="left-nav-wrapper">
@@ -68,12 +67,12 @@
     height: 100%;
     width: 100%;
     position: relative;
-    background-color: $color-primary-highlight;
+    background-color: $color-primary-dark;
   }
 
   :global(.main-container) {
     flex-grow: 1;
-    background-color: $color-primary-highlight;
+    background-color: $color-primary-dark;
     position: relative;
   }
 
