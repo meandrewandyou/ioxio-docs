@@ -13,8 +13,12 @@
 
   const popover = createPopover({})
   const size = breakpointObserver()
-
-  $: isSmallScreen = size.smallerThan("md")
+  let isSmallScreen
+  $: {
+    isSmallScreen = size.smallerThan("md")
+    !$isSmallScreen && popover.close()
+  }
+  
   $: indexPage = $page.url.pathname === "/"
 
   // close the mobile menu after navigating to another page

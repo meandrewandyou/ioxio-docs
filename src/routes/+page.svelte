@@ -91,6 +91,7 @@
       .hero-image {
         max-width: 42rem;
         margin: 0 0 0 auto;
+        overflow: hidden;
 
         @include tablet() {
           max-width: 14rem;
