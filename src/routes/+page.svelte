@@ -109,6 +109,7 @@
         gap: $spacing-01;
         position: relative;
         height: 10rem;
+        isolation: isolate;
 
         .link {
           display: flex;

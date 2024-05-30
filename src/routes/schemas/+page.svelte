@@ -9,7 +9,7 @@
 
 <Title title="Data schemas used in IOXIO Dataspaces" />
 
-<Breadcrumbs path={data.path} route={data.route} />
+<Breadcrumbs path={data.path} />
 
 <h1>Schemas</h1>
 

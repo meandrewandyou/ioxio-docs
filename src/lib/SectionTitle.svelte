@@ -3,7 +3,7 @@
 
   let id: string
   export let level = 1
-  export let title
+  export let title: string
 
   $: if (title) {
     id = title.trim().replaceAll(" ", "-").toLowerCase()

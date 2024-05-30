@@ -4,6 +4,7 @@
   import HomeIcon from "$lib/images/home-icon.svg"
   import { page } from "$app/stores"
   import { spring } from "svelte/motion"
+  import { navigation, type NavItem } from "$lib/navigation"
 
   const MENU_SMALL = 4.5
   const MENU_WIDE = 12
@@ -11,35 +12,66 @@
   export let mobile = false
 
   const width = spring(mobile ? MENU_WIDE : MENU_SMALL)
+
+  function isSelected(section: NavItem, currentPath: string) {
+    if (section.route === "" && currentPath === "/") {
+      return true
+    } else if (section.route !== "" && currentPath.startsWith(`/${section.route}`)) {
+      return true
+    }
+    return false
+  }
+
+  function getIcon(name?: string) {
+    switch (name) {
+      case "home":
+        return HomeIcon
+      case "qr-code-icon":
+        return QRCodeIcon
+      case "schemas-icon":
+        return SchemasIcon
+      default:
+        return HomeIcon
+    }
+  }
+
+  // needs for a correct transition
+  let textHidden = true
+
+  function expandMenu() {
+    width.set(MENU_WIDE)
+    textHidden = false
+  }
+
+  function collapseMenu() {
+    width.set(MENU_SMALL)
+    textHidden = true
+  }
 </script>
 
 <nav
   class="sidebar"
   class:mobile-only={mobile}
   style={`width: ${$width}rem`}
-  on:mouseover={() => !mobile && width.set(MENU_WIDE)}
-  on:mouseout={() => !mobile && width.set(MENU_SMALL)}
+  on:mouseover={() => !mobile && expandMenu()}
+  on:mouseout={() => !mobile && collapseMenu()}
   on:blur={undefined}
   on:focus={undefined}
 >
-  <a href="/" class="menu-item" class:selected={$page.url.pathname === "/"}>
-    <div class="icon-wrapper">
-      <HomeIcon />
-    </div>
-    <div class="name">Home</div>
-  </a>
-  <a href="/tags" class="menu-item" class:selected={$page.url.pathname.startsWith("/tags")}>
-    <div class="icon-wrapper">
-      <QRCodeIcon />
-    </div>
-    <div class="name">IOXIO Tags™</div>
-  </a>
-  <a href="/schemas" class="menu-item" class:selected={$page.url.pathname.startsWith("/schemas")}>
-    <div class="icon-wrapper">
-      <SchemasIcon />
-    </div>
-    <div class="name">Schemas</div>
-  </a>
+  <div class="sticky-wrapper">
+    {#each navigation as section}
+      <a
+        href={`/${section.route}`}
+        class="menu-item"
+        class:selected={isSelected(section, $page.url.pathname)}
+      >
+        <div class="icon-wrapper">
+          <svelte:component this={getIcon(section.icon)} />
+        </div>
+        <div class="name">{!textHidden || mobile ? section.name : ""}</div>
+      </a>
+    {/each}
+  </div>
 </nav>
 
 <style lang="scss">
@@ -56,8 +88,12 @@
     position: absolute;
     left: 0;
     top: 0;
-    overflow: hidden;
     white-space: nowrap;
+
+    .sticky-wrapper {
+      position: sticky;
+      top: $spacing-02;
+    }
 
     .menu-item {
       border-radius: 5px;
@@ -92,7 +128,7 @@
 
       .name {
         opacity: 0;
-        transition: opacity 250ms ease 0s;
+        transition: opacity 500ms ease 0s;
       }
 
       &:hover:not(.selected) {

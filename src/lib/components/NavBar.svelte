@@ -1,27 +1,19 @@
 <script lang="ts">
   import MenuButton from "./MenuButton.svelte"
-
   import IoxioLogo from "$lib/images/ioxio-logo.svg?dataurl"
-  import GitHubLogo from "$lib/images/github-icon.svg?dataurl"
-  import Container from "$lib/components/Container.svelte"
 
   export let popover: any
 </script>
 
 <header>
-  <Container>
-    <div class="header">
-      <div class="title">
-        <MenuButton {popover} />
-        <img src={IoxioLogo} alt="IOXIO" />
-        <div class="separator" />
-        <a class="title-link" href="/">Documentation portal</a>
-      </div>
-      <a href="https://github.com/ioxiocom/ioxio-docs" rel="noopener noreferrer" target="_blank">
-        <img src={GitHubLogo} alt="GitHub repository" />
-      </a>
+  <div class="header">
+    <div class="title">
+      <MenuButton {popover} />
+      <img src={IoxioLogo} alt="IOXIO" />
+      <div class="separator" />
+      <a class="title-link" href="/">Documentation portal</a>
     </div>
-  </Container>
+  </div>
 </header>
 
 <style lang="scss">
@@ -29,6 +21,7 @@
 
   header {
     background-color: $color-primary-highlight;
+    padding: 0 $spacing-03;
   }
 
   .header {
@@ -73,13 +66,9 @@
 
       // ioxio logo
       img {
+        width: 4rem;
         height: $spacing-02;
       }
-    }
-
-    // github
-    img {
-      height: $spacing-03;
     }
   }
 </style>

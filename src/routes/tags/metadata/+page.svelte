@@ -115,7 +115,7 @@
 <TableOfContents>
   <Title title={`IOXIO Tags™️ metadata`} />
 
-  <Breadcrumbs path={data.path} route={data.route} />
+  <Breadcrumbs path={data.path} />
 
   <p>Technical details about the metadata files for IOXIO Tags™.</p>
 

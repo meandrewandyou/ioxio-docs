@@ -38,7 +38,7 @@
   "dependencies": {
     "@fontsource/poppins": "^5.0.8",
     "@material/layout-grid": "^14.0.0",
-    "@smui/layout-grid": "7.0.0-beta.16",
+    "@smui/layout-grid": "^7.0.0",
     "svelte-headlessui": "^0.0.33",
     "svelte-highlight": "^7.3.0"
   }

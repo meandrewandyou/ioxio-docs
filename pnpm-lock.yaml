@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@fontsource/poppins':
     specifier: ^5.0.8
@@ -8,8 +12,8 @@ dependencies:
     specifier: ^14.0.0
     version: 14.0.0
   '@smui/layout-grid':
-    specifier: 7.0.0-beta.16
-    version: 7.0.0-beta.16(svelte@4.2.0)(typescript@5.1.6)
+    specifier: ^7.0.0
+    version: 7.0.0(svelte@4.2.0)(typescript@5.1.6)
   svelte-headlessui:
     specifier: ^0.0.33
     version: 0.0.33
@@ -461,22 +465,22 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@smui/common@7.0.0-beta.18(svelte@4.2.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-BH70iF23eGKK57YReDG5nerJR/7lomncVAcKCJ35KEso90S+eu7lZwDg5kUdzVzDRNdS+WkTrDKPhKmo3R2sEQ==}
+  /@smui/common@7.0.0(svelte@4.2.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-/JUf25KMIDLFNfiuMSMs2g7dEZZFUnDJDxpbT3FlGEY/HKoEf0W9GnbmIOzPje1wxW9ajKHN2SIYDPx9so1vnw==}
     dependencies:
       '@material/dom': 14.0.0
-      svelte2tsx: 0.6.27(svelte@4.2.0)(typescript@5.1.6)
+      svelte2tsx: 0.7.8(svelte@4.2.0)(typescript@5.1.6)
     transitivePeerDependencies:
       - svelte
       - typescript
     dev: false
 
-  /@smui/layout-grid@7.0.0-beta.16(svelte@4.2.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-/7ciDwv4j2k6qwrd8LwzOpD7M5X3nBbiWoPQd10bvDzjh3QiQc5TtEKRI7mzp7t7RBNbIKKeQIdoy+BQ1CIPbw==}
+  /@smui/layout-grid@7.0.0(svelte@4.2.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-LF4Lh8FwZa9swh5/Yxf1aTiqBTrq3txmExTsCl9UcbGpOLXGS5ITXDJO9YWePj9YtT/GlNHEcGishP1gChkCTQ==}
     dependencies:
       '@material/layout-grid': 14.0.0
-      '@smui/common': 7.0.0-beta.18(svelte@4.2.0)(typescript@5.1.6)
-      svelte2tsx: 0.6.27(svelte@4.2.0)(typescript@5.1.6)
+      '@smui/common': 7.0.0(svelte@4.2.0)(typescript@5.1.6)
+      svelte2tsx: 0.7.8(svelte@4.2.0)(typescript@5.1.6)
     transitivePeerDependencies:
       - svelte
       - typescript
@@ -2216,8 +2220,8 @@ packages:
       typescript: 5.1.6
     dev: true
 
-  /svelte2tsx@0.6.27(svelte@4.2.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-E1uPW1o6VsbRz+nUk3fznZ2lSmCITAJoNu8AYefWSvIwE2pSB01i5sId4RMbWNzfcwCQl1DcgGShCPcldl4rvg==}
+  /svelte2tsx@0.7.8(svelte@4.2.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-ABK3RDFcy59AqAiU1N5Kxu1RnKrb1GDMrQjLgNgJfE8Q+coCKpjCAPtUVKQM2HnmuqeNWcT3NqfXbE+ZmN5Pow==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
@@ -2486,7 +2490,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

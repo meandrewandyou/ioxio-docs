@@ -7,6 +7,7 @@
   import MailIcon from "$lib/images/mail-icon.svg"
   import SlackIcon from "$lib/images/slack-icon.svg"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
+  import GitHubLogo from "$lib/images/github-icon.svg?dataurl"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
@@ -56,6 +57,20 @@
       </Grid>
       <Grid container>
         <Grid sm={0} lg={1} />
+        <Grid sm={12} lg={11}>
+          <a
+            class="github-link"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/ioxiocom/ioxio-docs"
+          >
+            <img src={GitHubLogo} alt="GitHub repository" />
+            <div>Contribute to these docs</div>
+          </a>
+        </Grid>
+      </Grid>
+      <Grid container>
+        <Grid sm={0} lg={1} />
         <Grid sm={12} md={8} lg={6}>
           <div class="body-2">
             IOXIO® is a registered trademark of IOXIO Oy. IOXIO Dataspace™ and IOXIO Tags™ are
@@ -96,6 +111,10 @@
         text-decoration: none;
         align-items: center;
         gap: $spacing-01;
+
+        span {
+          flex-shrink: 0;
+        }
       }
     }
   }
@@ -121,6 +140,25 @@
       margin: 0 0 0 auto;
       @include mobile() {
         margin: 0 auto 0 0;
+      }
+    }
+
+    .github-link {
+      display: flex;
+      align-items: center;
+      gap: $spacing-01;
+      margin-bottom: $spacing-02;
+      color: $color-neutral-light;
+      text-decoration: none;
+      font-size: 0.75rem;
+      width: max-content;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+      }
+      &:hover {
+        text-decoration: underline;
       }
     }
 

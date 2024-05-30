@@ -13,7 +13,7 @@
 <TableOfContents>
   <Title title={`IOXIO Tags™️ signatures`} />
 
-  <Breadcrumbs path={data.path} route={data.route} />
+  <Breadcrumbs path={data.path} />
 
   <p>Technical details about the signatures used with IOXIO Tags™.</p>
 

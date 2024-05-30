@@ -13,7 +13,7 @@
 <TableOfContents>
   <Title title={`IOXIO Tags™️`} />
 
-  <Breadcrumbs path={data.path} route={data.route} />
+  <Breadcrumbs path={data.path} />
 
   <h2>Technical details</h2>
   <ul>

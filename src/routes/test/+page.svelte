@@ -12,7 +12,7 @@
   export let data
 </script>
 
-<Breadcrumbs path={data.path} route={data.route} />
+<Breadcrumbs path={data.path} />
 
 <Title>How to build applications</Title>
 <p>This wonderful code fetches your data.</p>

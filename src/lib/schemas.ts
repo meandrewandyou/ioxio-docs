@@ -1,5 +1,5 @@
 // TODO: Try and generate this automatically
-export const schemas = [
+export const schemas: { route: string; name: string }[] = [
   {
     route: "consent-configuration",
     name: "consent-configuration.json",

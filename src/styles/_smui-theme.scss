@@ -11,4 +11,4 @@
   $columns: (desktop: 12, tablet: 12, phone: 12)
 );
 
-@use "@smui/layout-grid/style";
+@use "@material/layout-grid/mdc-layout-grid";

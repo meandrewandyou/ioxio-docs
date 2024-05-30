@@ -1,6 +1,7 @@
 <script lang="ts">
   import { createPopover } from "svelte-headlessui"
   import { fade } from "svelte/transition"
+  import { page } from "$app/stores"
 
   import Container from "$lib/components/Container.svelte"
   import Footer from "$lib/components/Footer.svelte"
@@ -8,52 +9,86 @@
   import NavBar from "$lib/components/NavBar.svelte"
   import breakpointObserver from "$lib/breakpointObserver.js"
   import Sidebar from "$lib/components/Sidebar.svelte"
-  import { page } from "$app/stores"
+  import { navigation } from "$lib/navigation"
 
   const popover = createPopover({})
   const size = breakpointObserver()
+
   $: isSmallScreen = size.smallerThan("md")
+  $: indexPage = $page.url.pathname === "/"
+
+  // close the mobile menu after navigating to another page
+  let currentPage = $page.url
+  $: if ($page.url != currentPage) {
+    popover.close()
+    currentPage = $page.url
+  }
+
+  let subNavigation: { href: string; name: string }[] = []
+  let currentSectionName = ""
+  $: for (let section of navigation) {
+    if ($page.url.pathname === "/") {
+      subNavigation = []
+      break
+    }
+    if (section.route !== "" && $page.url.pathname.startsWith(`/${section.route}`)) {
+      currentSectionName = section.name
+      subNavigation = (section.children || []).map((child) => ({
+        href: `/${section.route}/${child.route}`,
+        name: child.name,
+      }))
+    }
+  }
 </script>
 
 <section>
   <NavBar {popover} />
-  <Container class="main-container">
+  <div class="main-container">
     {#if !$isSmallScreen}
       <Sidebar />
     {/if}
-    <!-- needs to stay there for better keyboard navigation on mobile -->
-    {#if $isSmallScreen && $popover.expanded}
-      <div class="mobile-sidebar-wrapper" use:popover.panel transition:fade={{ duration: 100 }}>
-        <Grid container>
-          <Grid sm={5}>
-            <Sidebar mobile />
-          </Grid>
-          <Grid sm={7} />
-        </Grid>
+    {#if !indexPage}
+      <div class="left-nav-wrapper">
+        <div class="left-nav">
+          <div class="section-title">{currentSectionName}</div>
+          {#each subNavigation as navItem}
+            <a href={navItem.href}>{navItem.name}</a>
+          {/each}
+        </div>
       </div>
     {/if}
-    <Grid container class="main-grid">
-      {#if $page.url.pathname !== "/"}
-        {#if !$isSmallScreen}
-          <Grid sm={0} md={3} class="left-nav-wrapper">
-            <div class="left-nav" />
+    <Container class="main-container">
+      <!-- needs to stay there for better keyboard navigation on mobile -->
+      {#if $isSmallScreen && $popover.expanded}
+        <div class="mobile-sidebar-wrapper" use:popover.panel transition:fade={{ duration: 100 }}>
+          <Grid container>
+            <Grid sm={5}>
+              <Sidebar mobile />
+            </Grid>
+            <Grid sm={7}>
+              <div class="mobile-sub-navigation">
+                {#each subNavigation as navItem}
+                  <a href={navItem.href}>{navItem.name}</a>
+                {/each}
+              </div>
+            </Grid>
           </Grid>
-        {/if}
-        <Grid sm={12} md={9} class="content-grid">
-          <slot />
-        </Grid>
-      {:else}
-        {#if !$isSmallScreen}
-          <Grid sm={0} md={2} lg={1} class="left-nav-wrapper">
-            <div class="left-nav" />
-          </Grid>
-        {/if}
-        <Grid sm={12} md={10} lg={11} class="content-grid">
-          <slot />
-        </Grid>
+        </div>
       {/if}
-    </Grid>
-  </Container>
+      <Grid container class="main-grid">
+        {#if indexPage}
+          <Grid sm={0} md={2} />
+          <Grid sm={12} md={10} class="content-grid">
+            <slot />
+          </Grid>
+        {:else}
+          <Grid sm={12} class="content-grid">
+            <slot />
+          </Grid>
+        {/if}
+      </Grid>
+    </Container>
+  </div>
   <Footer />
 </section>
 
@@ -71,6 +106,7 @@
   }
 
   :global(.main-container) {
+    display: flex;
     flex-grow: 1;
     background-color: $color-primary-dark;
     position: relative;
@@ -82,18 +118,42 @@
 
   :global(.left-nav-wrapper) {
     position: relative;
+    width: 25rem;
 
     @include mobile() {
       display: none;
     }
-  }
 
-  .left-nav {
-    margin-left: 72px;
+    .left-nav {
+      margin-left: 5.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-01;
+      padding-top: $spacing-02;
+      position: sticky;
+      top: 0;
+
+      .section-title {
+        font-weight: 600;
+      }
+
+      a {
+        color: $color-neutral-gray;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-success-main;
+        }
+      }
+    }
   }
 
   :global(.main-container .content-grid) {
     margin-bottom: $spacing-05;
+  }
+
+  :global(.main-container .mdc-layout-grid) {
+    width: 100%;
   }
 
   .mobile-sidebar-wrapper {
@@ -125,6 +185,22 @@
 
         :global(path) {
           fill: $color-neutral-light;
+        }
+      }
+    }
+
+    .mobile-sub-navigation {
+      margin: $spacing-04 0 0 $spacing-02;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-01;
+
+      a {
+        color: $color-neutral-gray;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-success-main;
         }
       }
     }
