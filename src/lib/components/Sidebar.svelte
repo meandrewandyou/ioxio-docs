@@ -4,7 +4,7 @@
   import HomeIcon from "$lib/images/home-icon.svg"
   import { page } from "$app/stores"
   import { spring } from "svelte/motion"
-  import { navigation, type NavItem } from "$lib/navigation"
+  import { navigation, type NavItem } from "$lib/components/navigation"
 
   const MENU_SMALL = 4.5
   const MENU_WIDE = 12
@@ -52,7 +52,7 @@
 <nav
   class="sidebar"
   class:mobile-only={mobile}
-  style={`width: ${$width}rem`}
+  style={mobile ? "" : `width: ${$width}rem`}
   on:mouseover={() => !mobile && expandMenu()}
   on:mouseout={() => !mobile && collapseMenu()}
   on:blur={undefined}
@@ -162,7 +162,6 @@
       height: 100vh;
 
       .menu-item {
-        margin: 0 0 0 $spacing-04;
         gap: 0;
       }
     }

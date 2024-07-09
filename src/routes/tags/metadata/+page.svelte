@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Schema from "$lib/Schema.svelte"
-  import SectionTitle from "$lib/SectionTitle.svelte"
-  import Code from "$lib/Code.svelte"
+  import Schema from "$lib/components/Schema.svelte"
+  import SectionTitle from "$lib/components/SectionTitle.svelte"
+  import Code from "$lib/components/Code.svelte"
   import json from "svelte-highlight/languages/json"
-  import A from "$lib/A.svelte"
-  import Breadcrumbs from "$lib/Breadcrumbs.svelte"
-  import Title from "$lib/Title.svelte"
-  import TableOfContents from "$lib/TableOfContents.svelte"
+  import A from "$lib/components/A.svelte"
+  import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
+  import Title from "$lib/components/Title.svelte"
+  import TableOfContents from "$lib/components/TableOfContents.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -117,7 +117,7 @@
 
   <Breadcrumbs path={data.path} />
 
-  <p>Technical details about the metadata files for IOXIO Tags™.</p>
+  <h1>Technical details about the metadata files for IOXIO Tags™</h1>
 
   <SectionTitle title="product-passport.json" />
   <p>

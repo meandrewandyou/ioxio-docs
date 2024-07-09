@@ -4,6 +4,9 @@
 html,
 body {
   font-family: Poppins, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -13,12 +16,12 @@ body {
   color: vars.$color-neutral-light;
 }
 
-* {
-  &:focus-visible {
-    outline: 2px solid vars.$color-success-main;
-    border-radius: 0.3125rem;
-    outline-offset: 2px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: vars.$spacing-04 0 vars.$spacing-02 0;
 }
 
 h1 {
@@ -37,13 +40,61 @@ h3 {
   font-size: vars.$h3-font-size;
   font-weight: vars.$h3-font-weight;
   line-height: vars.$h3-line-height;
+  margin-top: 2rem;
 }
 
-a {
+h4,
+h5 {
+  font-size: vars.$h3-font-size;
+  font-weight: vars.$h3-font-weight;
+  line-height: vars.$h3-line-height;
+}
+
+p {
+  line-height: 1.5;
+  margin: vars.$spacing-02 0 vars.$spacing-02 0;
+}
+
+em {
+  font-style: normal;
+  font-family: Consolas, Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+  white-space: pre-wrap;
+  padding: 4px 8px;
+  background-color: vars.$color-dark-green;
+  border-radius: 2px;
+  color: vars.$color-neutral-light;
+
+  // When an em spans multiple lines, makes the next lines indented a bit to give them margin to the left edge of the background color
+  // https://css-tricks.com/multi-line-padded-text/
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+img {
+  margin: vars.$spacing-02 0 vars.$spacing-02 0;
+  max-width: 100%;
+}
+
+a,
+a:visited {
   @include mixins.text-body();
   color: vars.$color-success-main;
+  text-decoration: none;
 
   &:hover {
     color: vars.$color-success-main;
+    text-decoration: underline;
+  }
+}
+
+* {
+  &:focus-visible {
+    outline: 2px solid vars.$color-success-main;
+    border-radius: 0.3125rem;
+    outline-offset: 2px;
   }
 }

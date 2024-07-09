@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { navigation } from "$lib/navigation"
+  import { navigation } from "$lib/components/navigation"
 
   type Breadcrumb = {
     name: string

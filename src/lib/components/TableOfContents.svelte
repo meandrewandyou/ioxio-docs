@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onDestroy, onMount, setContext } from "svelte"
   import { createPopover } from "svelte-headlessui"
-  import breakpointObserver from "$lib/breakpointObserver.js"
-  import { tableOfContents } from "../routes/store"
-  import Grid from "./components/Grid.svelte"
-  import MenuButton from "./components/MenuButton.svelte"
+  import breakpointObserver from "$lib/components/breakpointObserver.js"
+  import { tableOfContents } from "../../routes/store"
+  import Grid from "./Grid.svelte"
+  import MenuButton from "./MenuButton.svelte"
 
   type Entry = {
     title: string
@@ -33,7 +33,21 @@
 </script>
 
 <Grid class="main-grid" container>
-  <Grid sm={$isSmallScreen ? 10 : 9}>
+  {#if $isSmallScreen}
+    <div class="table-of-contents small">
+      <MenuButton {popover} showInTablet={true} alignIconToRight={true} />
+      {#if $popover.expanded}
+        <div class="content tablet-and-below">
+          <p>On this page</p>
+          {#each $tableOfContents as entry}
+            <a class="link" href={`#${entry.id}`}>{entry.title}</a>
+          {/each}
+        </div>
+      {/if}
+    </div>
+  {/if}
+  <!-- Dunno why but the grid defaults to md=9 unless we override it here for tablet size too .. -->
+  <Grid sm={$isSmallScreen ? 12 : 9} md={$isSmallScreen ? 12 : 9}>
     <slot />
   </Grid>
   {#if !$isSmallScreen}
@@ -46,25 +60,14 @@
       </div>
     </Grid>
   {/if}
-  {#if $isSmallScreen}
-    <Grid sm={2} class="table-of-contents">
-      <MenuButton {popover} showInTablet={true} alignIconToRight={true} />
-      {#if $popover.expanded}
-        <div class="content mobile">
-          <p>On this page</p>
-          {#each $tableOfContents as entry}
-            <a class="link" href={`#${entry.id}`}>{entry.title}</a>
-          {/each}
-        </div>
-      {/if}
-    </Grid>
-  {/if}
 </Grid>
 
 <style lang="scss">
-  @import "$styles/setup";
+  @use "$styles/mixins" as mixins;
+  @use "$styles/variables" as vars;
+
   :global(.table-of-contents) {
-    color: $color-neutral-gray;
+    color: vars.$color-neutral-gray;
     padding-top: 1rem;
 
     .content {
@@ -79,48 +82,56 @@
 
       @supports (scrollbar-color: auto) {
         padding-right: 3px;
-        scrollbar-color: $color-primary-dark-hover $color-primary-highlight;
+        scrollbar-color: vars.$color-primary-dark-hover vars.$color-primary-highlight;
         scrollbar-width: thin;
       }
 
       @supports selector(::-webkit-scrollbar) {
         &::-webkit-scrollbar {
-          background: $color-primary-highlight;
+          background: vars.$color-primary-highlight;
           width: 8px;
         }
 
         &::-webkit-scrollbar-thumb {
-          background: $color-primary-dark-hover;
+          background: vars.$color-primary-dark-hover;
         }
       }
 
       p {
-        margin-bottom: $spacing-03;
+        margin-bottom: vars.$spacing-03;
         margin-left: 0.5rem;
       }
 
-      &.mobile {
+      &.tablet-and-below {
         position: absolute;
         top: 4rem;
         right: 2rem;
-        background: $color-primary-dark;
+        background: vars.$color-primary-dark-hover;
         border-radius: 5px;
         padding-right: 1rem;
+        width: 16rem;
       }
+
       .link {
-        @include text-body-2();
-        color: $color-neutral-gray;
+        @include mixins.text-body-2();
+        color: vars.$color-neutral-gray;
         text-decoration: none;
         padding: 0.5rem 0 0.5rem 1rem;
         margin-left: 0.5rem;
-        border-left: 2px solid $color-dark-green;
+        border-left: 2px solid vars.$color-dark-green;
         transition: all 0.3s ease;
 
         &:hover {
-          color: $color-success-main;
-          border-left-color: $color-success-main;
+          color: vars.$color-success-main;
+          border-left-color: vars.$color-success-main;
         }
       }
     }
+  }
+
+  :global(.table-of-contents.small) {
+    position: absolute;
+    right: vars.$spacing-02;
+    top: vars.$spacing-03;
   }
 </style>

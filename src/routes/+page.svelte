@@ -1,5 +1,5 @@
 <script xmlns="http://www.w3.org/1999/html">
-  import A from "$lib/A.svelte"
+  import A from "$lib/components/A.svelte"
   import FrontpageHeroImage from "$lib/images/frontpage-hero-image.svg?dataurl"
   import DataSchemasIcon from "$lib/images/card-schemas-icon.svg?dataurl"
   import QRCodeIcon from "$lib/images/card-qr-code-icon.svg?dataurl"
@@ -40,12 +40,13 @@
       {#each cards as card}
         <Grid lg={4} sm={12} md={6}>
           <div class="card">
-            <h2>{card.title}</h2>
-            <img class="card-icon" src={card.img} alt={card.alt} />
-            <a class="link" href={card.href}
-              ><span>Read more </span>
-              <ArrowIcon />
-            </a>
+            <div class="card-left">
+              <h2>{card.title}</h2>
+              <a class="link" href={card.href}>Read more <ArrowIcon /></a>
+            </div>
+            <div class="card-right">
+              <img class="card-icon" src={card.img} alt={card.alt} />
+            </div>
           </div>
         </Grid>
       {/each}
@@ -55,6 +56,7 @@
 
 <style lang="scss">
   @import "$styles/setup";
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -81,6 +83,7 @@
           line-height: 150%;
           margin-bottom: 1rem;
         }
+
         .subtext {
           font-size: $text-body-font-size;
           line-height: 150%;
@@ -103,41 +106,52 @@
       .card {
         padding: $spacing-02;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         background: #192935;
         justify-content: space-between;
         border-radius: 10px;
         gap: $spacing-01;
         position: relative;
-        height: 10rem;
         isolation: isolate;
+        min-height: 10rem;
 
-        .link {
+        .card-left {
           display: flex;
-          flex-direction: row;
-          width: max-content;
-          color: $color-success-main;
-          font-weight: 600;
-          line-height: 150%;
-          text-decoration: none;
-          align-items: center;
-          gap: $spacing-01;
-          z-index: 99;
+          flex-direction: column;
+          justify-content: space-between;
+
+          h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 150%;
+            z-index: 99;
+          }
+
+          .link {
+            display: flex;
+            flex-direction: row;
+            color: $color-success-main;
+            font-weight: 600;
+            line-height: 150%;
+            text-decoration: none;
+            align-items: center;
+            gap: $spacing-01;
+            z-index: 99;
+            white-space: nowrap;
+          }
         }
 
-        h2 {
-          font-size: $h2-font-size;
-          font-weight: 600;
-          line-height: 150%;
-          z-index: 99;
-        }
+        .card-right {
+          width: 5rem;
+          flex-shrink: 0;
 
-        .card-icon {
-          position: absolute;
-          width: 6.125rem;
-          height: 6.125rem;
-          right: $spacing-02;
-          bottom: $spacing-02;
+          .card-icon {
+            margin: 0;
+            padding: 0;
+            width: 6.125rem;
+            height: 6.125rem;
+          }
         }
       }
     }

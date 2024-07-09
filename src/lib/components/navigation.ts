@@ -1,4 +1,4 @@
-import { schemas } from "$lib/schemas"
+import { schemas } from "$lib/components/schemas"
 
 export type NavItem = {
   name: string

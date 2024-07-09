@@ -1,10 +1,10 @@
 <script>
-  import SectionTitle from "$lib/SectionTitle.svelte"
-  import A from "$lib/A.svelte"
-  import Breadcrumbs from "$lib/Breadcrumbs.svelte"
-  import Title from "$lib/Title.svelte"
-  import Miro from "$lib/Miro.svelte"
-  import TableOfContents from "$lib/TableOfContents.svelte"
+  import SectionTitle from "$lib/components/SectionTitle.svelte"
+  import A from "$lib/components/A.svelte"
+  import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
+  import Title from "$lib/components/Title.svelte"
+  import Miro from "$lib/components/Miro.svelte"
+  import TableOfContents from "$lib/components/TableOfContents.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -14,12 +14,6 @@
   <Title title={`IOXIO Tags™️`} />
 
   <Breadcrumbs path={data.path} />
-
-  <h2>Technical details</h2>
-  <ul>
-    <li><a href="/tags/metadata/">Metadata</a></li>
-    <li><a href="/tags/signatures/">Signing</a></li>
-  </ul>
 
   <SectionTitle title="Overview" />
 

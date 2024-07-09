@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { schemas } from "$lib/schemas"
-  import Breadcrumbs from "$lib/Breadcrumbs.svelte"
-  import Title from "$lib/Title.svelte"
+  import { schemas } from "$lib/components/schemas"
+  import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
+  import Title from "$lib/components/Title.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data

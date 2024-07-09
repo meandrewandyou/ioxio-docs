@@ -7,9 +7,9 @@
   import Footer from "$lib/components/Footer.svelte"
   import Grid from "$lib/components/Grid.svelte"
   import NavBar from "$lib/components/NavBar.svelte"
-  import breakpointObserver from "$lib/breakpointObserver.js"
+  import breakpointObserver from "$lib/components/breakpointObserver.js"
   import Sidebar from "$lib/components/Sidebar.svelte"
-  import { navigation } from "$lib/navigation"
+  import { navigation } from "$lib/components/navigation"
 
   const popover = createPopover({})
   const size = breakpointObserver()
@@ -52,8 +52,8 @@
       <Sidebar />
     {/if}
     {#if !indexPage}
-      <div class="left-nav-wrapper">
-        <div class="left-nav">
+      <div class="second-level-navigation-wrapper">
+        <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
             <a href={navItem.href}>{navItem.name}</a>
@@ -65,18 +65,14 @@
       <!-- needs to stay there for better keyboard navigation on mobile -->
       {#if $isSmallScreen && $popover.expanded}
         <div class="mobile-sidebar-wrapper" use:popover.panel transition:fade={{ duration: 100 }}>
-          <Grid container>
-            <Grid sm={5}>
-              <Sidebar mobile />
-            </Grid>
-            <Grid sm={7}>
-              <div class="mobile-sub-navigation">
-                {#each subNavigation as navItem}
-                  <a href={navItem.href}>{navItem.name}</a>
-                {/each}
-              </div>
-            </Grid>
-          </Grid>
+          <div class="mobile-sidebar-left-column">
+            <Sidebar mobile />
+          </div>
+          <div class="mobile-sidebar-right-column">
+            {#each subNavigation as navItem}
+              <a href={navItem.href}>{navItem.name}</a>
+            {/each}
+          </div>
         </div>
       {/if}
       <Grid container class="main-grid">
@@ -120,15 +116,16 @@
     height: 100%;
   }
 
-  :global(.left-nav-wrapper) {
+  :global(.second-level-navigation-wrapper) {
     position: relative;
     width: 25rem;
+    padding-bottom: $spacing-05;
 
     @include mobile() {
       display: none;
     }
 
-    .left-nav {
+    .second-level-navigation {
       margin-left: 5.25rem;
       display: flex;
       flex-direction: column;
@@ -168,6 +165,9 @@
     height: 100%;
     min-height: 100vh;
     background-color: $color-primary-highlight;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
 
     :global(.grid-full-height) {
       height: 100%;
@@ -178,23 +178,12 @@
       }
     }
 
-    :global(.mobile-sidebar-right-column) {
-      background: rgba(16, 24, 40, 0.88);
-
-      :global(svg) {
-        cursor: pointer;
-        margin: $spacing-02;
-        width: $spacing-03;
-        height: $spacing-03;
-
-        :global(path) {
-          fill: $color-neutral-light;
-        }
-      }
+    .mobile-sidebar-left-column {
+      min-width: 12rem;
     }
 
-    .mobile-sub-navigation {
-      margin: $spacing-04 0 0 $spacing-02;
+    .mobile-sidebar-right-column {
+      margin: $spacing-04 $spacing-01 0 $spacing-02;
       display: flex;
       flex-direction: column;
       gap: $spacing-01;

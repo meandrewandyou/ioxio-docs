@@ -25,8 +25,15 @@
 <h2 {id}><a href={`#${id}`}> {title} <span class="marker">§</span></a></h2>
 
 <style lang="scss">
+  @use "$styles/variables" as vars;
+
   h2 {
-    margin-top: 3rem;
+    a {
+      font-size: vars.$h2-font-size;
+      font-weight: vars.$h2-font-weight;
+      line-height: vars.$h2-line-height;
+      color: vars.$color-neutral-light;
+    }
   }
 
   .marker {
