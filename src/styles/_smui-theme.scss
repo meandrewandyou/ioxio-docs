@@ -1,0 +1,14 @@
+// we only use Grid from SMUI!
+
+@use "./variables" as vars;
+
+@use "@material/layout-grid/index" with (
+  // customize breakpoints, gutters and other stuff there.
+  // see node_modules/@material/layout-grid/_variables.scss for reference
+  $breakpoints:
+    (desktop: vars.$breakpoint-lg, tablet: vars.$breakpoint-md, phone: vars.$breakpoint-sm),
+  $default-margin: (desktop: 0px, tablet: 0px, phone: 0px),
+  $columns: (desktop: 12, tablet: 12, phone: 12)
+);
+
+@use "@material/layout-grid/mdc-layout-grid";

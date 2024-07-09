@@ -34,12 +34,15 @@
   {/if}
 </article>
 
-<style lang="css">
+<style lang="scss">
+  @use "$styles/variables" as vars;
+
   div.code {
     display: none;
   }
 
   article {
     max-width: 100%;
+    margin: vars.$spacing-02 0 vars.$spacing-02 0;
   }
 </style>

@@ -1,18 +1,18 @@
 <script>
-  import Code from "$lib/Code.svelte"
-  import Title from "$lib/Title.svelte"
-  import Miro from "$lib/Miro.svelte"
+  import Code from "$lib/components/Code.svelte"
+  import Title from "$lib/components/Title.svelte"
+  import Miro from "$lib/components/Miro.svelte"
 
   import typescript from "svelte-highlight/languages/typescript"
   import python from "svelte-highlight/languages/python"
   import json from "svelte-highlight/languages/json"
-  import Breadcrumbs from "$lib/Breadcrumbs.svelte"
+  import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data
 </script>
 
-<Breadcrumbs path={data.path} route={data.route} />
+<Breadcrumbs path={data.path} />
 
 <Title>How to build applications</Title>
 <p>This wonderful code fetches your data.</p>
