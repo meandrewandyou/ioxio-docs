@@ -25,7 +25,7 @@
 
   {#if code}
     {#if lineNumbers}
-      <Highlight style="nightOwl" language={lang} {code} let:highlighted>
+      <Highlight language={lang} {code} let:highlighted>
         <LineNumbers {highlighted} wrapLines />
       </Highlight>
     {:else}

@@ -1,7 +1,6 @@
 <script lang="ts">
   // Render the HTML files from JSON Schemas
   import "$styles/schema_doc.scss"
-  import { onMount } from "svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
   import Title from "$lib/components/Title.svelte"
   import { schemas } from "$lib/components/schemas"
@@ -32,9 +31,7 @@
         }
       })
     }
-  })
 
-  onMount(() => {
     if (typeof document === "undefined" || typeof window === "undefined" || !window.anchorOnLoad) {
       return
     }
@@ -81,6 +78,8 @@
     }
 
     :global(code) {
+      // These styles are copied from _globals.scss em
+
       font-style: normal;
       font-family: Consolas, Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
       white-space: pre-wrap;

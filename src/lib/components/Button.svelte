@@ -41,7 +41,7 @@
     background: transparent;
     border: 1px solid $color-success-main;
     border-radius: 4px;
-    font-size: 12.8px;
+    font-size: 12px;
     line-height: 150%;
     font-weight: 600;
     display: flex;
