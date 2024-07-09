@@ -22,3 +22,10 @@ Make sure you test `build` as well, as not all things work in SvelteKit static g
 ```shell
 pnpm run build
 ```
+
+And you can test it e.g. with
+
+```shell
+cd build
+python -m http.server
+```
