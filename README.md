@@ -6,7 +6,7 @@ Documentation for various IOXIO projects. Hosted at https://docs.ioxio.dev
 
 You will need
 
-- Node 18.x
+- Node 18.x or 20.x
 - PNPM 8.x
 
 ```shell
