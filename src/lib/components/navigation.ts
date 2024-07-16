@@ -23,6 +23,13 @@ export const navigation: NavItem[] = [
     ],
   },
   {
+    name: "Dataspaces",
+    icon: "dataspace-icon",
+    route: "dataspace",
+    children: [{ name: "Guides", route: "guides" }],
+  },
+
+  {
     name: "Schemas",
     icon: "schemas-icon",
     route: "schemas",
