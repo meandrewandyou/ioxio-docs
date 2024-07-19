@@ -23,7 +23,7 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    name: "Dataspaces",
+    name: "Dataspace",
     icon: "dataspace-icon",
     route: "dataspace",
     children: [{ name: "Guides", route: "guides" }],

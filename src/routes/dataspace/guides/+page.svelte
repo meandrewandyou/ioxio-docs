@@ -202,6 +202,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          width: 70%;
 
           h2 {
             margin: 0;
@@ -226,7 +227,7 @@
         }
 
         .card-right {
-          width: 5rem;
+          width: 30%;
           flex-shrink: 0;
 
           .card-icon {
