@@ -38,13 +38,13 @@
     decoding and verifying it.
   </p>
   <SectionTitle title="Verifying the id_token in the productizer" />
-  <h2>Get the Authorization header</h2>
+  <h3>Get the Authorization header</h3>
   <p>
     The productizer or data source needs to first extract the id_token from the Authorization HTTP
     header of the request. Please note that the header is in many data source definitions optional,
     so take that in mind when parsing it.
   </p>
-  <h2>Extracting the id_token from the header</h2>
+  <h3>Extracting the id_token from the header</h3>
   <p>
     The value of the header should be of the form Bearer
     <token
@@ -70,7 +70,7 @@
     >. However you would likely want to adapt that slightly to make it an optional dependency for
     easier reuse.
   </p>
-  <h2>Reading the id_token</h2>
+  <h3>Reading the id_token</h3>
   <p>
     The id_token is a <a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank"
       >JSON Web Token (JWT)</a
