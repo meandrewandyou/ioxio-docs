@@ -12,7 +12,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`Building a data definition for IOXIO Dataspace`} />
+  <Title title={`Building a data source for IOXIO Dataspace`} />
 
   <Breadcrumbs path={data.path} />
 
