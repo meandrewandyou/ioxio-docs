@@ -3,8 +3,6 @@
   import Code from "$lib/components/Code.svelte"
   import json from "svelte-highlight/languages/json"
   import python from "svelte-highlight/languages/python"
-
-  import A from "$lib/components/A.svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
   import Title from "$lib/components/Title.svelte"
   import TableOfContents from "$lib/components/TableOfContents.svelte"
@@ -47,14 +45,14 @@
   <SectionTitle title="What are we building?" />
   <p>
     In this guide we will build a productizer that provides an API matching the
-    test/ioxio-dataspace-guides/Country/BasicInfo definition that we created in the How to create
-    data definitions guide. As the definition is an OpenAPI spec you might want to use se some tool
-    like the Swagger Editor to view it in a more human friendly format.
+    <em>test/ioxio-dataspace-guides/Country/BasicInfo</em> definition that we created in the How to create
+    data definitions guide. As the definition is an OpenAPI spec you might want to use se some tool like
+    the Swagger Editor to view it in a more human friendly format.
   </p>
   <p>
     In this case it means we will create an API that accepts a POST request at the path
-    /test/ioxio-dataspace-guides/Country/BasicInfo. It could for example be hosted at
-    https://productizer.example.com/test/ioxio-dataspace-guides/Country/BasicInfo.
+    <em>/test/ioxio-dataspace-guides/Country/BasicInfo</em>. It could for example be hosted at
+    <em>https://productizer.example.com/test/ioxio-dataspace-guides/Country/BasicInfo</em>.
   </p>
   <p>The POST request to that endpoint needs to accept a JSON payload, similar to this:</p>
   <Code lang={json}>
@@ -97,31 +95,31 @@
   <p>You most likely want to update the README.md to better describe your own data source.</p>
   <p>
     If you intend to use Poetry to manage your Python dependencies you should change the name of the
-    project and authors found in pyproject.toml and run poetry install to install the dependencies
-    so you then can run the productizer locally by running poetry run invoke dev. If you don't
-    intend to use poetry you can delete the file.
+    project and authors found in <em>pyproject.toml</em> and run poetry install to install the dependencies
+    so you then can run the productizer locally by running poetry run invoke dev. If you don't intend
+    to use poetry you can delete the file.
   </p>
   <p>
-    You might want to set up pre-commit for your project or get rid of the .pre-commit-config.yaml
+    You might want to set up pre-commit for your project or get rid of the <em
+      >.pre-commit-config.yaml</em
+    >
     file.
   </p>
   <p>
     If you don't intend to use Docker for your data source, you can also get rid of the Dockerfile,
-    .dockerignore and the docker directory.
+    <em>.dockerignore</em> and the docker directory.
   </p>
-  <SectionTitle
-    title="Adding models for the request and response
-"
-  />
+  <SectionTitle title="Adding models for the request and response" />
   <p>
-    Let's start by deleting the models related to the weather data (CurrentWeatherMetricRequest and
-    CurrentWeatherMetricResponse) from the app/models.py, as we won't need them.
+    Let's start by deleting the models related to the weather data <em>
+      (CurrentWeatherMetricRequest and CurrentWeatherMetricResponse)</em
+    > from the app/models.py, as we won't need them.
   </p>
   <p>
-    Next, let's add the definition for the request and response to app/models.py. We can directly
-    copy the BasicCountryInfoRequest, Capital and BasicCountryInfoResponse classes from the final
-    definition we created in the How to create data definitions guide. Note that we also need to add
-    the necessary imports.
+    Next, let's add the definition for the request and response to <em>app/models.py</em> . We can directly
+    copy the BasicCountryInfoRequest, Capital and BasicCountryInfoResponse classes from the final definition
+    we created in the How to create data definitions guide. Note that we also need to add the necessary
+    imports.
   </p>
   <p>
     If you're building a data source for another definition, it's possible it was created using
@@ -130,7 +128,7 @@
     case the same guide can be handy, as well as the official pydantic documentation and the Request
     Body section of the FastAPI docs.
   </p>
-  <p>The app/models.py file would after these changes look like this:</p>
+  <p>The <em>app/models.py</em> file would after these changes look like this:</p>
 
   <Code lang={python}>
     {`
@@ -225,9 +223,9 @@ class BasicCountryInfoResponse(CamelCaseModel):
 "
   />
   <p>
-    We can delete the file app/openweathermap.py. You might find it a useful example in case your
-    productizer will fetch data from some other system, but in our case we won't need it. Instead we
-    will create the file app/datasource.py with the following content:
+    We can delete the file <em>app/openweathermap.py</em>. You might find it a useful example in
+    case your productizer will fetch data from some other system, but in our case we won't need it.
+    Instead we will create the file <em>app/datasource.py</em> with the following content:
   </p>
   <Code lang={python}>
     {`
@@ -273,17 +271,19 @@ async def get_data(country: str) -> Dict[str, Any]:
     This contains just a hardcoded dictionary of different values and a simple wrapper to fetch
     them. In practice you would want to change this to actually somehow fetch or generate the
     necessary data. Note that you might also need to install some Python packages for connecting to
-    and querying your database or other systems. The original implementation required an API_KEY and
-    an API_ENDPOINT, which our data source does not require, so we can remove those from
-    settings.py. Those can however be handy examples for your own implementation.
+    and querying your database or other systems. The original implementation required an <em
+      >API_KEY</em
+    >
+    and an <em>API_ENDPOINT</em>, which our data source does not require, so we can remove those
+    from settings.py. Those can however be handy examples for your own implementation.
   </p>
   <SectionTitle
     title="Adding the route
 "
   />
   <p>
-    Let's open the file app/routers/dataproduct.py. We start with emptying it, so we get rid of the
-    old route. Let's add our new route like this:
+    Let's open the file <em>app/routers/dataproduct.py</em>. We start with emptying it, so we get
+    rid of the old route. Let's add our new route like this:
   </p>
   <Code lang={python}>
     {`
@@ -312,15 +312,18 @@ async def data_product(params: BasicCountryInfoRequest):
 `}
   </Code>
   <p>
-    We define the route for the path /test/ioxio-dataspace-guides/Country/BasicInfo, which matches
-    the path for our definition and the path defined in the OpenAPI spec file. We also define which
-    pydantic models we use for the request and for the response, as well as define some metadata for
-    the route. We use our get_data function to retrieve the data, raising a 404 exception in case
-    the country is not found. Finally we wrap the data into a BasicCountryInfoResponse. We could as
-    well just return the data as a dictionary and let FastAPI take care of the rest automatically
-    using the definition in the response_model. The FastAPI documentation is really well written and
-    describes in great detail topics, such as the request body, response models and handling errors,
-    so those resources are well worth a look if the explanation in this guide was too brief.
+    We define the route for the path <em>/test/ioxio-dataspace-guides/Country/BasicInfo</em>, which
+    matches the path for our definition and the path defined in the OpenAPI spec file. We also
+    define which pydantic models we use for the request and for the response, as well as define some
+    metadata for the route. We use our get_data function to retrieve the data, raising a 404
+    exception in case the country is not found.
+  </p>
+  <p>
+    Finally we wrap the data into a BasicCountryInfoResponse. We could as well just return the data
+    as a dictionary and let FastAPI take care of the rest automatically using the definition in the
+    response_model. The FastAPI documentation is really well written and describes in great detail
+    topics, such as the request body, response models and handling errors, so those resources are
+    well worth a look if the explanation in this guide was too brief.
   </p>
   <SectionTitle
     title="Deploy and host your productizer
@@ -344,15 +347,19 @@ async def data_product(params: BasicCountryInfoRequest):
   <p>
     Use the menu to navigate to My data sources. Press the + ADD A DATASOURCE button. In the Data
     product definition, pick the definition you used for your productizer. Pick one of your groups
-    in the dropdown for groups. If you want to publish multiple data sources for the same definition
-    using the same group, you can add a tag to distinguish them from each other. Most likely you
-    don't want to use this for your first data source. In the Source URL enter the base URL at which
-    your deployment is available. The help text shows where the API endpoint is expected to be
-    available. The Source URL will not be displayed to other users and is only used by the product
-    gateway to connect to the productizer. All other applications must connect through the product
-    gateway. Leave the Published unchecked. The filled in form would look like this:
+    in the dropdown for groups.
   </p>
-  <img />
+  <p>
+    If you want to publish multiple data sources for the same definition using the same group, you
+    can add a variant name to distinguish them from each other. Most likely you don't want to use
+    this for your first data source. In the Source URL enter the base URL at which your deployment
+    is available. The help text shows where the API endpoint is expected to be available. The Source
+    URL will not be displayed to other users and is only used by the product gateway to connect to
+    the productizer. All other applications must connect through the product gateway. For the
+    purpose of this tutorial let's select "private" for the visibility options. The filled in form
+    would look like this:
+  </p>
+  <img class="small" alt="Create a new datasource -form" src="/create-new-datasource-sc.png" />
   <p>Finally press the CREATE button to create the data source.</p>
   <SectionTitle
     title="Test your data source
@@ -360,15 +367,15 @@ async def data_product(params: BasicCountryInfoRequest):
   />
   <p>
     You should now be able to test your own data source by querying it through the product gateway.
-    From the list of your data sources, press OPEN next to the data source you just created. The
-    developer portal will show you the Request URL at which you can query your own data source as
-    well as the X-Preview-Token necessary to use a data source until it has been published.
+    From the list of your data sources, press EDIT next to the data source you just created. The
+    developer portal will show you the address where at which you can query your own data source as
+    well as the <em>X-Preview-Token</em> necessary to use a data source until it has been published.
   </p>
-  <img />
+  <img class="small" alt="Edit a data source -form" src="/edit-data-source-sc.png" />
   <p>
     You can for example use the cURL command line tool to query it like this (make sure the replace
-    the url and X-Preview-Token to the one shown to you in the developer portal and change the data
-    to match the expected payload of your own data source):
+    the url and <em>X-Preview-Token</em> to the one shown to you in the developer portal and change the
+    data to match the expected payload of your own data source):
   </p>
   <Code lang={python}>
     {`
@@ -443,7 +450,8 @@ content-length: 95
 "
   />
   <p>
-    If you created the data source definition under your own test/<your-own-name>
+    If you created the data source definition under your own test/
+    <your-own-name>
       namespace, you likely want to submit a pull request to copy it outside the test namespace and
       add a version or copy it to the repository used for definitions in a production Dataspace.
       Note that you will also need to adjust your productizer to accept the request at the updated
