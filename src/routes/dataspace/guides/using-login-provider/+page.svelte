@@ -35,7 +35,4 @@
 </TableOfContents>
 
 <style lang="scss">
-  img {
-    max-width: 32rem;
-  }
 </style>
