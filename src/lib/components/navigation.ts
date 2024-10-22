@@ -1,4 +1,5 @@
 import { schemas } from "$lib/components/schemas"
+import { GUIDES } from "../../routes/guides/urls"
 
 export type NavItem = {
   name: string
@@ -23,10 +24,13 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    name: "Dataspace",
+    name: "Guides",
     icon: "dataspace-icon",
-    route: "dataspace",
-    children: [{ name: "Guides", route: "guides" }],
+    route: "guides",
+    children: Object.values(GUIDES).map((g) => ({
+      name: g.title,
+      route: g.href.split("/").pop()!,
+    })),
   },
 
   {

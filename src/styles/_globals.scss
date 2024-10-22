@@ -59,10 +59,11 @@ em {
   font-style: normal;
   font-family: Consolas, Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
   white-space: pre-wrap;
-  padding: 4px 8px;
-  background-color: vars.$color-dark-green;
+  padding: 0 4px;
+  background-color: vars.$color-text-emphasize-background;
   border-radius: 2px;
-  color: vars.$color-neutral-light;
+  outline: 1px solid vars.$color-dark-green;
+  color: vars.$color-text-emphasize;
 
   // When an em spans multiple lines, makes the next lines indented a bit to give them margin to the left edge of the background color
   // https://css-tricks.com/multi-line-padded-text/

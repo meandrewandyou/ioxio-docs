@@ -1,0 +1,138 @@
+{
+  "BUILD_DATA_DEF": {
+    "CREATE_DEFINITION": {
+      "src": "/guides/building-a-data-definition/create_definition.png",
+      "alt": ""
+    }
+  },
+  "BUILD_DATA_SOURCE": {
+    "CREATE_NEW_DS": {
+      "src": "/guides/building-a-data-source/create_new_ds.png",
+      "alt": ""
+    },
+    "EDIT_DS": {
+      "src": "/guides/building-a-data-source/edit_ds.png",
+      "alt": ""
+    }
+  },
+  "BUILD_APP": {
+    "API_DOCS": {
+      "src": "/guides/building-an-application/api_docs.png",
+      "alt": ""
+    },
+    "API_DOCS_2": {
+      "src": "/guides/building-an-application/api_docs_2.png",
+      "alt": ""
+    },
+    "AVAILABLE_DATA_SOURCES": {
+      "src": "/guides/building-an-application/available_data_sources.png",
+      "alt": ""
+    },
+    "AVAILABLE_DATA_SOURCES_2": {
+      "src": "/guides/building-an-application/available_data_sources_2.png",
+      "alt": ""
+    },
+    "CONSENT_PORTAL_AFTER_LOGGING_IN": {
+      "src": "/guides/building-an-application/consent_portal_after_logging_in.png",
+      "alt": ""
+    },
+    "CREATE_AN_APPLICATION_PAGE": {
+      "src": "/guides/building-an-application/create_an_application_page.png",
+      "alt": ""
+    },
+    "CREATE_AN_APPLICATION_PAGE_2": {
+      "src": "/guides/building-an-application/create_an_application_page_2.jfif",
+      "alt": ""
+    },
+    "DATA_DEFINITION_VIEWER": {
+      "src": "/guides/building-an-application/data_definition_viewer.jfif",
+      "alt": ""
+    },
+    "DATA_DEFINITION_VIEWER_2": {
+      "src": "/guides/building-an-application/data_definition_viewer_2.jfif",
+      "alt": ""
+    },
+    "DATA_DEFINITIONS_DROPDOWN": {
+      "src": "/guides/building-an-application/data_definitions_dropdown.jfif",
+      "alt": ""
+    },
+    "DATA_DEFINITIONS_DROPDOWN_2": {
+      "src": "/guides/building-an-application/data_definitions_dropdown_2.jfif",
+      "alt": ""
+    },
+    "DECODED_CONSENT_REQUEST_TOKEN": {
+      "src": "/guides/building-an-application/decoded_consent_request_token.png",
+      "alt": ""
+    },
+    "DECODED_CONSENT_REQUEST_TOKEN_2": {
+      "src": "/guides/building-an-application/decoded_consent_request_token_2.png",
+      "alt": ""
+    },
+    "DEFINITION_VIEWER": {
+      "src": "/guides/building-an-application/definition_viewer.png",
+      "alt": ""
+    },
+    "DEFINITION_VIEWER_BROWSE": {
+      "src": "/guides/building-an-application/definition_viewer_browse.png",
+      "alt": ""
+    },
+    "DEFINITION_VIEWER_DROPDOWN": {
+      "src": "/guides/building-an-application/definition_viewer_dropdown.png",
+      "alt": ""
+    },
+    "DS_DETAILS": {
+      "src": "/guides/building-an-application/ds_details.png",
+      "alt": ""
+    },
+    "DS_DETAILS_SIG_RIGHTS": {
+      "src": "/guides/building-an-application/ds_details_sig_rights.png",
+      "alt": ""
+    },
+    "DS_SEARCH": {
+      "src": "/guides/building-an-application/ds_search.png",
+      "alt": ""
+    },
+    "THE_CONSENT_PORTAL": {
+      "src": "/guides/building-an-application/the_consent_portal.png",
+      "alt": ""
+    }
+  },
+  "MANAGE_GROUP": {
+    "EDITING_A_GROUP": {
+      "src": "/guides/managing-groups/editing_a_group.png",
+      "alt": ""
+    },
+    "PAGE_FOR_CREATING_GROUPS": {
+      "src": "/guides/managing-groups/page_for_creating_groups.png",
+      "alt": ""
+    },
+    "PAGE_FOR_CREATING_GROUPS_2": {
+      "src": "/guides/managing-groups/page_for_creating_groups_2.png",
+      "alt": ""
+    }
+  },
+  "USING_LOGIN_PROVIDER": {
+    "CREATE_AN_APPLICATION_PAGE": {
+      "src": "/guides/using-login-provider/create_an_application_page.png",
+      "alt": ""
+    },
+    "MY_APPLICATIONS_PAGE": {
+      "src": "/guides/using-login-provider/my_applications_page.png",
+      "alt": ""
+    },
+    "MY_APPLICATIONS_PAGE_2": {
+      "src": "/guides/using-login-provider/my_applications_page_2.png",
+      "alt": ""
+    },
+    "THE_CREATED_APPLICATION": {
+      "src": "/guides/using-login-provider/the_created_application.png",
+      "alt": ""
+    }
+  },
+  "VERIFY_CONSENT": {
+    "DECODED_CONSENT_TOKEN": {
+      "src": "/guides/verifying-constent-in-data-source/decoded_consent_token.png",
+      "alt": ""
+    }
+  }
+}
