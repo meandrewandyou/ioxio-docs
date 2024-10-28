@@ -9,6 +9,7 @@
   import type { PageData } from "./$types"
   import GuideImage from "$lib/components/GuideImage.svelte"
   import bash from "svelte-highlight/languages/bash"
+  import A from "$lib/components/A.svelte"
 
   export let data: PageData
 
@@ -47,22 +48,22 @@
     installation instructions):
   </p>
   <ul>
-    <li><a href="https://git-scm.com/downloads" target="_blank">Git</a></li>
-    <li><a href="https://www.python.org/downloads/" target="_blank">Python 3.11</a></li>
-    <li><a href="https://pre-commit.com/#install" target="_blank">Pre-commit</a></li>
+    <li><A href="https://git-scm.com/downloads">Git</A></li>
+    <li><A href="https://www.python.org/downloads/">Python 3.11</A></li>
+    <li><A href="https://pre-commit.com/#install">Pre-commit</A></li>
   </ul>
   <h3>Fork and clone the data definitions repository</h3>
   <p>
-    Go to the <a href="https://github.com/ioxio-dataspace/sandbox-definitions/" target="_blank"
-      >data definition repository on GitHub</a
+    Go to the <A href="https://github.com/ioxio-dataspace/sandbox-definitions/"
+      >data definition repository on GitHub</A
     > and create your own fork of the repository and clone it. It's important that you make a fork as
     you don't have write access to the repository.
   </p>
 
   <p>
-    Both of these steps are described in detail in the <a
+    Both of these steps are described in detail in the <A
       href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo"
-      target="_blank">Fork a repo quickstart guide</a
+      >Fork a repo quickstart guide</A
     > in the GitHub documentation.
   </p>
   <h3>Set up pre-commit hooks</h3>
@@ -89,9 +90,9 @@ pre-commit install
     fork and cloned it (followed the steps above), you should have an up to date state already.
   </p>
   <p>
-    If you need help with syncing the repo from the upstream, check the <a
+    If you need help with syncing the repo from the upstream, check the <A
       href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository"
-      target="_blank">Configuring Git to sync your fork with the upstream repository</a
+      >Configuring Git to sync your fork with the upstream repository</A
     > on GitHub.
   </p>
 
@@ -110,9 +111,8 @@ pre-commit install
 "
   />
   <p>
-    This guide explains how to create a new definition using a python file (with models based on the <a
-      href="https://docs.pydantic.dev/1.10/"
-      target="_blank">pydantic library</a
+    This guide explains how to create a new definition using a python file (with models based on the <A
+      href="https://docs.pydantic.dev/1.10/">pydantic library</A
     >). The content gets automatically converted into an OpenAPI spec file using the pre-commit
     hooks. This is fairly simple to do and understand even if you're not too familiar with Python or
     OpenAPI spec.
@@ -293,8 +293,8 @@ class BasicCountryInfoRequest(CamelCaseModel):
 `}
   </Code>
   <p>
-    We define that there's one attribute/field, called <em>code</em> that is a string (str). The definition
-    is done using python's type annotations.
+    We define that there's one attribute/field, called <em>code</em> that is a string (<em>str</em
+    >). The definition is done using python's type annotations.
   </p>
   <p>
     However, this doesn't give any extra info about the parameter for anyone and doesn't impose any
@@ -317,9 +317,7 @@ class BasicCountryInfoRequest(CamelCaseModel):
     in python (<em>null</em> in JSON). We don't want that, so we've set it to the special value
     <em>...</em>
     (ellipsis), which tells pydantic that the field is
-    <a href="https://docs.pydantic.dev/1.10/usage/models/#required-fields" target="_blank"
-      >required</a
-    >.
+    <A href="https://docs.pydantic.dev/1.10/usage/models/#required-fields">required</A>.
   </p>
   <p>The end result of the two above examples are identical.</p>
   <p>
@@ -340,9 +338,8 @@ class BasicCountryInfoRequest(CamelCaseModel):
   </Code>
   <p>If we'd want, we could even add a regular expressions to check it's an uppercase string.</p>
   <p>
-    For more details on these parameters refer to the <a
-      href="https://docs.pydantic.dev/1.10/usage/schema/#field-customization"
-      target="_blank">Field customization</a
+    For more details on these parameters refer to the <A
+      href="https://docs.pydantic.dev/1.10/usage/schema/#field-customization">Field customization</A
     > section of the documentation for pydantic.
   </p>
   <h3>Defining the simple fields of the response</h3>
@@ -413,9 +410,8 @@ class BasicCountryInfoResponse(CamelCaseModel):
   </Code>
   <p>
     However, like this there would be no restriction on the length of the strings in the list. We
-    can fix that by using a <a
-      href="https://docs.pydantic.dev/1.10/usage/types/#constrained-types"
-      target="_blank">constrained type</a
+    can fix that by using a <A href="https://docs.pydantic.dev/1.10/usage/types/#constrained-types"
+      >constrained type</A
     >, in this case the <em>constr</em>. We need to import it like this (at the top of the file):
   </p>
   <Code lang={python}>
@@ -457,9 +453,8 @@ class BasicCountryInfoResponse(CamelCaseModel):
 `}
   </Code>
   <p>
-    To do this, we'll use <a
-      href="https://docs.pydantic.dev/1.10/usage/models/#recursive-models"
-      target="_blank">Recursive Models</a
+    To do this, we'll use <A href="https://docs.pydantic.dev/1.10/usage/models/#recursive-models"
+      >Recursive Models</A
     > in pydantic.
   </p>
   <p>
@@ -514,9 +509,9 @@ class BasicCountryInfoResponse(CamelCaseModel):
 `}
   </Code>
   <p>
-    However, right now, the capital would be a mandatory field in the response. But we wanted to
-    also support countries that don't have a capital, like Nauru. Thus we need to modify this
-    slightly. We'll need to import <em>Optional</em> from <em>typing</em>, so at the top we'll
+    However, right now, the <em>capital</em> would be a mandatory field in the response. But we
+    wanted to also support countries that don't have a capital, like Nauru. Thus we need to modify
+    this slightly. We'll need to import <em>Optional</em> from <em>typing</em>, so at the top we'll
     import both <em>List</em> and <em>Optional</em> from <em>typing</em>, like this:
   </p>
   <Code lang={python}>
@@ -536,7 +531,7 @@ class BasicCountryInfoResponse(CamelCaseModel):
     capital: Optional[Capital]
 `}
   </Code>
-  <p>This allows the JSON response to have the capital set to <em>null</em>.</p>
+  <p>This allows the JSON response to have the <em>capital</em> set to <em>null</em>.</p>
   <p>
     Further we want to add some more information about the capital, so we add a <em>Field()</em>.
     Note that this time, we set the default value to <em>None</em> (Python's variant of

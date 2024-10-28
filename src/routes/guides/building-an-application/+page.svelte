@@ -40,7 +40,7 @@
       application. Fill in all the necessary fields, select a group and click the Create button.
       You'll have to pick one of the groups you must have created beforehand. The steps required for
       creating a group are detailed in the <A href={GUIDES.MANAGE_GROUP.href}
-        >How to create and manage a group</A
+        >{GUIDES.MANAGE_GROUP.title}</A
       > guide.
     </p>
     <GuideImage img={images.CREATE_AN_APPLICATION_PAGE} />
@@ -112,11 +112,11 @@
     <h3>No matching definition?</h3>
     <p>
       If you don't find any data source definition providing the data you need, you can also consult
-      the guide <A href={GUIDES.BUILD_DATA_DEF.href}>How to create data definitions</A> to create your
+      the guide <A href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A> to create your
       own definition. The definition alone is of little use unless someone also provides a data source
       for the data. The guide
-      <A href={GUIDES.BUILD_DATA_SOURCE.href}>How to build a data source</A> explains how you or someone
-      else could build a data source for the definition.
+      <A href={GUIDES.BUILD_DATA_SOURCE.href}>{GUIDES.BUILD_DATA_SOURCE.title}</A> explains how you or
+      someone else could build a data source for the definition.
     </p>
 
     <SectionTitle title="Finding an available data source" />
@@ -133,7 +133,7 @@
     <p>
       If there are no matching sources, you might want to consider building your own data source or
       request someone to build it, following the <A href={GUIDES.BUILD_DATA_SOURCE.href}
-        >How to build a data source</A
+        >{GUIDES.BUILD_DATA_SOURCE.title}</A
       > guide.
     </p>
 
@@ -227,13 +227,13 @@
     <SectionTitle title="Authenticating users" />
     <p>
       There's a separate guide called <A href={GUIDES.USING_LOGIN_PROVIDER.href}
-        >Use login portal in your application</A
+        >{GUIDES.USING_LOGIN_PROVIDER.title}</A
       > that goes into details on how you register your application and use the login portal for authentication
       to obtain the <em>id_token</em> for a user.
     </p>
     <SectionTitle title="Using consent" />
     <p>
-      The <a href="https://miro.com/app/board/o9J_lC4tnfI=/">Consent protocol summary</a> explains the
+      The <A href="https://miro.com/app/board/o9J_lC4tnfI=/">Consent protocol summary</A> explains the
       flow for requesting consent and outlines the overall design. This guide focuses on implementing
       the necessary parts of it in your application so you can request consent from the user, obtain
       a consent token and use it to fetch the data product.
@@ -269,7 +269,9 @@
     <p>
       This is a JWT that you have to create and it needs to have the following extra information in
       the header (the <em>kid</em> needs to match one of the keys you published through the
-      <A href={GUIDES.MANAGE_GROUP.href}>party-configuration for the group of your application</A>
+      <A href="{GUIDES.MANAGE_GROUP.href}#creating-and-hosting-party-configuration"
+        >party-configuration for the group of your application</A
+      >
       and <em>v</em> must be
       <em>"0.2"</em>, for now the <em>alg</em> should be set to
       <em>"RS256"</em>). Below is an example of what should be contained in the header and body. The
@@ -313,7 +315,7 @@
     <p>
       In order to be able to request consent from the user you will need to first authenticate the
       user and obtain the id_token for the user. This is explained in the <A
-        href={GUIDES.USING_LOGIN_PROVIDER.href}>Use login portal in your application</A
+        href={GUIDES.USING_LOGIN_PROVIDER.href}>{GUIDES.USING_LOGIN_PROVIDER.title}</A
       > guide. You will also need the Data Source Identifier and Consent Request Token both described
       above.
     </p>

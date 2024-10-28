@@ -25,7 +25,7 @@
   <p>
     In this guide we will explain how to build a new data source or productizer and how to use the
     developer portal to publish it using the developer portal so it can be queried through the
-    product gateway using <a href="https://sandbox.ioxio-dataspace.com/">IOXIO Sandbox Dataspace</a
+    product gateway using <A href="https://sandbox.ioxio-dataspace.com/">IOXIO Sandbox Dataspace</A
     >. These steps are the same on all IOXIO Dataspaces, while some might miss the particular data
     products mentioned here.
   </p>
@@ -33,24 +33,25 @@
   <li>Data that you want to provide.</li>
   <li>A data source definition for the data.</li>
   <li>
-    Ability to host an API that responds to POST requests on the public internet over the https
+    Ability to host an API that responds to <em>POST</em> requests on the public internet over the https
     protocol.
   </li>
   <SectionTitle title="Choosing a data definition for your source" />
   <p>
-    You can use the <a href="https://sandbox.ioxio-dataspace.com" target="_blank"
-      >Data definition viewer</a
-    > to find available data source definitions.
+    You can use the <A href="https://sandbox.ioxio-dataspace.com">Data definition viewer</A> to find
+    available data source definitions.
   </p>
   <p>
     If there is no definition for the kind of data that you want to provide you can create your own
-    definition by following the <A href={GUIDES.BUILD_DATA_DEF.href}>Building a data definition</A> guide.
+    definition by following the <A href={GUIDES.BUILD_DATA_DEF.href}
+      >{GUIDES.BUILD_DATA_DEF.title}</A
+    > guide.
   </p>
   <SectionTitle title="What are we building?" />
   <p>
     In this guide we will build a productizer that provides an API matching the
     <em>test/ioxio-dataspace-guides/Country/BasicInfo</em> definition that we created in the <A
-      href={GUIDES.BUILD_DATA_DEF.href}>Building a data definition</A
+      href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A
     > guide. As the definition is an OpenAPI spec you might want to use se some tool like the Swagger
     Editor to view it in a more human friendly format.
   </p>
@@ -59,7 +60,7 @@
     <em>/test/ioxio-dataspace-guides/Country/BasicInfo</em>. It could for example be hosted at
     <em>https://productizer.example.com/test/ioxio-dataspace-guides/Country/BasicInfo</em>.
   </p>
-  <p>The POST request to that endpoint needs to accept a JSON payload, similar to this:</p>
+  <p>The <em>POST</em> request to that endpoint needs to accept a JSON payload, similar to this:</p>
   <Code lang={json}>
     {`
 {
@@ -92,26 +93,25 @@
   </p>
   <SectionTitle title="Building a data source based on the example productizer" />
   <p>
-    We will use the <a href="http://fastapi.tiangolo.com" target="_blank">FastAPI</a> based
-    <a href="https://github.com/ioxio-dataspace/example-productizer/" target="_blank"
-      >example productizer</a
-    > as a starting point and just modify it to provide the country data instead. Feel free to fork the
-    repository or just download the source code as an archive from GitHub to follow along.
+    We will use the <A href="http://fastapi.tiangolo.com">FastAPI</A> based
+    <A href="https://github.com/ioxio-dataspace/example-productizer/">example productizer</A> as a starting
+    point and just modify it to provide the country data instead. Feel free to fork the repository or
+    just download the source code as an archive from GitHub to follow along.
   </p>
   <SectionTitle title="General project setup and cleanup" />
   <p>
     You most likely want to update the <em>README.md</em> to better describe your own data source.
   </p>
   <p>
-    If you intend to use <a href="https://python-poetry.org/" target="_blank">Poetry</a> to manage
-    your Python dependencies you should change the name of the project and authors found in
+    If you intend to use <A href="https://python-poetry.org/">Poetry</A> to manage your Python dependencies
+    you should change the name of the project and authors found in
     <em>pyproject.toml</em> and run poetry install to install the dependencies so you then can run
     the productizer locally by running <em>poetry run invoke dev</em>. If you don't intend to use
     poetry you can delete the file.
   </p>
   <p>
-    You might want to set up <a href="https://pre-commit.com/" target="_blank">pre-commit</a> for
-    your project or get rid of the <em>.pre-commit-config.yaml</em>
+    You might want to set up <A href="https://pre-commit.com/">pre-commit</A> for your project or get
+    rid of the <em>.pre-commit-config.yaml</em>
     file.
   </p>
   <p>
@@ -133,7 +133,7 @@
     directly copy the <em>BasicCountryInfoRequest</em>, <em>Capital</em> and
     <em>BasicCountryInfoResponse</em>
     classes from the final definition we created in the <A href={GUIDES.BUILD_DATA_DEF.href}
-      >Building a data definition</A
+      >{GUIDES.BUILD_DATA_DEF.title}</A
     > guide. Note that we also need to add the necessary imports.
   </p>
   <p>
@@ -141,8 +141,7 @@
     pydantic models, in which you can retrieve those from within the <em>/src</em> directory in the
     definitions repository. If they are not available you will have to build them yourself. In that
     case the same guide can be handy, as well as the official pydantic documentation and the
-    <a href="https://fastapi.tiangolo.com/tutorial/body/" target="_blank">Request Body</a> section of
-    the FastAPI docs.
+    <A href="https://fastapi.tiangolo.com/tutorial/body/">Request Body</A> section of the FastAPI docs.
   </p>
   <p>The <em>app/models.py</em> file would after these changes look like this:</p>
 
@@ -339,16 +338,13 @@ async def data_product(params: BasicCountryInfoRequest):
     the data as a dictionary and let FastAPI take care of the rest automatically using the
     definition in the
     <em>response_model</em>. The
-    <a href="https://fastapi.tiangolo.com/learn/" target="_blank">FastAPI documentation</a>
+    <A href="https://fastapi.tiangolo.com/learn/">FastAPI documentation</A>
     is really well written and describes in great detail topics, such as the
-    <a href="https://fastapi.tiangolo.com/tutorial/body/" target="_blank">request body</a>,
-    <a href="https://fastapi.tiangolo.com/tutorial/response-model/" target="_blank"
-      >response models</a
-    >
+    <A href="https://fastapi.tiangolo.com/tutorial/body/">request body</A>,
+    <A href="https://fastapi.tiangolo.com/tutorial/response-model/">response models</A>
     and
-    <a href="https://fastapi.tiangolo.com/tutorial/handling-errors/" target="_blank"
-      >handling errors</a
-    >, so those resources are well worth a look if the explanation in this guide was too brief.
+    <A href="https://fastapi.tiangolo.com/tutorial/handling-errors/">handling errors</A>, so those
+    resources are well worth a look if the explanation in this guide was too brief.
   </p>
   <SectionTitle
     title="Deploy and host your productizer
