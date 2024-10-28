@@ -130,4 +130,5 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json. At
     the time of writing this it returned this JSON content (formatted for readability):
   </p>
+  <p style="color: red">TODO: Copy the rest of the guide!!!</p>
 </TableOfContents>
