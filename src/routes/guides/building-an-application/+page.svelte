@@ -40,8 +40,8 @@
       application. Fill in all the necessary fields, select a group and click the Create button.
       You'll have to pick one of the groups you must have created beforehand. The steps required for
       creating a group are detailed in the <A href={GUIDES.MANAGE_GROUP.href}
-        >Creating a Group guide</A
-      >.
+        >How to create and manage a group</A
+      > guide.
     </p>
     <GuideImage img={images.CREATE_AN_APPLICATION_PAGE} />
     <h2>What features does the IOXIO® Dataspace bring to an application?</h2>
@@ -146,8 +146,8 @@
     <p>
       This shows the URL at which you can query the product gateway to get the data from this
       particular source. For the same definition, the only thing that will change depending on the
-      source is the <strong>?source=</strong> query parameter. It's thus easy to later change the source
-      to another that provides the same data.
+      source is the <em>?source=</em> query parameter. It's thus easy to later change the source to another
+      that provides the same data.
     </p>
     <p>
       In order to request the data, you need to know what data to include in the request. The
@@ -229,7 +229,7 @@
       There's a separate guide called <A href={GUIDES.USING_LOGIN_PROVIDER.href}
         >Use login portal in your application</A
       > that goes into details on how you register your application and use the login portal for authentication
-      to obtain the id_token for a user.
+      to obtain the <em>id_token</em> for a user.
     </p>
     <SectionTitle title="Using consent" />
     <p>
