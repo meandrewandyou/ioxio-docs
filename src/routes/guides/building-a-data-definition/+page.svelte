@@ -48,7 +48,7 @@
   </p>
   <ul>
     <li><a href="https://git-scm.com/downloads" target="_blank">Git</a></li>
-    <li><a href="https://www.python.org/downloads/" target="_blank">Python 3.9</a></li>
+    <li><a href="https://www.python.org/downloads/" target="_blank">Python 3.11</a></li>
     <li><a href="https://pre-commit.com/#install" target="_blank">Pre-commit</a></li>
   </ul>
   <h3>Fork and clone the data definitions repository</h3>
@@ -228,8 +228,8 @@ pre-commit install
     Each user is expected to create a subfolder inside it, with the same name as their
     <b>GitHub username</b>
     and then create any desired hierarchy of definitions under that. So this guide assumes we'd have
-    a user account called <b>ioxio-dataspace-guides</b> and thus store the definition in
-    <b>test/ioxio-dataspace-guides</b>.
+    a user account called <em>ioxio-dataspace-guides</em> and thus store the definition in
+    <em>test/ioxio-dataspace-guides</em>.
   </p>
   <h3>Initial setup of the definition file</h3>
   <p>To get a quick start we will copy most of the content from the BasicInfo for companies.</p>
@@ -275,11 +275,12 @@ DEFINITION = DataProductDefinition(
   we'll define the output of the data source.
 
   <p>
-    In the last section, we define the <b><i>DEFINITION</i></b>. The converter expects to find a
-    variable with this name, that is an instance of the DataProductDefinition. In it we define a
+    In the last section, we define the <em>DEFINITION</em>. The converter expects to find a variable
+    with this name, that is an instance of the <em>DataProductDefinition</em>. In it we define a
     version number (for definitions in the <em>test/UserName/</em> space it needs to be of the form
     <em>0.0.x</em>), a title and description. We also specify that the
-    <em>BasicCountryInfoRequest</em> class is the one defining the request (input) and BasicCountryInfoResponse
+    <em>BasicCountryInfoRequest</em> class is the one defining the request (input) and
+    <em>BasicCountryInfoResponse</em>
     the response (output).
   </p>
   <h3>Defining the request</h3>
@@ -292,7 +293,7 @@ class BasicCountryInfoRequest(CamelCaseModel):
 `}
   </Code>
   <p>
-    We define that there's one attribute/field, called code that is a string (str). The definition
+    We define that there's one attribute/field, called <em>code</em> that is a string (str). The definition
     is done using python's type annotations.
   </p>
   <p>
@@ -311,10 +312,11 @@ class BasicCountryInfoRequest(CamelCaseModel):
 `}
   </Code>
   <p>
-    The first argument to <b><i>Field()</i></b> is the default value of the field, which defaults to
-    <b><i>None</i></b>
-    in python (null in JSON). We don't want that, so we've set it to the special value ... (ellipsis),
-    which tells pydantic that the field is
+    The first argument to <em>Field()</em> is the default value of the field, which defaults to
+    <em>None</em>
+    in python (<em>null</em> in JSON). We don't want that, so we've set it to the special value
+    <em>...</em>
+    (ellipsis), which tells pydantic that the field is
     <a href="https://docs.pydantic.dev/1.10/usage/models/#required-fields" target="_blank"
       >required</a
     >.
@@ -322,9 +324,8 @@ class BasicCountryInfoRequest(CamelCaseModel):
   <p>The end result of the two above examples are identical.</p>
   <p>
     Let's now add a title, description and an example and min/max length to ensure it's a two letter
-    code we get. This is done by simply adding some more keyword arguments to the <b
-      ><i>Field()</i></b
-    >, like this:
+    code we get. This is done by simply adding some more keyword arguments to the <em>Field()</em>,
+    like this:
   </p>
   <Code lang={python}>
     {`
@@ -350,10 +351,10 @@ class BasicCountryInfoRequest(CamelCaseModel):
     response.
   </p>
   <p>
-    The definition for the <b><i>code</i></b> we can copy as-is from the request. The
-    <b><i>name</i></b>
+    The definition for the <em>code</em> we can copy as-is from the request. The
+    <em>name</em>
     we can define rather similarly; we don't need to set any minimum and maximum lengths for it. The
-    <b><i>area</i></b> is also straight forward to define; we just need to specify it as a float.
+    <em>area</em> is also straight forward to define; we just need to specify it as a float.
   </p>
   <Code lang={python}>
     {`
@@ -382,8 +383,8 @@ class BasicCountryInfoResponse(CamelCaseModel):
   </Code>
   <h3>Defining the languages field in the response</h3>
   <p>
-    We wanted the official languages to be a list of strings. We'll need to import List for the type
-    annotations, like this (at the top of the file):
+    We wanted the official languages to be a list of strings. We'll need to import <em>List</em> for
+    the type annotations, like this (at the top of the file):
   </p>
   <Code lang={python}>
     {`
@@ -392,8 +393,9 @@ class BasicCountryInfoResponse(CamelCaseModel):
 `}
   </Code>
   <p>
-    Then we can define languages field using the type annotation languages: <b><i>List[str]</i></b>
-    and again use the <b><i>Field()</i></b> to add a title, example etc.:
+    Then we can define <em>languages</em> field using the type annotation languages:
+    <em>List[str]</em>
+    and again use the <em>Field()</em> to add a title, example etc.:
   </p>
   <Code lang={python}>
     {`
@@ -414,8 +416,7 @@ class BasicCountryInfoResponse(CamelCaseModel):
     can fix that by using a <a
       href="https://docs.pydantic.dev/1.10/usage/types/#constrained-types"
       target="_blank">constrained type</a
-    >, in this case the <b><i>constr</i></b>. We need to import it like this (at the top of the
-    file):
+    >, in this case the <em>constr</em>. We need to import it like this (at the top of the file):
   </p>
   <Code lang={python}>
     {`
@@ -424,8 +425,7 @@ from pydantic import constr
 `}
   </Code>
   <p>
-    Then we replace the <b><i>str</i></b> with <b><i>constr(min_length=2, max_length=2)</i></b>,
-    like this:
+    Then we replace the <em>str</em> with <em>constr(min_length=2, max_length=2)</em>, like this:
   </p>
   <Code lang={python}>
     {`
@@ -440,7 +440,7 @@ class BasicCountryInfoResponse(CamelCaseModel):
 `}
   </Code>
   <h3>Defining the capital in the response</h3>
-  <p>We wanted the capital to contain a sub object in the JSON response, something like this:</p>
+  <p>We wanted the capital to be a nested object in the JSON response, something like this:</p>
   <Code lang={python}>
     {`
     {
@@ -463,8 +463,8 @@ class BasicCountryInfoResponse(CamelCaseModel):
     > in pydantic.
   </p>
   <p>
-    Let's start by defining this sub structure for the capital as a new <b><i>Capital class</i></b>.
-    It looks like this, when we've filled in all titles, examples and limits:
+    Let's start by defining this nested structure for the capital as a new <em>Capital</em> class. It
+    looks like this, when we've filled in all titles, examples and limits:
   </p>
   <Code lang={python}>
     {`
@@ -499,9 +499,9 @@ class BasicCountryInfoResponse(CamelCaseModel):
     it inside it.
   </p>
   <p>
-    We add the <b><i>capital</i></b> to the <b><i>BasicCountryInfoResponse</i></b>, but this time we
-    annotate it as a <b><i>Capital</i></b>, rather than a <b><i>stc</i></b>, <b><i>float</i></b> or
-    <b><i>List</i></b>, like this (see the last line):
+    We add the <em>capital</em> to the <em>BasicCountryInfoResponse</em>, but this time we annotate
+    it as a <em>Capital</em>, rather than a <em>str</em>, <em>float</em> or
+    <em>List</em>, like this (see the last line):
   </p>
   <Code lang={python}>
     {`
@@ -516,9 +516,8 @@ class BasicCountryInfoResponse(CamelCaseModel):
   <p>
     However, right now, the capital would be a mandatory field in the response. But we wanted to
     also support countries that don't have a capital, like Nauru. Thus we need to modify this
-    slightly. We'll need to import <b><i>Optional</i></b> from <b><i>typing</i></b>, so at the top
-    we'll import both <b><i>List</i></b> and <b><i>Optional</i></b> from <b><i>typing</i></b>, like
-    this:
+    slightly. We'll need to import <em>Optional</em> from <em>typing</em>, so at the top we'll
+    import both <em>List</em> and <em>Optional</em> from <em>typing</em>, like this:
   </p>
   <Code lang={python}>
     {`
@@ -537,11 +536,11 @@ class BasicCountryInfoResponse(CamelCaseModel):
     capital: Optional[Capital]
 `}
   </Code>
-  <p>This allows the JSON response to have the capital set to null.</p>
+  <p>This allows the JSON response to have the capital set to <em>null</em>.</p>
   <p>
-    Further we want to add some more information about the capital, so we add a <b><i>Field()</i></b
-    >. Note that this time, we set the default value to <b><i>None</i></b> (Python's variant of
-    <b><i>null</i></b>) to mark it as optional, so it thus becomes:
+    Further we want to add some more information about the capital, so we add a <em>Field()</em>.
+    Note that this time, we set the default value to <em>None</em> (Python's variant of
+    <em>null</em>) to mark it as optional, so it thus becomes:
   </p>
   <Code lang={python}>
     {`
