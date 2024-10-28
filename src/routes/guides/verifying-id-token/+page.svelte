@@ -5,11 +5,14 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
   import Title from "$lib/components/Title.svelte"
   import TableOfContents from "$lib/components/TableOfContents.svelte"
-  import type { PageData } from "../../../../.svelte-kit/types/src/routes/guides/building-an-application/$types"
+  import type { PageData } from "../../../../.svelte-kit/types/src/routes/guides/verifying-id-token/$types"
   import A from "$lib/components/A.svelte"
+  import GuideImage from "$lib/components/GuideImage.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data: PageData
+
+  const images = data.images
 </script>
 
 <TableOfContents>
@@ -114,7 +117,7 @@
     > and extract your own <em>id_token</em> from a cookie with that name once you've logged in.
   </p>
   <p>This is what the content of the token will look like:</p>
-  <img src="/view-jwt-token.png" alt="view of jwt token" />
+  <GuideImage img={images.VIEW_JWT_TOKEN} />
   <p>
     Many JWT libraries also allow you to read the JWT without verifying it. In case your library for
     some reason does not do that, you can actually note that the token consists of three sections
