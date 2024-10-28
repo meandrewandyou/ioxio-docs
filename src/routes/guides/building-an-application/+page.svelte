@@ -100,7 +100,7 @@
       The details view will show you what data is needed as input and what kind of data is included
       in the response.
     </p>
-    <GuideImage img={images.DEFINITION_VIEWER_DROPDOWN} />
+    <GuideImage img={images.DEFINITION_VIEWER_BROWSE} />
 
     <h3>GitHub repository</h3>
     <p>
@@ -240,12 +240,12 @@
     </p>
     <h3>Check if consent is required</h3>
     <p>
-      The data source definition can indicate that the <strong>X-Consent-Token</strong> is required for
-      a particular definition if it is always required. It's also possible to mark it as optional, in
-      which case each data source can decide if it's required or not. If it's required and missing, the
-      productizer will respond with the status code 403 to the request from the product gateway. The
-      product gateway will use this information and respond to you with the status code 502 and a JSON
-      body with the field status set to 403, which is your indication that consent is required.
+      The data source definition can indicate that the <em>X-Consent-Token</em> is required for a particular
+      definition if it is always required. It's also possible to mark it as optional, in which case each
+      data source can decide if it's required or not. If it's required and missing, the productizer will
+      respond with the status code 403 to the request from the product gateway. The product gateway will
+      use this information and respond to you with the status code 502 and a JSON body with the field
+      status set to 403, which is your indication that consent is required.
     </p>
     <h3>Data Source Identifier</h3>
     <p>

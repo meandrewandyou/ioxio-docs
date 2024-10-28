@@ -105,9 +105,9 @@
   <p>
     If you intend to use <A href="https://python-poetry.org/">Poetry</A> to manage your Python dependencies
     you should change the name of the project and authors found in
-    <em>pyproject.toml</em> and run poetry install to install the dependencies so you then can run
-    the productizer locally by running <em>poetry run invoke dev</em>. If you don't intend to use
-    poetry you can delete the file.
+    <em>pyproject.toml</em> and run <em>poetry install</em> to install the dependencies so you then
+    can run the productizer locally by running <em>poetry run invoke dev</em>. If you don't intend
+    to use poetry you can delete the file.
   </p>
   <p>
     You might want to set up <A href="https://pre-commit.com/">pre-commit</A> for your project or get
@@ -115,9 +115,8 @@
     file.
   </p>
   <p>
-    If you don't intend to use Docker for your data source, you can also get rid of the <em
-      >Dockerfile</em
-    >,
+    If you don't intend to use <A href="https://www.docker.com/">Docker</A> for your data source, you
+    can also get rid of the <em>Dockerfile</em>,
     <em>.dockerignore</em> and the <em>docker</em> directory.
   </p>
   <SectionTitle title="Adding models for the request and response" />
@@ -470,7 +469,7 @@ content-length: 95
 "
   />
   <p>
-    If you created the data source definition under your own test/
+    If you created the data source definition under your own <em>test/</em>
     <your-own-name>
       namespace, you likely want to submit a pull request to copy it outside the test namespace and
       add a version or copy it to the repository used for definitions in a production Dataspace.
