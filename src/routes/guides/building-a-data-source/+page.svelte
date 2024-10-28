@@ -105,9 +105,9 @@
   <p>
     If you intend to use <a href="https://python-poetry.org/" target="_blank">Poetry</a> to manage
     your Python dependencies you should change the name of the project and authors found in
-    <em>pyproject.toml</em> and run poetry install to install the dependencies so you then can run the
-    productizer locally by running poetry run invoke dev. If you don't intend to use poetry you can delete
-    the file.
+    <em>pyproject.toml</em> and run poetry install to install the dependencies so you then can run
+    the productizer locally by running <em>poetry run invoke dev</em>. If you don't intend to use
+    poetry you can delete the file.
   </p>
   <p>
     You might want to set up <a href="https://pre-commit.com/" target="_blank">pre-commit</a> for
@@ -390,8 +390,8 @@ async def data_product(params: BasicCountryInfoRequest):
   <p>
     You should now be able to test your own data source by querying it through the product gateway.
     From the list of your data sources, press EDIT next to the data source you just created. The
-    developer portal will show you the address where at which you can query your own data source as
-    well as the <em>X-Preview-Token</em> necessary to use a data source until it has been published.
+    developer portal will show you the address at which you can query your own data source as well
+    as the <em>X-Preview-Token</em> necessary to use a data source until it has been published.
   </p>
   <GuideImage img={images.EDIT_DS} />
   <p>
@@ -424,7 +424,9 @@ content-length: 130
 `}
   </Code>
   <p>
-    Note: As long as your datasource is not published you will need to use the X-Preview-Token
+    Note: As long as your datasource is not published you will need to use the <em
+      >X-Preview-Token</em
+    >
     header, once the datasource is published the header should be left out.
   </p>
   <p>
@@ -464,8 +466,8 @@ content-length: 95
     When you've verified the data source works as intended you can publish the data source by
     selecting it in the list, pressing the EDIT button and ticking the Published checkbox and press
     the UPDATE button to save the changes. When it's published, it will be listed to all users in
-    the Available data sources section and it will no longer require a X-Preview-Token header to be
-    queried.
+    the Available data sources section and it will no longer require an <em>X-Preview-Token</em> header
+    to be queried.
   </p>
   <SectionTitle
     title="Next steps
