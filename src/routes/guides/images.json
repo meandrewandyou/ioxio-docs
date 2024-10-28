@@ -131,7 +131,7 @@
   },
   "VERIFY_CONSENT": {
     "DECODED_CONSENT_TOKEN": {
-      "src": "/guides/verifying-constent-in-data-source/decoded_consent_token.png",
+      "src": "/guides/verifying-consent-in-data-source/decoded_consent_token.png",
       "alt": ""
     }
   },

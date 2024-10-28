@@ -24,7 +24,7 @@ export const GUIDES = {
   },
   VERIFY_CONSENT: {
     title: "How to verify consent in data source",
-    href: "/guides/verifying-constent-in-data-source",
+    href: "/guides/verifying-consent-in-data-source",
     alt: "Data schemas",
     cardImage: DataSchemasIcon,
   },
