@@ -40,7 +40,7 @@
   <p>
     For more details on how to request a consent and obtaining a consent token, check out the <A
       href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A
-    > section of the <A href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.href}</A> guide.
+    > section of the <A href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.title}</A> guide.
   </p>
   <SectionTitle title="Verifying the consent token in the productizer" />
   <h3>Get the X-Consent-Token header</h3>
