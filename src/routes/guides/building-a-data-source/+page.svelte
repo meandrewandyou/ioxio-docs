@@ -372,12 +372,12 @@ async def data_product(params: BasicCountryInfoRequest):
   <p>
     If you want to publish multiple data sources for the same definition using the same group, you
     can add a variant name to distinguish them from each other. Most likely you don't want to use
-    this for your first data source. In the Source URL enter the base URL at which your deployment
-    is available. The help text shows where the API endpoint is expected to be available. The Source
-    URL will not be displayed to other users and is only used by the product gateway to connect to
-    the productizer. All other applications must connect through the product gateway. For the
-    purpose of this tutorial let's select "private" for the visibility options. The filled in form
-    would look like this:
+    this for your first data source. In the Base URL enter the base URL at which your deployment is
+    available. The help text shows where the API endpoint is expected to be available. The Base URL
+    will not be displayed to other users and is only used by the product gateway to connect to the
+    productizer. All other applications must connect through the product gateway. For the purpose of
+    this tutorial let's select "private" for the visibility options. The filled in form would look
+    like this:
   </p>
   <GuideImage img={images.CREATE_NEW_DS} />
   <p>Finally press the CREATE button to create the data source.</p>
@@ -480,7 +480,9 @@ content-length: 95
   <p>
     When the definition has been published, you will need to add the data source once more. This
     time using the definition in the new path. If you want the data source to appear in the list of
-    available data sources for other users of the Dataspace also tick the Published checkbox.
+    available data sources for other users of the Dataspace also switch the radio button to <em
+      >Published</em
+    >.
   </p>
   <p>
     You might want to clean up by removing the old data source definition by submitting a pull
