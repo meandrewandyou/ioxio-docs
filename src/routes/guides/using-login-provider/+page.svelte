@@ -15,7 +15,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`How to use dataspace login in an application`} />
+  <Title title={data.guide.title} />
 
   <Breadcrumbs path={data.path} />
 

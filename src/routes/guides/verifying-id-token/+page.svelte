@@ -5,13 +5,13 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
   import Title from "$lib/components/Title.svelte"
   import TableOfContents from "$lib/components/TableOfContents.svelte"
+  import type { PageData } from "./$types"
 
-  /** @type {import('./$types').PageData} */
-  export let data
+  export let data: PageData
 </script>
 
 <TableOfContents>
-  <Title title={`Verify id_token in a data source`} />
+  <Title title={data.guide.title} />
 
   <Breadcrumbs path={data.path} />
 
@@ -49,8 +49,8 @@
     The value of the header should be of the form Bearer
     <token
       >, where
-      <token> is the actual id_token. </token></token
-    >
+      <token> is the actual id_token.</token>
+    </token>
   </p>
   <p>
     You can split the header at the space character or the right string index and verify the scheme
@@ -149,8 +149,8 @@
     >
     has a PyJWKClient that can fetch the key if you already know the JWKS URI, but it does not support
     asynchronous execution. There's however a separate library called
-    <a href="https://pypi.org/project/pyjwt-key-fetcher/" target="blank">pyjwt-key-fetcher</a> that supports
-    async and has built in caching and other features.
+    <a href="https://pypi.org/project/pyjwt-key-fetcher/" target="blank">pyjwt-key-fetcher</a>
+    that supports async and has built in caching and other features.
   </p>
   <h3>Find the JWKS URI</h3>
   <p>

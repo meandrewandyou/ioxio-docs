@@ -15,7 +15,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`Verify consent in a data source on IOXIO Dataspace`} />
+  <Title title={data.guide.title} />
 
   <Breadcrumbs path={data.path} />
 

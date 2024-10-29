@@ -15,7 +15,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`How to create and manage a group`} />
+  <Title title={data.guide.title} />
 
   <Breadcrumbs path={data.path} />
 

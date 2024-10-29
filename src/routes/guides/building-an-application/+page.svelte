@@ -21,7 +21,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`How to build an application`} />
+  <Title title={data.guide.title} />
 
   <Breadcrumbs path={data.path} />
 
