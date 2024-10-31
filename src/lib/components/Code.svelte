@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Highlight, LineNumbers } from "svelte-highlight"
   import type { LanguageType } from "svelte-highlight/languages"
+  import "svelte-highlight/styles/tokyo-night-dark.css"
 
   // https://svhe.onrender.com/languages
   export let lang: LanguageType<string>

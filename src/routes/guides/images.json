@@ -1,7 +1,11 @@
 {
   "BUILD_DATA_DEF": {
-    "CREATE_DEFINITION": {
-      "src": "/guides/building-a-data-definition/create_definition.png",
+    "PRE_COMMIT": {
+      "src": "/guides/building-a-data-definition/pre_commit.png",
+      "alt": ""
+    },
+    "PULL_REQUEST": {
+      "src": "/guides/building-a-data-definition/pull_request.png",
       "alt": ""
     }
   },
@@ -20,10 +24,6 @@
       "src": "/guides/building-an-application/api_docs.png",
       "alt": ""
     },
-    "API_DOCS_2": {
-      "src": "/guides/building-an-application/api_docs_2.png",
-      "alt": ""
-    },
     "AVAILABLE_DATA_SOURCES": {
       "src": "/guides/building-an-application/available_data_sources.png",
       "alt": ""
@@ -38,26 +38,6 @@
     },
     "CREATE_AN_APPLICATION_PAGE": {
       "src": "/guides/building-an-application/create_an_application_page.png",
-      "alt": ""
-    },
-    "CREATE_AN_APPLICATION_PAGE_2": {
-      "src": "/guides/building-an-application/create_an_application_page_2.jfif",
-      "alt": ""
-    },
-    "DATA_DEFINITION_VIEWER": {
-      "src": "/guides/building-an-application/data_definition_viewer.jfif",
-      "alt": ""
-    },
-    "DATA_DEFINITION_VIEWER_2": {
-      "src": "/guides/building-an-application/data_definition_viewer_2.jfif",
-      "alt": ""
-    },
-    "DATA_DEFINITIONS_DROPDOWN": {
-      "src": "/guides/building-an-application/data_definitions_dropdown.jfif",
-      "alt": ""
-    },
-    "DATA_DEFINITIONS_DROPDOWN_2": {
-      "src": "/guides/building-an-application/data_definitions_dropdown_2.jfif",
       "alt": ""
     },
     "DECODED_CONSENT_REQUEST_TOKEN": {
@@ -105,10 +85,6 @@
     "PAGE_FOR_CREATING_GROUPS": {
       "src": "/guides/managing-groups/page_for_creating_groups.png",
       "alt": ""
-    },
-    "PAGE_FOR_CREATING_GROUPS_2": {
-      "src": "/guides/managing-groups/page_for_creating_groups_2.png",
-      "alt": ""
     }
   },
   "USING_LOGIN_PROVIDER": {
@@ -118,10 +94,6 @@
     },
     "MY_APPLICATIONS_PAGE": {
       "src": "/guides/using-login-provider/my_applications_page.png",
-      "alt": ""
-    },
-    "MY_APPLICATIONS_PAGE_2": {
-      "src": "/guides/using-login-provider/my_applications_page_2.png",
       "alt": ""
     },
     "THE_CREATED_APPLICATION": {
