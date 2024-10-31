@@ -40,8 +40,8 @@
       application. Fill in all the necessary fields, select a group and click the Create button.
       You'll have to pick one of the groups you must have created beforehand. The steps required for
       creating a group are detailed in the <A href={GUIDES.MANAGE_GROUP.href}
-        >Creating a Group guide</A
-      >.
+        >{GUIDES.MANAGE_GROUP.title}</A
+      > guide.
     </p>
     <GuideImage img={images.CREATE_AN_APPLICATION_PAGE} />
     <h2>What features does the IOXIO® Dataspace bring to an application?</h2>
@@ -100,7 +100,7 @@
       The details view will show you what data is needed as input and what kind of data is included
       in the response.
     </p>
-    <GuideImage img={images.DEFINITION_VIEWER_DROPDOWN} />
+    <GuideImage img={images.DEFINITION_VIEWER_BROWSE} />
 
     <h3>GitHub repository</h3>
     <p>
@@ -112,11 +112,11 @@
     <h3>No matching definition?</h3>
     <p>
       If you don't find any data source definition providing the data you need, you can also consult
-      the guide <A href={GUIDES.BUILD_DATA_DEF.href}>How to create data definitions</A> to create your
+      the guide <A href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A> to create your
       own definition. The definition alone is of little use unless someone also provides a data source
       for the data. The guide
-      <A href={GUIDES.BUILD_DATA_SOURCE.href}>How to build a data source</A> explains how you or someone
-      else could build a data source for the definition.
+      <A href={GUIDES.BUILD_DATA_SOURCE.href}>{GUIDES.BUILD_DATA_SOURCE.title}</A> explains how you or
+      someone else could build a data source for the definition.
     </p>
 
     <SectionTitle title="Finding an available data source" />
@@ -133,7 +133,7 @@
     <p>
       If there are no matching sources, you might want to consider building your own data source or
       request someone to build it, following the <A href={GUIDES.BUILD_DATA_SOURCE.href}
-        >How to build a data source</A
+        >{GUIDES.BUILD_DATA_SOURCE.title}</A
       > guide.
     </p>
 
@@ -146,8 +146,8 @@
     <p>
       This shows the URL at which you can query the product gateway to get the data from this
       particular source. For the same definition, the only thing that will change depending on the
-      source is the <strong>?source=</strong> query parameter. It's thus easy to later change the source
-      to another that provides the same data.
+      source is the <em>?source=</em> query parameter. It's thus easy to later change the source to another
+      that provides the same data.
     </p>
     <p>
       In order to request the data, you need to know what data to include in the request. The
@@ -227,25 +227,25 @@
     <SectionTitle title="Authenticating users" />
     <p>
       There's a separate guide called <A href={GUIDES.USING_LOGIN_PROVIDER.href}
-        >Use login portal in your application</A
+        >{GUIDES.USING_LOGIN_PROVIDER.title}</A
       > that goes into details on how you register your application and use the login portal for authentication
-      to obtain the id_token for a user.
+      to obtain the <em>id_token</em> for a user.
     </p>
     <SectionTitle title="Using consent" />
     <p>
-      The <a href="https://miro.com/app/board/o9J_lC4tnfI=/">Consent protocol summary</a> explains the
+      The <A href="https://miro.com/app/board/o9J_lC4tnfI=/">Consent protocol summary</A> explains the
       flow for requesting consent and outlines the overall design. This guide focuses on implementing
       the necessary parts of it in your application so you can request consent from the user, obtain
       a consent token and use it to fetch the data product.
     </p>
     <h3>Check if consent is required</h3>
     <p>
-      The data source definition can indicate that the <strong>X-Consent-Token</strong> is required for
-      a particular definition if it is always required. It's also possible to mark it as optional, in
-      which case each data source can decide if it's required or not. If it's required and missing, the
-      productizer will respond with the status code 403 to the request from the product gateway. The
-      product gateway will use this information and respond to you with the status code 502 and a JSON
-      body with the field status set to 403, which is your indication that consent is required.
+      The data source definition can indicate that the <em>X-Consent-Token</em> is required for a particular
+      definition if it is always required. It's also possible to mark it as optional, in which case each
+      data source can decide if it's required or not. If it's required and missing, the productizer will
+      respond with the status code 403 to the request from the product gateway. The product gateway will
+      use this information and respond to you with the status code 502 and a JSON body with the field
+      status set to 403, which is your indication that consent is required.
     </p>
     <h3>Data Source Identifier</h3>
     <p>
@@ -269,7 +269,9 @@
     <p>
       This is a JWT that you have to create and it needs to have the following extra information in
       the header (the <em>kid</em> needs to match one of the keys you published through the
-      <A href={GUIDES.MANAGE_GROUP.href}>party-configuration for the group of your application</A>
+      <A href="{GUIDES.MANAGE_GROUP.href}#creating-and-hosting-party-configuration"
+        >party-configuration for the group of your application</A
+      >
       and <em>v</em> must be
       <em>"0.2"</em>, for now the <em>alg</em> should be set to
       <em>"RS256"</em>). Below is an example of what should be contained in the header and body. The
@@ -313,7 +315,7 @@
     <p>
       In order to be able to request consent from the user you will need to first authenticate the
       user and obtain the id_token for the user. This is explained in the <A
-        href={GUIDES.USING_LOGIN_PROVIDER.href}>Use login portal in your application</A
+        href={GUIDES.USING_LOGIN_PROVIDER.href}>{GUIDES.USING_LOGIN_PROVIDER.title}</A
       > guide. You will also need the Data Source Identifier and Consent Request Token both described
       above.
     </p>

@@ -60,8 +60,8 @@
     <SectionTitle title="OpenID Configurations" />
     <p>
       The login portal supports the OpenID Connect Discovery, thus most relevant configurations for
-      OpenID Connect clients can be found at the path /.well-known/openid-configuration, for example
-      on the sandbox at the address <A
+      OpenID Connect clients can be found at the path <em>/.well-known/openid-configuration</em>,
+      for example on the sandbox at the address <A
         href="https://login.sandbox.ioxio-dataspace.com/.well-known/openid-configuration"
         >https://login.sandbox.ioxio-dataspace.com/.well-known/openid-configuration</A
       >.
@@ -103,43 +103,46 @@
         >Developer portal</A
       >.
     </p>
-    <p>2. Go to the My Applications page in the menu.</p>
+    <p>2. Go to the <em>My applications</em> page in the menu.</p>
     <GuideImage img={images.MY_APPLICATIONS_PAGE} />
-    <p>3. Press the + ADD AN APPLICATION button.</p>
+    <p>3. Press the <em>+ Add an application</em> button.</p>
     <p>4. Fill in the necessary details for your application:</p>
     <GuideImage img={images.CREATE_AN_APPLICATION_PAGE} />
     <p>
-      Pick a name for your own application and fill it in the Application name field.<br />Add a
-      Redirect URI for your application, as well as a Logout Redirect URI. These are the addresses
-      the user is allowed to be redirected to when being returned to your application.
+      Pick a name for your own application and fill it in the <em>Application name</em> field.<br
+      />Add one or more
+      <em>Redirect URIs</em> for your application, as well as <em>Logout redirect URIs</em>. These
+      are the addresses the user is allowed to be redirected to when being returned to your
+      application.
     </p>
-    <p>5. Create the application by pressing the CREATE button.</p>
+    <p>5. Create the application by pressing the <em>Create</em> button.</p>
     <p>6. Your application is now created.</p>
     <GuideImage img={images.THE_CREATED_APPLICATION} />
     <p>
-      As part of creating it, a Client ID was generated, as well as two client secrets (so you can
-      use one and rotate the other one). You will need the Client ID and either one of the two
-      Client Secrets when setting up your application. The buttons next to the client secrets allows
-      you to show them, copy them and replace them. In case you need to edit any of the URIs or the
-      name of the app you can press the EDIT button.
+      As part of creating it, a <em>Client ID</em> was generated, as well as two
+      <em>Client secrets</em>
+      (so you can use one and rotate the other one). You will need the Client ID and either one of the
+      two Client secrets when setting up your application. The buttons next to the client secrets allows
+      you to show them, copy them and replace them. In case you need to edit any of the URIs or the name
+      of the app you can change them and press the <em>Save</em> button.
     </p>
     <SectionTitle title="Other configurations" />
     <h3>Scopes</h3>
-    <p>At the moment the only supported scope is openid and it is required.</p>
+    <p>At the moment the only supported <em>scope</em> is <em>openid</em> and it is required.</p>
     <h3>ACR Values</h3>
     <p>
-      The acr_values is required and used to indicate which underlying authentication method the
-      login portal will use for the authentication. For applications registered on the sandbox
-      Dataspace, the value fake-auth is the only supported one and will use a fake authentication
-      where the user can fill in any username that will be postfixed with a faked domain to form a
-      fake-email address and no password. Please consult your Dataspace specific details for which
-      values are supported in your Dataspace if you're creating an application for another
+      The <em>acr_values</em> is required and used to indicate which underlying authentication
+      method the login portal will use for the authentication. For applications registered on the
+      IOXIO Sandbox Dataspace, the value <em>fake-auth</em> is the only supported one and will use a
+      fake authentication where the user can fill in any username that will be postfixed with a faked
+      domain to form a fake-email address and no password. Please consult your Dataspace specific details
+      for which values are supported in your Dataspace if you're creating an application for another
       Dataspace.
     </p>
     <h3>ID Token Hint</h3>
     <p>
-      When logging out the user the application must include the id_token_hint when redirecting the
-      user to the end_session_endpoint.
+      When logging out the user the application must include the <em>id_token_hint</em> when
+      redirecting the user to the <em>end_session_endpoint</em>.
     </p>
   </div>
 </TableOfContents>

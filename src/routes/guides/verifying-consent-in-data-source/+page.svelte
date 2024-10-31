@@ -31,24 +31,25 @@
     consent.
   </p>
   <p>
-    The <A href="https://well-known-docs.sandbox.ioxio-dataspace.com/consent-token.html"
-      >consent token</A
-    >
+    The <A href="/schemas/consent-token/">consent token</A>
     is a
     <A href="https://datatracker.ietf.org/doc/html/rfc7519">JSON Web Token (JWT)</A>
     that can be decoded and verified. This guide will explain in more detail the process of extracting,
     decoding and verifying it.
   </p>
   <p>
-    For more details on how to request a consent and obtaining a consent token, check out the Using
-    Consent section of the How to build an application guide.
+    For more details on how to request a consent and obtaining a consent token, check out the <A
+      href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A
+    > section of the <A href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.href}</A> guide.
   </p>
   <SectionTitle title="Verifying the consent token in the productizer" />
   <h3>Get the X-Consent-Token header</h3>
   <p>
-    The productizer or data source needs to first extract the consent token from the X-Consent-Token
-    HTTP header of the request. Please note that the header is in many data source definitions
-    optional, so take that into account.
+    The productizer or data source needs to first extract the consent token from the <em
+      >X-Consent-Token</em
+    >
+    HTTP header of the request. Please note that the header is in many data source definitions optional,
+    so take that into account.
   </p>
   <h3>Reading the consent token</h3>
   <p>
@@ -60,18 +61,18 @@
     If you are unfamiliar with JWTs you might want to check out the <A
       href="https://jwt.io/introduction">JSON Web Token Introduction</A
     >. The same site has a really good tool for decoding JWTs directly in the web browser at
-    <A href="https://jwtio">jwt.io</A>, as well as a fairly good list of different
+    <A href="https://jwt.io">jwt.io</A>, as well as a fairly good list of different
     <A href="https://jwt.io/libraries">JWT libraries</A> for different programming languages.
   </p>
   <p>
     You most likely want to use one of the libraries for your programming language rather than try
-    to implement it according to the<A href="https://datatracker.ietf.org/doc/html/rfc7519"
-      >RFC 7519.</A
-    >
+    to implement it according to the <A href="https://datatracker.ietf.org/doc/html/rfc7519">
+      RFC 7519</A
+    >.
   </p>
   <p>
-    Let's have a look at a valid example token from one of the applications on the sandbox Dataspace
-    and how to verify it.
+    Let's have a look at a valid example token from one of the applications on the IOXIO Sandbox
+    Dataspace and how to verify it.
   </p>
   <p>Let's examine this token:</p>
   <Code lang={json}>
@@ -83,9 +84,10 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <p>
     At the time you are reading this guide the token will, unfortunately, have expired, so some of
     the verifications we will perform here won't work. If you need a valid token, you can follow the
-    steps in the Using consent section of the How to build and application guide to set up your own
-    application and request a consent token following the cURL examples in that guide. If you're
-    familiar with developer tools in your browser you can also go to the <A
+    steps in the <A href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A> section of the <A
+      href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.title}</A
+    > guide to set up your own application and request a consent token following the cURL examples in
+    that guide. If you're familiar with developer tools in your browser you can also go to the <A
       href="https://mycompany.demos.ioxio.com/my-company/company/0522908-2/board"
     >
       board page of one of the companies in the MyCompany Demo App</A
@@ -96,9 +98,10 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <p>
     Many JWT libraries also allow you to read the JWT without verifying it. In case your library for
     some reason does not do that, you can actually note that the token consists of three sections
-    separated by a dot, like AAA.BBB.CCC. The first section is the header, the second one the body
-    and the last one the signature. The first two are actually just Base64 encoded JSON strings that
-    can be easily decoded and read, without verifying the signature.
+    separated by a dot, like <em>AAA.BBB.CCC</em>. The first section (<em>AAA</em>) is the header,
+    the second one (<em>BBB</em>) the body and the last one (<em>CCC</em>) the signature. The first
+    two are actually just Base64 encoded JSON strings that can be easily decoded and read, without
+    verifying the signature.
   </p>
   <SectionTitle title="Find the JWKS URI" />
   <p>
@@ -111,13 +114,18 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     dataspace this would always be the address of the consent provider of the dataspace.
   </p>
   <p>
-    In this example the iss (Issuer) is https://consent.sandbox.ioxio-dataspace.com, which is the
-    consent provider of the sandbox dataspace. The consent provider has a consent configuration in a
-    well-known path (inspired by the OpenID Connect configuration). The configuration for a consent
-    provider can be found in the path /.well-known/dataspace/consent-configuration.json relative to
-    the iss. Thus in this case the consent provider configuration can be fetched from
-    https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json. At
-    the time of writing this it returned this JSON content (formatted for readability):
+    In this example the <em>iss</em> (Issuer) is
+    <em>https://consent.sandbox.ioxio-dataspace.com</em>, which is the consent provider of the
+    sandbox dataspace. The consent provider has a <A href="/schemas/consent-configuration/"
+      >consent configuration</A
+    > in a well-known path (inspired by the OpenID Connect configuration). The configuration for a consent
+    provider can be found in the path <em>/.well-known/dataspace/consent-configuration.json</em>
+    relative to the <em>iss</em>. Thus in this case the consent provider configuration can be
+    fetched from
+    <A
+      href="https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json"
+      >https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json</A
+    >. At the time of writing this it returned this JSON content (formatted for readability):
   </p>
   <Code lang={json}
     >{`

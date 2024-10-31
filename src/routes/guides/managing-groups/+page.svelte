@@ -34,21 +34,22 @@
     <strong>1.</strong>
     Select a domain (it can also be a subdomain) on which you want to host your party configuration.
     <br />
-    <strong>Note:</strong> You will need to be able to create a file at "/.well-known/dataspace/party-configuration.json"
-    on that domain and it needs to be accessible over "https://" with a valid certificate.
+    <strong>Note:</strong> You will need to be able to create a file at
+    <em>/.well-known/dataspace/party-configuration.json</em>
+    on that domain and it needs to be accessible over <em>https://</em> with a valid certificate.
   </p>
   <p>
     <strong>2.</strong>
-    Create the party-configuration.json and host it on the desired domain. See
-    <a href="/schemas/party-configuration/">party configuration schema</a>
+    Create the <em>party-configuration.json</em> and host it on the desired domain. See
+    <A href="/schemas/party-configuration/">party configuration schema</A>
     for more details.
   </p>
   <p>
     <strong>3.</strong>
-    Ensure the jwks_uri points to some "https://" based domain and a location you can control. A suggestion
-    is to point it to the /.well-known/jwks.json on the same domain as the party configuration.<br
-    />Example from
-    <a href="/schemas/party-configuration">https://docs.ioxio.dev/schemas/party-configuration</a>:
+    Ensure the <em>jwks_uri</em> points to some <em>https://</em> based domain and a location you
+    can control. A suggestion is to point it to the <em>/.well-known/jwks.json</em> on the same
+    domain as the party configuration.<br />Example from
+    <A href="/schemas/party-configuration">https://docs.ioxio.dev/schemas/party-configuration</A>:
   </p>
   <Code lang={json}
     >{`
@@ -59,11 +60,14 @@
   </Code>
   <p>
     <strong>4.</strong>
-    Create the content for the jwks_uri and host it in the location you specified in the party configuration.
-    For this, you will need to generate an RSA public/private keypair. Ensure there is at least one key
-    and that it has a kid, kty is RSA, use is set to sig, alg is RS256 and it has the n and e parameters.
-    Here is an example of what it should look like from
-    <a href="https://ioxio.com/.well-known/jwks.json">https://ioxio.com/.well-known/jwks.json</a>:
+    Create the content for the <em>jwks_uri</em> and host it in the location you specified in the
+    party configuration. For this, you will need to generate an RSA public/private keypair. Ensure
+    there is at least one key and that it has a <em>kid</em>, the <em>kty</em> is <em>RSA</em>, the
+    <em>use</em>
+    is set to <em>sig</em>, the <em>alg</em>
+    is <em>RS256</em> and it has the <em>n</em> and <em>e</em> parameters. Here is an example of
+    what it should look like from
+    <A href="https://ioxio.com/.well-known/jwks.json">https://ioxio.com/.well-known/jwks.json</A>:
   </p>
 
   <Code lang={json}

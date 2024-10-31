@@ -103,8 +103,14 @@
   },
   "VERIFY_CONSENT": {
     "DECODED_CONSENT_TOKEN": {
-      "src": "/guides/verifying-constent-in-data-source/decoded_consent_token.png",
+      "src": "/guides/verifying-consent-in-data-source/decoded_consent_token.png",
       "alt": ""
+    }
+  },
+  "VERIFY_ID_TOKEN": {
+    "VIEW_JWT_TOKEN": {
+      "src": "/guides/verifying-id-token/view-jwt-token.png",
+      "alt": "View of decoded JWT token"
     }
   }
 }
