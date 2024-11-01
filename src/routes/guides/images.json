@@ -2,115 +2,115 @@
   "BUILD_DATA_DEF": {
     "PRE_COMMIT": {
       "src": "/guides/building-a-data-definition/pre_commit.png",
-      "alt": ""
+      "alt": "pre-commit screenshot"
     },
     "PULL_REQUEST": {
       "src": "/guides/building-a-data-definition/pull_request.png",
-      "alt": ""
+      "alt": "Creating pull request in GitHub"
     }
   },
   "BUILD_DATA_SOURCE": {
     "CREATE_NEW_DS": {
       "src": "/guides/building-a-data-source/create_new_ds.png",
-      "alt": ""
+      "alt": "Create new data source page in Developer Portal"
     },
     "EDIT_DS": {
       "src": "/guides/building-a-data-source/edit_ds.png",
-      "alt": ""
+      "alt": "Edit data source page in Developer Portal"
     }
   },
   "BUILD_APP": {
     "API_DOCS": {
       "src": "/guides/building-an-application/api_docs.png",
-      "alt": ""
+      "alt": "SwaggerUI page with API docs"
     },
     "AVAILABLE_DATA_SOURCES": {
       "src": "/guides/building-an-application/available_data_sources.png",
-      "alt": ""
+      "alt": "Available data sources page in Developer Portal"
     },
     "AVAILABLE_DATA_SOURCES_2": {
       "src": "/guides/building-an-application/available_data_sources_2.png",
-      "alt": ""
+      "alt": "Available data sources page in Developer Portal"
     },
     "CONSENT_PORTAL_AFTER_LOGGING_IN": {
       "src": "/guides/building-an-application/consent_portal_after_logging_in.png",
-      "alt": ""
+      "alt": "Consent portal page"
     },
     "CREATE_AN_APPLICATION_PAGE": {
       "src": "/guides/building-an-application/create_an_application_page.png",
-      "alt": ""
+      "alt": "Create application page in Developer Portal"
     },
     "DECODED_CONSENT_REQUEST_TOKEN": {
       "src": "/guides/building-an-application/decoded_consent_request_token.png",
-      "alt": ""
+      "alt": "Decoded consent request token"
     },
     "DECODED_CONSENT_REQUEST_TOKEN_2": {
       "src": "/guides/building-an-application/decoded_consent_request_token_2.png",
-      "alt": ""
+      "alt": "Decoded consent request token"
     },
     "DEFINITION_VIEWER": {
       "src": "/guides/building-an-application/definition_viewer.png",
-      "alt": ""
+      "alt": "Definition Viewer page"
     },
     "DEFINITION_VIEWER_BROWSE": {
       "src": "/guides/building-an-application/definition_viewer_browse.png",
-      "alt": ""
+      "alt": "Browse definitions page"
     },
     "DEFINITION_VIEWER_DROPDOWN": {
       "src": "/guides/building-an-application/definition_viewer_dropdown.png",
-      "alt": ""
+      "alt": "Definitions dropdown"
     },
     "DS_DETAILS": {
       "src": "/guides/building-an-application/ds_details.png",
-      "alt": ""
+      "alt": "Data source details page"
     },
     "DS_DETAILS_SIG_RIGHTS": {
       "src": "/guides/building-an-application/ds_details_sig_rights.png",
-      "alt": ""
+      "alt": "Data source details"
     },
     "DS_SEARCH": {
       "src": "/guides/building-an-application/ds_search.png",
-      "alt": ""
+      "alt": "Available data sources search page"
     },
     "THE_CONSENT_PORTAL": {
       "src": "/guides/building-an-application/the_consent_portal.png",
-      "alt": ""
+      "alt": "Consent portal page"
     }
   },
   "MANAGE_GROUP": {
     "EDITING_A_GROUP": {
       "src": "/guides/managing-groups/editing_a_group.png",
-      "alt": ""
+      "alt": "Editing a group page in Developer Portal"
     },
     "PAGE_FOR_CREATING_GROUPS": {
       "src": "/guides/managing-groups/page_for_creating_groups.png",
-      "alt": ""
+      "alt": "Create a group page in Developer Portal"
     }
   },
   "USING_LOGIN_PROVIDER": {
     "CREATE_AN_APPLICATION_PAGE": {
       "src": "/guides/using-login-provider/create_an_application_page.png",
-      "alt": ""
+      "alt": "Create an application page in Developer Portal"
     },
     "MY_APPLICATIONS_PAGE": {
       "src": "/guides/using-login-provider/my_applications_page.png",
-      "alt": ""
+      "alt": "My application page in Developer Portal"
     },
     "THE_CREATED_APPLICATION": {
       "src": "/guides/using-login-provider/the_created_application.png",
-      "alt": ""
+      "alt": "Created application page"
     }
   },
   "VERIFY_CONSENT": {
     "DECODED_CONSENT_TOKEN": {
       "src": "/guides/verifying-consent-in-data-source/decoded_consent_token.png",
-      "alt": ""
+      "alt": "Decoded consent token"
     }
   },
   "VERIFY_ID_TOKEN": {
     "VIEW_JWT_TOKEN": {
       "src": "/guides/verifying-id-token/view-jwt-token.png",
-      "alt": "View of decoded JWT token"
+      "alt": "Decoded JWT token"
     }
   }
 }

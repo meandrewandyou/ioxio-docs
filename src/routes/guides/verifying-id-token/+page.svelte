@@ -10,6 +10,8 @@
   import GuideImage from "$lib/components/GuideImage.svelte"
 
   export let data: PageData
+
+  const images = data.images
 </script>
 
 <TableOfContents>
