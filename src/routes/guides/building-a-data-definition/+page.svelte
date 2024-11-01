@@ -233,7 +233,7 @@ pre-commit install
       >src/test/ioxio-dataspace-guides/Country/BasicInfo.py</em
     >:
   </p>
-  <Code lang={python}>
+  <Code lang={python} lineNumbers>
     {`
 from definition_tooling.converter import CamelCaseModel, DataProductDefinition
 from pydantic import Field
@@ -551,7 +551,7 @@ class BasicCountryInfoResponse(CamelCaseModel):
     If you've followed along the guide so far, the <em>Country/BasicInfo.py</em> file should now look
     like this in it's entirety:
   </p>
-  <Code lang={python}>
+  <Code lang={python} lineNumbers>
     {`
 from typing import List, Optional
 
