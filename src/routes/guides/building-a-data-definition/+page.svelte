@@ -712,7 +712,7 @@ git push --set-upstream origin adding-my-definition
   <p>
     If you spot things you want to change in the definition you can submit a pull request with
     changes to your own definition. You can optionally increment the version number of the
-    definition each time; i.e. to 0.0.2, 0.0.3 etc.
+    definition each time; i.e. to <em>0.0.2</em>, <em>0.0.3</em> etc.
   </p>
   <p>
     Once you've tested the definition and are somewhat happy with it and think it could be tested in
