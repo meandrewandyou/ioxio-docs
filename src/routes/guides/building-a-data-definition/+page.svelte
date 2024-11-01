@@ -646,7 +646,7 @@ DEFINITION = DataProductDefinition(
     OpenAPI spec from the python file. Let's go back to the command line and ensure we're in the
     root of the repository we cloned.
   </p>
-  <p class="MuiTypography-root MuiTypography-body1 css-18biqfg">
+  <p>
     Let's add the new definition file to it and run the pre-commit hooks to see that it creates the
     OpenAPI spec file. Then let's add the OpenAPI spec file and commit it. Note that you might get
     some changes to the <em>BasicInfo.py</em> file due to the
