@@ -100,17 +100,13 @@ pre-commit install
   <h3>Create a new branch</h3>
   <p>Create a new branch for your new definition, for example by running:</p>
 
-  <Code lang={json}>
+  <Code lang={bash}>
     {`
     git checkout -b adding-my-definition
-
-`}
+    `}
   </Code>
 
-  <SectionTitle
-    title="Creating a new definition
-"
-  />
+  <SectionTitle title="Creating a new definition" />
   <p>
     This guide explains how to create a new definition using a python file (with models based on the <A
       href="https://docs.pydantic.dev/1.10/">pydantic library</A
@@ -197,10 +193,8 @@ pre-commit install
   <Code lang={json}>
     {`
 {
-   "code": "FI",
-
+   "code": "FI"
 }
-
 `}
   </Code>
   <h3>Where do we create the definition?</h3>
