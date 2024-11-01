@@ -650,10 +650,8 @@ DEFINITION = DataProductDefinition(
     Let's add the new definition file to it and run the pre-commit hooks to see that it creates the
     OpenAPI spec file. Then let's add the OpenAPI spec file and commit it. Note that you might get
     some changes to the <em>BasicInfo.py</em> file due to the
-    <a href="https://black.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer"
-      >black</a
-    > pre-commit hook reformatting it slightly. In that case, you'll also need to add that file again
-    before you'll be able to commit.
+    <A href="https://black.readthedocs.io/en/stable/">black</A> pre-commit hook reformatting it slightly.
+    In that case, you'll also need to add that file again before you'll be able to commit.
   </p>
   <p>Here are the commands you should need to run:</p>
   <Code lang={bash}
