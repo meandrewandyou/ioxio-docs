@@ -265,7 +265,7 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   </p>
   <Code lang={json}>{'{"dataSource": "dpp://<source>@<dataspace-domain>/<definition>"}'}</Code>
   <p>
-    Make sure you replace the source with the name of your own data source (group + optional tag
+    Make sure you replace the source with the name of your own data source (group + optional variant
     separated by a colon), specify the dataspace domain and the definition your datasource is using.
     Here is what the request would look like as a cURL command with the respective tokens shortened
     down for readability:
