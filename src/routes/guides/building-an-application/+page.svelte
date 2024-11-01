@@ -107,16 +107,15 @@
       If you prefer to look at the raw OpenAPI Spec files or use some specific tool for inspecting
       them, you can go to the <A href="https://github.com/ioxio-dataspace/sandbox-definitions/"
         >GitHub repository for the sandbox-definitions</A
-      >. The data source definitions are found in the DataProducts directory.
+      >. The data source definitions are found in the <em>DataProducts</em> directory.
     </p>
     <h3>No matching definition?</h3>
     <p>
       If you don't find any data source definition providing the data you need, you can also consult
-      the guide <A href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A> to create your
+      the <A href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A> guide to create your
       own definition. The definition alone is of little use unless someone also provides a data source
-      for the data. The guide
-      <A href={GUIDES.BUILD_DATA_SOURCE.href}>{GUIDES.BUILD_DATA_SOURCE.title}</A> explains how you or
-      someone else could build a data source for the definition.
+      for the data. The <A href={GUIDES.BUILD_DATA_SOURCE.href}>{GUIDES.BUILD_DATA_SOURCE.title}</A>
+      guide explains how you or someone else could build a data source for the definition.
     </p>
 
     <SectionTitle title="Finding an available data source" />
@@ -275,8 +274,8 @@
       and <em>v</em> must be
       <em>"0.2"</em>, for now the <em>alg</em> should be set to
       <em>"RS256"</em>). Below is an example of what should be contained in the header and body. The
-      JWT should be signed with the key corresponding to the kid used in the header. You can check
-      out
+      JWT should be signed with the key corresponding to the <em>kid</em> used in the header. You
+      can check out
       <A href="/schemas/consent-request-token/">the consent request token page</A> to get details of
       each field.
     </p>
@@ -308,13 +307,13 @@
     </Code>
     <p>
       Here is an example of what a decoded Consent Request Token could look like when decoded at
-      jwt.io:
+      <A href="https://jwt.io">jwt.io</A>:
     </p>
     <GuideImage img={images.DECODED_CONSENT_REQUEST_TOKEN} />
     <h3>Request consent</h3>
     <p>
       In order to be able to request consent from the user you will need to first authenticate the
-      user and obtain the id_token for the user. This is explained in the <A
+      user and obtain the <em>id_token</em> for the user. This is explained in the <A
         href={GUIDES.USING_LOGIN_PROVIDER.href}>{GUIDES.USING_LOGIN_PROVIDER.title}</A
       > guide. You will also need the Data Source Identifier and Consent Request Token both described
       above.
@@ -323,18 +322,18 @@
       The consent request is created by doing a <em>POST</em> request to the
       <em>/Consent/RequestConsents</em>
       endpoint on the Consent Portal, for example,
-      <em>https://consent.sandbox.ioxio-dataspace.com/Consent/RequestConsents</em>. The Content-Type
+      <em>https://consent.sandbox.ioxio-dataspace.com/Consent/RequestConsents</em>. The
+      <em>Content-Type</em>
       header has to be set to <em>application/json</em> and the
       <em>X-Consent-Request-Token</em> header should contain the consent request token. You can request
       multiple consents at a time.
     </p>
     <p>
       The JSON body of the request should be an array of consent requests with each having the
-      dataSource field set to the Data Source Identifier and the required field set to either <em
-        >true</em
-      >
+      <em>dataSource</em> field set to the Data Source Identifier and the required field set to
+      either <em>true</em>
       or <em>false</em>. True means if consent is denied for it then consent will be denied for
-      every other one while False means it's optional and denying it consent doesn't affect others.
+      every other one while false means it's optional and denying it consent doesn't affect others.
       The body could thus look like this:
     </p>
     <Code lang={json}
@@ -403,16 +402,17 @@ curl --request POST \\
     <GuideImage img={images.CONSENT_PORTAL_AFTER_LOGGING_IN} />
     <p>
       The user will be redirected back to the return URL with an added <em>?status=fail</em>
-      or <em>?status=success</em> query parameter, e.g. either to https://my-app.example.com/?status=fail
-      or https://my-app.example.com/?status=success.
+      or <em>?status=success</em> query parameter, e.g. either to
+      <em>https://my-app.example.com/?status=fail</em>
+      or <em>https://my-app.example.com/?status=success</em>.
     </p>
     <h3>Request the consent token</h3>
     <p>
       When the user has returned you need to retrieve the consent token. This is done by sending a
       <em>POST</em> request to the <em>/Consent/GetToken</em>
-      endpoint. The Content-Type header has to be set to <em>application/json</em> and the
-      <em>X-Consent-Request-Token</em> header should contain the consent request token. The JSON body
-      should be the dataSource field set to the Data Source Identifier i.e.
+      endpoint. The <em>Content-Type</em> header has to be set to <em>application/json</em> and the
+      <em>X-Consent-Request-Token</em> header should contain the consent request token. The JSON
+      body should be the <em>dataSource</em> field set to the Data Source Identifier i.e.
     </p>
     <Code lang={bash}
       >{`
@@ -448,9 +448,10 @@ curl --request POST \\
     <h3>Using the consent token</h3>
     <p>
       Once you've got the consent token for the user, you can do a request to the data source
-      through the product gateway. Just remember to add the <strong>Authorization</strong> header
-      with the id_token as a Bearer Token and the consent token in the
-      <strong>X-Consent-Token</strong> header.
+      through the product gateway. Just remember to add the <em>Authorization</em> header with the
+      <em>id_token</em>
+      as a Bearer Token and the consent token in the
+      <em>X-Consent-Token</em> header.
     </p>
     <p>Using cURL the request would look similar to this:</p>
     <Code lang={bash}
