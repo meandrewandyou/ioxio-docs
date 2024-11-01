@@ -260,8 +260,8 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     <em>POST</em>
     request with the <em>Authorization: Bearer &lt;token&gt;</em> and the
     <em>X-Consent-Token &lt;consent token&gt;</em>
-    headers. The body is expected to be in JSON format (Content-Type: application/json) and contain a
-    body of the form:
+    headers. The body is expected to be in JSON format (<em>Content-Type: application/json</em>) and
+    contain a body of the form:
   </p>
   <Code lang={json}>{'{"dataSource": "dpp://<source>@<dataspace-domain>/<definition>"}'}</Code>
   <p>
