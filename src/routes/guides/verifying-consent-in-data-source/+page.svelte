@@ -263,7 +263,7 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     headers. The body is expected to be in JSON format (<em>Content-Type: application/json</em>) and
     contain a body of the form:
   </p>
-  <Code lang={json}>{'{"dataSource": "dpp://<source>@<dataspace-domain>/<definition>"}'}</Code>
+  <Code lang={json}>{'{"dataSource": "dpp://{source}@{dataspace-domain}/{definition}"}'}</Code>
   <p>
     Make sure you replace the source with the name of your own data source (group + optional variant
     separated by a colon), specify the dataspace domain and the definition your datasource is using.
