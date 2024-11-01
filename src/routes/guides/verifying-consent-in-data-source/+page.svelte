@@ -136,23 +136,23 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
 }
   `}</Code
   >
-  <p>The jwks_uri specify where we can find the keys of this consent provider.</p>
+  <p>The <em>jwks_uri</em> specify where we can find the keys of this consent provider.</p>
   <p>
-    For convenience the JWT token also contains the jku (JSON Web Key Set URL) header with the same
-    value. This is what for example jwt.io uses to fetch the key to verify the signature of the
-    token.
+    For convenience the JWT token also contains the <em>jku</em> (JSON Web Key Set URL) header with
+    the same value. This is what for example <A href="https://jwt.io">jwt.io</A> uses to fetch the key
+    to verify the signature of the token.
   </p>
 
   <p>
-    Please note that you should validate the iss or jku match what you expect to find on the
-    dataspace you are working on before fetching keys to ensure they are indeed keys that should be
-    trusted on the particular dataspace.
+    Please note that you should validate the <em>iss</em> or <em>jku</em> match what you expect to find
+    on the dataspace you are working on before fetching keys to ensure they are indeed keys that should
+    be trusted on the particular dataspace.
   </p>
 
   <SectionTitle title="Find the key" />
   <p>
-    At the time of writing this, the jwks_uri <A
-      href="https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json"
+    At the time of writing this, the <em>jwks_uri</em>
+    <A href="https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json"
       >https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json</A
     >
     returned this JSON content (formatted for readability):
@@ -177,7 +177,7 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <p>
     Use the key entry with a
     <em>kid</em> (Key ID) and <em>alg</em> (Algorithm) matching the values in the consent token and
-    has the use set to <em>sig</em> (signing). You can read more about JWKS in <A
+    has the <em>use</em> set to <em>sig</em> (signing). You can read more about JWKS in <A
       href="https://datatracker.ietf.org/doc/html/rfc7517">RFC 7517: JSON Web Key (JWK)</A
     >.
   </p>
@@ -192,9 +192,9 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <SectionTitle title="Caching" />
   <p>
     Please note that for performance reasons you should use some level of caching. The address of
-    the jwks_uri is for example not likely to change in practice. The keys are neither rotated
-    frequently, so they could be cached for some time, but it's still important they get refreshed
-    once in a while.
+    the <em>jwks_uri</em> is for example not likely to change in practice. The keys are neither rotated
+    frequently, so they could be cached for some time, but it's still important they get refreshed once
+    in a while.
   </p>
   <SectionTitle title="Verifying token signature" />
   <p>
