@@ -701,6 +701,7 @@ git push --set-upstream origin adding-my-definition
     cases the maintainers might also ask for adjustments or reject the pull request. Please follow
     the updates posted on the pull request.
   </p>
+  <h3>Next steps</h3>
   <p>
     Once the definition has been merged you can start using it in data sources, for that you might
     want to check out the <A href={GUIDES.BUILD_DATA_SOURCE.href}
