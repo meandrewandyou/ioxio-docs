@@ -34,6 +34,12 @@ export const GUIDES = {
     alt: "Data schemas",
     cardImage: DataSchemasIcon,
   },
+  MANAGE_GROUP_MEMBERS: {
+    title: "How to manage group members",
+    href: "/guides/managing-group-members",
+    alt: "Data schemas",
+    cardImage: DataSchemasIcon,
+  },
   USING_LOGIN_PROVIDER: {
     title: "How to use dataspace login in an application",
     href: "/guides/using-login-provider",
