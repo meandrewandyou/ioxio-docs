@@ -452,13 +452,11 @@ content-length: 95
   </p>
   <SectionTitle title="Next steps" />
   <p>
-    If you created the data source definition under your own <em>test/</em>
-    <your-own-name>
-      namespace, you likely want to submit a pull request to copy it outside the test namespace and
-      add a version or copy it to the repository used for definitions in a production Dataspace.
-      Note that you will also need to adjust your productizer to accept the request at the updated
-      path or ensure it will accept requests on multiple different paths.
-    </your-own-name>
+    If you created the data source definition under your own <em>test/&lt;your-own-name&gt;</em>
+    namespace, you likely want to submit a pull request to copy it outside the test namespace and add
+    a version or copy it to the repository used for definitions in a production Dataspace. Note that
+    you will also need to adjust your productizer to accept the request at the updated path or ensure
+    it will accept requests on multiple different paths.
   </p>
   <p>
     When the definition has been published, you will need to add the data source once more. This
