@@ -39,9 +39,9 @@
       Go to my applications submenu in the developer portal and click on the button to add an
       application. Fill in all the necessary fields, select a group and click the Create button.
       You'll have to pick one of the groups you must have created beforehand. The steps required for
-      creating a group are detailed in the <A href={GUIDES.MANAGE_GROUP.href}
-        >{GUIDES.MANAGE_GROUP.title}</A
-      > guide.
+      creating a group are detailed in the <A href={GUIDES.MANAGE_GROUP.href}>
+        {GUIDES.MANAGE_GROUP.title}
+      </A> guide.
     </p>
     <GuideImage img={images.CREATE_AN_APPLICATION_PAGE} />
     <h2>What features does the IOXIO® Dataspace bring to an application?</h2>
@@ -105,9 +105,10 @@
     <h3>GitHub repository</h3>
     <p>
       If you prefer to look at the raw OpenAPI Spec files or use some specific tool for inspecting
-      them, you can go to the <A href="https://github.com/ioxio-dataspace/sandbox-definitions/"
-        >GitHub repository for the sandbox-definitions</A
-      >. The data source definitions are found in the <em>DataProducts</em> directory.
+      them, you can go to the
+      <A href="https://github.com/ioxio-dataspace/sandbox-definitions/">
+        GitHub repository for the sandbox-definitions
+      </A>. The data source definitions are found in the <em>DataProducts</em> directory.
     </p>
     <h3>No matching definition?</h3>
     <p>
@@ -122,18 +123,18 @@
     <p>
       Log in to the <A href="https://developer.sandbox.ioxio-dataspace.com/">developer portal</A> and
       navigate to the
-      <A href="https://developer.sandbox.ioxio-dataspace.com/sources/available"
-        >Available data sources</A
-      > section and use the dropdown to list the available data sources for the desired definition.
+      <A href="https://developer.sandbox.ioxio-dataspace.com/sources/available">
+        Available data sources
+      </A> section and use the dropdown to list the available data sources for the desired definition.
     </p>
     <GuideImage img={images.DS_SEARCH} />
 
     <p>You will get a list of all different data sources providing that data.</p>
     <p>
       If there are no matching sources, you might want to consider building your own data source or
-      request someone to build it, following the <A href={GUIDES.BUILD_DATA_SOURCE.href}
-        >{GUIDES.BUILD_DATA_SOURCE.title}</A
-      > guide.
+      request someone to build it, following the <A href={GUIDES.BUILD_DATA_SOURCE.href}>
+        {GUIDES.BUILD_DATA_SOURCE.title}
+      </A> guide.
     </p>
 
     <SectionTitle title="Requesting the data from a data source" />
@@ -150,14 +151,15 @@
     </p>
     <p>
       In order to request the data, you need to know what data to include in the request. The
-      required data is best explained in the <A
-        href="https://gateway.sandbox.ioxio-dataspace.com/docs#Data%20Products"
-        >Product Gateway API Docs for Data Products</A
-      >. In the section
+      required data is best explained in the
+      <A href="https://gateway.sandbox.ioxio-dataspace.com/docs#Data%20Products">
+        Product Gateway API Docs for Data Products
+      </A>. In the section
       <A
         href="https://gateway.sandbox.ioxio-dataspace.com/docs#/Data%20Products/Weather_Current_Metric_v1_0_Weather_Current_Metric_v1_0_post"
-        >Weather/Current/Metric_v1.0</A
-      > you can see an example:
+      >
+        Weather/Current/Metric_v1.0
+      </A> you can see an example:
     </p>
     <GuideImage img={images.API_DOCS} />
     <p>
@@ -188,8 +190,8 @@
       example to query for the weather in Helsinki using the definition mentioned earlier you could
       use this data:
     </p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
    "lat": 60.192059,
    "lon": 24.945831
@@ -200,8 +202,8 @@
       The response would follow the description in the definition and could for example for Helsinki
       look like this:
     </p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
    "humidity": 72,
    "pressure": 1007,
@@ -225,9 +227,9 @@
     </p>
     <SectionTitle title="Authenticating users" />
     <p>
-      There's a separate guide called <A href={GUIDES.USING_LOGIN_PROVIDER.href}
-        >{GUIDES.USING_LOGIN_PROVIDER.title}</A
-      > that goes into details on how you register your application and use the login portal for authentication
+      There's a separate guide called <A href={GUIDES.USING_LOGIN_PROVIDER.href}>
+        {GUIDES.USING_LOGIN_PROVIDER.title}
+      </A> that goes into details on how you register your application and use the login portal for authentication
       to obtain the <em>id_token</em> for a user.
     </p>
     <SectionTitle title="Using consent" />
@@ -268,9 +270,9 @@
     <p>
       This is a JWT that you have to create and it needs to have the following extra information in
       the header (the <em>kid</em> needs to match one of the keys you published through the
-      <A href="{GUIDES.MANAGE_GROUP.href}#creating-and-hosting-party-configuration"
-        >party-configuration for the group of your application</A
-      >
+      <A href="{GUIDES.MANAGE_GROUP.href}#creating-and-hosting-party-configuration">
+        party-configuration for the group of your application
+      </A>
       and <em>v</em> must be
       <em>"0.2"</em>, for now the <em>alg</em> should be set to
       <em>"RS256"</em>). Below is an example of what should be contained in the header and body. The
@@ -280,8 +282,8 @@
       each field.
     </p>
     <p>Header</p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
     "v": "0.2",
     "kid": "2d149479-88a6-4141-ad4c-b14c92f430bc",
@@ -290,8 +292,8 @@
     `}
     </Code>
     <p>Body</p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
     "iss": "https://example.com",
     "sub": "debade8a-091d-42da-9b0c-e61f9471e2c3",
@@ -313,9 +315,10 @@
     <h3>Request consent</h3>
     <p>
       In order to be able to request consent from the user you will need to first authenticate the
-      user and obtain the <em>id_token</em> for the user. This is explained in the <A
-        href={GUIDES.USING_LOGIN_PROVIDER.href}>{GUIDES.USING_LOGIN_PROVIDER.title}</A
-      > guide. You will also need the Data Source Identifier and Consent Request Token both described
+      user and obtain the <em>id_token</em> for the user. This is explained in the
+      <A href={GUIDES.USING_LOGIN_PROVIDER.href}>
+        {GUIDES.USING_LOGIN_PROVIDER.title}
+      </A> guide. You will also need the Data Source Identifier and Consent Request Token both described
       above.
     </p>
     <p>
@@ -336,8 +339,8 @@
       every other one while false means it's optional and denying it consent doesn't affect others.
       The body could thus look like this:
     </p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
   "consentRequests": [
      {
@@ -349,8 +352,8 @@
     `}
     </Code>
     <p>Expressed as a cURL command the whole request would look like this:</p>
-    <Code lang={bash}
-      >{`
+    <Code lang={bash}>
+      {`
 curl --request POST \\
   --url 'https://consent.sandbox.ioxio-dataspace.com/Consent/RequestConsents' \\
   --header 'Content-Type: application/json' \\
@@ -368,8 +371,8 @@ curl --request POST \\
     <p>
       and the response would look similar to this if the user has already granted all the consents:
     </p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
   "type": "allConsentsGranted"
 }
@@ -377,8 +380,8 @@ curl --request POST \\
     </Code>
     <p>If that is the case then you can skip to requesting the consent token section.</p>
     <p>It would look similar to this if the user has not yet granted the consent:</p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
  "type": "requestUserConsent",
  "missingConsents": [{"dataSource":"dpp://ioxio@sandbox.ioxio-dataspace.com/NSG/Agent/LegalEntity/NonListedCompany/SignatoryRights_v1.0","required":true}],
@@ -392,9 +395,9 @@ curl --request POST \\
       you should also add the query parameter <em>returnUrl</em> to indicate where the consent
       portal should redirect the user to after giving the consent (or declining it). Thus you would
       be redirecting the user to something similar to
-      <em
-        >https://consent.sandbox.ioxio-dataspace.com/request/86c0c7e6-4453-41c3-b20b-857ea41ea67b?returnUrl=https://my-app.example.com</em
-      >
+      <em>
+        https://consent.sandbox.ioxio-dataspace.com/request/86c0c7e6-4453-41c3-b20b-857ea41ea67b?returnUrl=https://my-app.example.com
+      </em>
     </p>
     <p>The user will be displayed a prompt to log in:</p>
     <GuideImage img={images.THE_CONSENT_PORTAL} />
@@ -414,8 +417,8 @@ curl --request POST \\
       <em>X-Consent-Request-Token</em> header should contain the consent request token. The JSON
       body should be the <em>dataSource</em> field set to the Data Source Identifier i.e.
     </p>
-    <Code lang={bash}
-      >{`
+    <Code lang={bash}>
+      {`
 curl --request POST \\
   --url 'https://consent.sandbox.ioxio-dataspace.com/Consent/GetToken' \\
   --header 'Content-Type: application/json' \\
@@ -424,8 +427,8 @@ curl --request POST \\
     `}
     </Code>
     <p>This time the response would look similar to this:</p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
   "type": "consentGranted",
   "consentToken": "eyJ..."
@@ -437,8 +440,8 @@ curl --request POST \\
       get token request it's possible to get a new token as long as the consent remains valid.
     </p>
     <p>The response will look like this if consent has not been granted or has been revoked:</p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
   "type": "missingConsent"
 }
@@ -454,8 +457,8 @@ curl --request POST \\
       <em>X-Consent-Token</em> header.
     </p>
     <p>Using cURL the request would look similar to this:</p>
-    <Code lang={bash}
-      >{`
+    <Code lang={bash}>
+      {`
 curl --request POST \\
   --url 'https://gateway.sandbox.ioxio-dataspace.com/NSG/Agent/LegalEntity/NonListedCompany/SignatoryRights_v1.0?source=ioxio' \\
   --header 'Content-Type: application/json' \\

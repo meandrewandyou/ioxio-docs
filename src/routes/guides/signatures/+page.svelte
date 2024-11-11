@@ -25,34 +25,33 @@
 
   <SectionTitle title="Encoded signed data" />
   <p>
-    Following the header there is the signed data, encoded in <A
-      href="https://datatracker.ietf.org/doc/rfc9285/">Base45</A
-    >, used commonly in e.g. the EU COVID passports and other standards where QR codes need to be
-    used to represent arbitrary binary data.
+    Following the header there is the signed data, encoded in
+    <A href="https://datatracker.ietf.org/doc/rfc9285/">Base45</A>, used commonly in e.g. the EU
+    COVID passports and other standards where QR codes need to be used to represent arbitrary binary
+    data.
   </p>
 
   <p>
     The data is signed with <A href="https://cose-wg.github.io/cose-spec/">COSE</A> (CBOR Object Signing
-    and Encryption), effectively a version of the JOSE system but for CBOR, and <A
-      href="https://cbor.io">CBOR</A
-    > itself is a more efficiently packed binary friendly format similar to JSON.
+    and Encryption), effectively a version of the JOSE system but for CBOR, and
+    <A href="https://cbor.io">CBOR</A> itself is a more efficiently packed binary friendly format similar
+    to JSON.
   </p>
 
   <p>
-    By parsing the COSE signature without verifying it, you should be able to get the JWKS <em
-      >kid</em
-    >
-    and <em>alg</em>
-    from the COSE header, as well as the payload. You can use the <em>iss</em> from the payload to
-    fetch the <a href="/tags/metadata/#product-passport.json">product-passport.json</a>, which
-    points to the <a href="/tags/metadata/#jwks.json">jwks.json</a>. Once you load that file, you
-    can use the other properties to determine the correct key to verify the signature with.
+    By parsing the COSE signature without verifying it, you should be able to get the JWKS
+    <em>kid</em> and <em>alg</em> from the COSE header, as well as the payload. You can use the
+    <em>iss</em> from the payload to fetch the
+    <a href="/tags/metadata/#product-passport.json">product-passport.json</a>, which points to the
+    <a href="/tags/metadata/#jwks.json">jwks.json</a>. Once you load that file, you can use the
+    other properties to determine the correct key to verify the signature with.
   </p>
 
   <p>
-    Check out the <em>verify_code</em> function in <A
-      href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/app/tag.py">our demo application</A
-    > for a full example.
+    Check out the <em>verify_code</em> function in
+    <A href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/app/tag.py"
+      >our demo application
+    </A> for a full example.
   </p>
 
   <SectionTitle title="Payload" />
@@ -63,9 +62,9 @@
 
   <p>
     The data is signed with <A href="https://cose-wg.github.io/cose-spec/">COSE</A> (CBOR Object Signing
-    and Encryption), effectively a version of the JOSE system but for CBOR, and <A
-      href="https://cbor.io">CBOR</A
-    > itself is a more efficiently packed binary friendly format similar to JSON.
+    and Encryption), effectively a version of the JOSE system but for CBOR, and
+    <A href="https://cbor.io">CBOR</A> itself is a more efficiently packed binary friendly format similar
+    to JSON.
   </p>
 
   <SectionTitle title="Parsing process" />
@@ -89,15 +88,15 @@
     </li>
     <li>Verify the COSE signature matches the key provided via JWKS</li>
     <li>
-      Fetch <em
-        >https://{"{"}payload.iss{"}"}/.well-known/product-passport/{"{"}payload.product{"}"}.json</em
-      >
+      Fetch <em>
+        https://{"{"}payload.iss{"}"}/.well-known/product-passport/{"{"}payload.product{"}"}.json
+      </em>
       for <a href="/tags/metadata/#%7Bproduct%7D.json">product metadata</a>
     </li>
     <li>
-      Fetch <em
-        >https://{"{"}product_dataspace{"}"}.well-known/dataspace/dataspace-configuration.json</em
-      >
+      Fetch <em>
+        https://{"{"}product_dataspace{"}"}.well-known/dataspace/dataspace-configuration.json
+      </em>
     </li>
     <li>
       Proceed to do what you wish with the <em>supported_dataproducts</em> from the
@@ -108,10 +107,12 @@
   </ol>
 
   <p>
-    Check out our Sandbox's <A
+    Check out our Sandbox's
+    <A
       href="https://sandbox.ioxio-dataspace.com/.well-known/dataspace/dataspace-configuration.json"
-      >dataspace-configuration.json</A
     >
+      dataspace-configuration.json
+    </A>
     to see what configuration is available for IOXIO dataspaces.
   </p>
 
@@ -137,16 +138,16 @@ V6MMZ1FLLG17WGDYP51T8W/06:QV43FK7RPC$-1Q+PK%I
   <img alt="example of a signed IOXIO Tag QR code" src="/ioxio-tag-example-signed.png" />
 
   <p>
-    Check out the <em>make_cose_code</em> function in <A
-      href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/app/tag.py">our demo application</A
-    > for a full example.
+    Check out the <em>make_cose_code</em> function in
+    <A href="https://github.com/ioxiocom/ioxio-tags/blob/main/api/app/tag.py">
+      our demo application
+    </A> for a full example.
   </p>
 
   <p>
     You can check out our <A href="https://generator.tags.ioxio.dev">IOXIO Tag&trade; generator</A> and
-    as well as <A href="https://scanner.tags.ioxio.dev">IOXIO Tag&trade; scanner</A>, and their <A
-      href="https://github.com/ioxiocom/ioxio-tags">source code</A
-    > to see how these work in practice.
+    as well as <A href="https://scanner.tags.ioxio.dev">IOXIO Tag&trade; scanner</A>, and their
+    <A href="https://github.com/ioxiocom/ioxio-tags">source code</A> to see how these work in practice.
   </p>
 </TableOfContents>
 

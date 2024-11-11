@@ -51,8 +51,8 @@
     domain as the party configuration.<br />Example from
     <A href="/schemas/party-configuration">https://docs.ioxio.dev/schemas/party-configuration</A>:
   </p>
-  <Code lang={json}
-    >{`
+  <Code lang={json}>
+    {`
 {
   "jwks_uri": "https://ioxio.com/.well-known/jwks.json"
 }
@@ -70,8 +70,8 @@
     <A href="https://ioxio.com/.well-known/jwks.json">https://ioxio.com/.well-known/jwks.json</A>:
   </p>
 
-  <Code lang={json}
-    >{`
+  <Code lang={json}>
+    {`
 {
   "keys": [
     {
