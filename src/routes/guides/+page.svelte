@@ -10,6 +10,7 @@
   import SlackIcon from "$lib/images/slack-icon.svg"
   import Button from "$lib/components/Button.svelte"
   import { GUIDES } from "./urls"
+  import type { PageData } from "./$types"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
@@ -32,8 +33,8 @@
       cardImage: QRCodeIcon,
     },
   ]
-  /** @type {import('./$types').PageData} */
-  export let data
+
+  export let data: PageData
 </script>
 
 <div class="wrapper">

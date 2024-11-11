@@ -6,8 +6,9 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
   import Title from "$lib/components/Title.svelte"
   import TableOfContents from "$lib/components/TableOfContents.svelte"
-  /** @type {import('./$types').PageData} */
-  export let data
+  import type { PageData } from "./$types"
+
+  export let data: PageData
 </script>
 
 <TableOfContents>
