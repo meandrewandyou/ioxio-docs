@@ -1,6 +1,6 @@
 <script lang="ts">
   import SectionTitle from "$lib/components/SectionTitle.svelte"
-  import QRCodeIcon from "$lib/images/card-qr-code-icon.svg?dataurl"
+  import VideoGuideIcon from "$lib/images/video-guide-icon.svg?dataurl"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
@@ -23,14 +23,14 @@
       href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
       cardImageAlt: "QR code",
       target: "_blank",
-      cardImage: QRCodeIcon,
+      cardImage: VideoGuideIcon,
     },
     {
       title: "Productizing Data",
       href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
       cardImageAlt: "QR code",
       target: "_blank",
-      cardImage: QRCodeIcon,
+      cardImage: VideoGuideIcon,
     },
   ]
 
