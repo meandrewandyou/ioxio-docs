@@ -1,6 +1,7 @@
 <script lang="ts">
   import QRCodeIcon from "$lib/images/qr-code-icon.svg"
   import GuidesIcon from "$lib/images/guides-icon.svg"
+  import DataspaceIcon from "$lib/images/dataspace-icon.svg"
 
   import SchemasIcon from "$lib/images/schemas-icon.svg"
   import HomeIcon from "$lib/images/home-icon.svg"
@@ -33,6 +34,8 @@
       case "schemas-icon":
         return SchemasIcon
       case "dataspace-icon":
+        return DataspaceIcon
+      case "guides-icon":
         return GuidesIcon
       default:
         return HomeIcon

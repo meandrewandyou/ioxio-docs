@@ -1,7 +1,6 @@
 <script lang="ts">
   import SectionTitle from "$lib/components/SectionTitle.svelte"
   import QRCodeIcon from "$lib/images/card-qr-code-icon.svg?dataurl"
-  import DataSchemasIcon from "$lib/images/card-schemas-icon.svg?dataurl"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
@@ -21,14 +20,14 @@
     {
       title: "Defining Data Products",
       href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
-      alt: "QR code",
+      cardImageAlt: "QR code",
       target: "_blank",
       cardImage: QRCodeIcon,
     },
     {
       title: "Productizing Data",
       href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
-      alt: "QR code",
+      cardImageAlt: "QR code",
       target: "_blank",
       cardImage: QRCodeIcon,
     },
@@ -39,7 +38,7 @@
 
 <div class="wrapper">
   <TableOfContents>
-    <Title title={`IOXIO Dataspace ®️ guides`} />
+    <Title title={`IOXIO Dataspace™ guides`} />
 
     <Breadcrumbs path={data.path} />
 
@@ -57,7 +56,7 @@
                 <a class="link" href={card.href}>Read more <ArrowIcon /></a>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.alt} />
+                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
               </div>
             </div>
           </Grid>
@@ -75,7 +74,7 @@
                 <a class="link" href={card.href} target={card.target}>Read more <ArrowIcon /></a>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.alt} />
+                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
               </div>
             </div>
           </Grid>
