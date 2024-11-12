@@ -1,5 +1,5 @@
 // @ts-ignore
-import GuidesIcon from "$lib/images/guides-icon.svg?dataurl"
+import GuidesIcon from "$lib/images/guides-card-icon.svg?dataurl"
 
 export const GUIDES = {
   BUILD_APP: {
