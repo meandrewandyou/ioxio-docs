@@ -72,7 +72,7 @@
             <div class="card">
               <div class="card-left">
                 <h2>{card.title}</h2>
-                <a class="link" href={card.href} target={card.target}>Read more <ArrowIcon /></a>
+                <a class="link" href={card.href} target={card.target}>Watch <ArrowIcon /></a>
               </div>
               <div class="card-right">
                 <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
