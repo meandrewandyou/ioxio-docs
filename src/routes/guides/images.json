@@ -88,41 +88,41 @@
     }
   },
   "MANAGE_GROUP_MEMBERS": {
-    "MY_GROUPS_LINK": {
-      "src": "/guides/managing-group-members/my_groups_link.png",
-      "alt": "Link to my groups in the sidebar"
-    },
-    "VIEW_MY_GROUP": {
-      "src": "/guides/managing-group-members/view_my_group.png",
-      "alt": "My groups page"
+    "EDIT_ROLE": {
+      "src": "/guides/managing-group-members/edit_role.png",
+      "alt": "Edit group's member role dialog"
     },
     "MEMBERS_SECTION": {
       "src": "/guides/managing-group-members/group_members_section.png",
       "alt": "Members section of my groups page"
     },
+    "INVITATION_ACCEPTED": {
+      "src": "/guides/managing-group-members/invitation_accepted.png",
+      "alt": "Invited user is in my group members list"
+    },
     "INVITE_DIALOG": {
       "src": "/guides/managing-group-members/invite_dialog.png",
       "alt": "Group member invitation dialog window"
     },
-    "PENDING_INVITATION": {
-      "src": "/guides/managing-group-members/pending_invitation.png",
-      "alt": "Pending invitation in group members list"
+    "MY_GROUPS_LINK": {
+      "src": "/guides/managing-group-members/my_groups_link.png",
+      "alt": "Link to my groups in the sidebar"
     },
     "NEW_INVITATION": {
       "src": "/guides/managing-group-members/new_invitation.png",
       "alt": "Invitation notification on my groups page"
     },
-    "INVITATION_ACCEPTED": {
-      "src": "/guides/managing-group-members/invitation_accepted.png",
-      "alt": "Invited user is in my group members list"
-    },
-    "EDIT_ROLE": {
-      "src": "/guides/managing-group-members/edit_role.png",
-      "alt": "Edit group's member role dialog"
+    "PENDING_INVITATION": {
+      "src": "/guides/managing-group-members/pending_invitation.png",
+      "alt": "Pending invitation in group members list"
     },
     "NEW_ROLE": {
       "src": "/guides/managing-group-members/role_of_member_changed.png",
       "alt": "Edit group's member role dialog"
+    },
+    "VIEW_MY_GROUP": {
+      "src": "/guides/managing-group-members/view_my_group.png",
+      "alt": "My groups page"
     }
   },
   "USING_LOGIN_PROVIDER": {
