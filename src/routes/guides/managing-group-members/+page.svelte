@@ -29,25 +29,25 @@
       configuration domain.
     </li>
   </ul>
-  <p>To send the invite:</p>
+  <SectionTitle title="To send the invite:" />
   <ol>
     <li>
       Navigate to the <b>My groups</b> page via sidebar.
       <GuideImage img={images.MY_GROUPS_LINK} />
     </li>
     <li>
-      Click the View button against the group you’re owner of.
+      Click the <b>View</b> button against the group you’re owner of.
       <GuideImage img={images.VIEW_MY_GROUP} />
     </li>
     <li>
       At the bottom of the page you’ll see a list of current members of the group as well as the
       Invite and Leave buttons (if the Leave button is disabled – it’s because you can’t leave a
-      group you’re the sole owner of). Click Invite.
+      group you’re the sole owner of). Click <b>Invite</b>.
       <GuideImage img={images.MEMBERS_SECTION} />
     </li>
     <li>
       On the dialog window enter the email of the user you want to invite and select the desired
-      role. Click Invite.
+      role. Click <b>Invite</b>.
       <GuideImage img={images.INVITE_DIALOG} />
     </li>
     <li>
@@ -64,11 +64,11 @@
       <GuideImage img={images.INVITATION_ACCEPTED} />
     </li>
   </ol>
-  <p>To edit the member’s role:</p>
+  <SectionTitle title="To edit member's role  :" />
   <ol>
     <li>Click the pencil icon against the user whose role you want to change.</li>
     <li>
-      Select new role. Click Save.
+      Select new role. Click <b>Save</b>.
       <GuideImage img={images.EDIT_ROLE} />
     </li>
     <li>
