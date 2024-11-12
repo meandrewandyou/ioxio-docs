@@ -25,7 +25,7 @@ export const navigation: NavItem[] = [
   },
   {
     name: "Guides",
-    icon: "dataspace-icon",
+    icon: "guides-icon",
     route: "guides",
     children: Object.values(GUIDES).map((g) => ({
       name: g.title,

@@ -1,7 +1,6 @@
 <script lang="ts">
   import SectionTitle from "$lib/components/SectionTitle.svelte"
-  import QRCodeIcon from "$lib/images/card-qr-code-icon.svg?dataurl"
-  import DataSchemasIcon from "$lib/images/card-schemas-icon.svg?dataurl"
+  import VideoGuideIcon from "$lib/images/video-guide-icon.svg?dataurl"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
@@ -11,6 +10,7 @@
   import SlackIcon from "$lib/images/slack-icon.svg"
   import Button from "$lib/components/Button.svelte"
   import { GUIDES } from "./urls"
+  import type { PageData } from "./$types"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
@@ -21,25 +21,25 @@
     {
       title: "Defining Data Products",
       href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
-      alt: "QR code",
+      cardImageAlt: "QR code",
       target: "_blank",
-      cardImage: QRCodeIcon,
+      cardImage: VideoGuideIcon,
     },
     {
       title: "Productizing Data",
       href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
-      alt: "QR code",
+      cardImageAlt: "QR code",
       target: "_blank",
-      cardImage: QRCodeIcon,
+      cardImage: VideoGuideIcon,
     },
   ]
-  /** @type {import('./$types').PageData} */
-  export let data
+
+  export let data: PageData
 </script>
 
 <div class="wrapper">
   <TableOfContents>
-    <Title title={`IOXIO Dataspace ®️ guides`} />
+    <Title title={`IOXIO Dataspace™ guides`} />
 
     <Breadcrumbs path={data.path} />
 
@@ -57,7 +57,7 @@
                 <a class="link" href={card.href}>Read more <ArrowIcon /></a>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.alt} />
+                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
               </div>
             </div>
           </Grid>
@@ -72,10 +72,10 @@
             <div class="card">
               <div class="card-left">
                 <h2>{card.title}</h2>
-                <a class="link" href={card.href} target={card.target}>Read more <ArrowIcon /></a>
+                <a class="link" href={card.href} target={card.target}>Watch <ArrowIcon /></a>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.alt} />
+                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
               </div>
             </div>
           </Grid>

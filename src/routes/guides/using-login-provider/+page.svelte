@@ -51,10 +51,10 @@
     </p>
     <p>
       For a really simple example of how the code flow authentication can be built, you can have a
-      look at the codebase for the <A
-        href="https://github.com/ioxio-dataspace/mycompany-consent-demo"
-        >My Company Consent demo application</A
-      >. It's lacking a lot of cleanup related things, but should be enough to show how you could
+      look at the codebase for the
+      <A href="https://github.com/ioxio-dataspace/mycompany-consent-demo">
+        My Company Consent demo application
+      </A>. It's lacking a lot of cleanup related things, but should be enough to show how you could
       build it.
     </p>
     <SectionTitle title="OpenID Configurations" />
@@ -63,12 +63,13 @@
       OpenID Connect clients can be found at the path <em>/.well-known/openid-configuration</em>,
       for example on the sandbox at the address <A
         href="https://login.sandbox.ioxio-dataspace.com/.well-known/openid-configuration"
-        >https://login.sandbox.ioxio-dataspace.com/.well-known/openid-configuration</A
-      >.
+      >
+        https://login.sandbox.ioxio-dataspace.com/.well-known/openid-configuration
+      </A>.
     </p>
     <p>The content looks like this:</p>
-    <Code lang={json}
-      >{`
+    <Code lang={json}>
+      {`
 {
   "issuer": "https://login.sandbox.ioxio-dataspace.com",
   "authorization_endpoint": "https://login.sandbox.ioxio-dataspace.com/start-login",
@@ -99,9 +100,9 @@
       Client Secret.
     </p>
     <p>
-      1. Login in to the <A href="https://developer.sandbox.ioxio-dataspace.com/"
-        >Developer portal</A
-      >.
+      1. Login in to the <A href="https://developer.sandbox.ioxio-dataspace.com/">
+        Developer portal
+      </A>.
     </p>
     <p>2. Go to the <em>My applications</em> page in the menu.</p>
     <GuideImage img={images.MY_APPLICATIONS_PAGE} />
@@ -109,11 +110,10 @@
     <p>4. Fill in the necessary details for your application:</p>
     <GuideImage img={images.CREATE_AN_APPLICATION_PAGE} />
     <p>
-      Pick a name for your own application and fill it in the <em>Application name</em> field.<br
-      />Add one or more
-      <em>Redirect URIs</em> for your application, as well as <em>Logout redirect URIs</em>. These
-      are the addresses the user is allowed to be redirected to when being returned to your
-      application.
+      Pick a name for your own application and fill it in the <em>Application name</em> field.
+      <br />Add one or more <em>Redirect URIs</em> for your application, as well as
+      <em>Logout redirect URIs</em>. These are the addresses the user is allowed to be redirected to
+      when being returned to your application.
     </p>
     <p>5. Create the application by pressing the <em>Create</em> button.</p>
     <p>6. Your application is now created.</p>

@@ -1,4 +1,4 @@
-import { GUIDES } from "../src/routes/guides/urls.ts"
+import { GUIDES } from "../src/routes/guides/urls"
 import CURRENT_IMAGES from "../src/routes/guides/images.json"
 
 import * as fs from "fs"
@@ -18,7 +18,6 @@ Object.entries(CURRENT_IMAGES).forEach(([guideName, images]) => {
 
 const GUIDES_IMG_DIR = "static/guides"
 
-const images = {}
 const dirs = fs.readdirSync(GUIDES_IMG_DIR)
 const newImages = JSON.parse(JSON.stringify(CURRENT_IMAGES))
 for (const dir of dirs) {
@@ -45,4 +44,4 @@ for (const dir of dirs) {
   }
 }
 
-fs.writeFileSync("src/routes/guides/images.json", JSON.stringify(newImages, null, 2))
+fs.writeFileSync("src/routes/guides/images.json", JSON.stringify(newImages, null, 2) + "\n")

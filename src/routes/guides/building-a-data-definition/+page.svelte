@@ -55,25 +55,28 @@
   </ul>
   <h3>Fork and clone the data definitions repository</h3>
   <p>
-    Go to the <A href="https://github.com/ioxio-dataspace/sandbox-definitions/"
-      >data definition repository on GitHub</A
-    > and create your own fork of the repository and clone it. It's important that you make a fork as
-    you don't have write access to the repository.
+    Go to the
+    <A href="https://github.com/ioxio-dataspace/sandbox-definitions/">
+      data definition repository on GitHub
+    </A> and create your own fork of the repository and clone it. It's important that you make a fork
+    as you don't have write access to the repository.
   </p>
 
   <p>
-    Both of these steps are described in detail in the <A
+    Both of these steps are described in detail in the
+    <A
       href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo"
-      >Fork a repo quickstart guide</A
-    > in the GitHub documentation.
+    >
+      Fork a repo quickstart guide
+    </A> in the GitHub documentation.
   </p>
   <h3>Set up pre-commit hooks</h3>
   <p>
     Open the repository you cloned in a terminal and run <em>pre-commit install</em> to set up the pre-commit
     hooks.
   </p>
-  <Code lang={bash}
-    >{`
+  <Code lang={bash}>
+    {`
 cd sandbox-definitions
 pre-commit install
   `}
@@ -91,10 +94,12 @@ pre-commit install
     fork and cloned it (followed the steps above), you should have an up to date state already.
   </p>
   <p>
-    If you need help with syncing the repo from the upstream, check the <A
+    If you need help with syncing the repo from the upstream, check the
+    <A
       href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository"
-      >Configuring Git to sync your fork with the upstream repository</A
-    > on GitHub.
+    >
+      Configuring Git to sync your fork with the upstream repository
+    </A> on GitHub.
   </p>
 
   <h3>Create a new branch</h3>
@@ -108,11 +113,10 @@ pre-commit install
 
   <SectionTitle title="Creating a new definition" />
   <p>
-    This guide explains how to create a new definition using a python file (with models based on the <A
-      href="https://docs.pydantic.dev/1.10/">pydantic library</A
-    >). The content gets automatically converted into an OpenAPI spec file using the pre-commit
-    hooks. This is fairly simple to do and understand even if you're not too familiar with Python or
-    OpenAPI spec.
+    This guide explains how to create a new definition using a python file (with models based on the
+    <A href="https://docs.pydantic.dev/1.10/">pydantic library</A>). The content gets automatically
+    converted into an OpenAPI spec file using the pre-commit hooks. This is fairly simple to do and
+    understand even if you're not too familiar with Python or OpenAPI spec.
   </p>
   <h3>Decide what data to include in the definition</h3>
   <p>
@@ -229,9 +233,9 @@ pre-commit install
   <h3>Initial setup of the definition file</h3>
   <p>To get a quick start we will copy most of the content from the BasicInfo for companies.</p>
   <p>
-    Let's start by creating this simple initial version of the definition in <em
-      >src/test/ioxio-dataspace-guides/Country/BasicInfo.py</em
-    >:
+    Let's start by creating this simple initial version of the definition in <em>
+      src/test/ioxio-dataspace-guides/Country/BasicInfo.py
+    </em>:
   </p>
   <Code lang={python} lineNumbers>
     {`
@@ -333,9 +337,10 @@ class BasicCountryInfoRequest(CamelCaseModel):
   </Code>
   <p>If we'd want, we could even add a regular expressions to check it's an uppercase string.</p>
   <p>
-    For more details on these parameters refer to the <A
-      href="https://docs.pydantic.dev/1.10/usage/schema/#field-customization">Field customization</A
-    > section of the documentation for pydantic.
+    For more details on these parameters refer to the
+    <A href="https://docs.pydantic.dev/1.10/usage/schema/#field-customization">
+      Field customization
+    </A> section of the documentation for pydantic.
   </p>
   <h3>Defining the simple fields of the response</h3>
   <p>
@@ -405,9 +410,9 @@ class BasicCountryInfoResponse(CamelCaseModel):
   </Code>
   <p>
     However, like this there would be no restriction on the length of the strings in the list. We
-    can fix that by using a <A href="https://docs.pydantic.dev/1.10/usage/types/#constrained-types"
-      >constrained type</A
-    >, in this case the <em>constr</em>. We need to import it like this (at the top of the file):
+    can fix that by using a
+    <A href="https://docs.pydantic.dev/1.10/usage/types/#constrained-types">constrained type</A>, in
+    this case the <em>constr</em>. We need to import it like this (at the top of the file):
   </p>
   <Code lang={python}>
     {`
@@ -448,9 +453,8 @@ class BasicCountryInfoResponse(CamelCaseModel):
 `}
   </Code>
   <p>
-    To do this, we'll use <A href="https://docs.pydantic.dev/1.10/usage/models/#recursive-models"
-      >Recursive Models</A
-    > in pydantic.
+    To do this, we'll use
+    <A href="https://docs.pydantic.dev/1.10/usage/models/#recursive-models">Recursive Models</A> in pydantic.
   </p>
   <p>
     Let's start by defining this nested structure for the capital as a new <em>Capital</em> class. It
@@ -654,15 +658,15 @@ DEFINITION = DataProductDefinition(
     In that case, you'll also need to add that file again before you'll be able to commit.
   </p>
   <p>Here are the commands you should need to run:</p>
-  <Code lang={bash}
-    >{`
+  <Code lang={bash}>
+    {`
 git add src/test/ioxio-dataspace-guides/Country/BasicInfo.py
 pre-commit run
 git status
 git add DataProducts/test/ioxio-dataspace-guides/Country/BasicInfo.json
 git commit -m "Add definition for Country/BasicInfo"
-  `}</Code
-  >
+  `}
+  </Code>
   <p>And this is what it will likely look like when you run the commands:</p>
   <GuideImage img={images.PRE_COMMIT} />
   <h3>Push your branch to your fork in GitHub</h3>
@@ -670,28 +674,31 @@ git commit -m "Add definition for Country/BasicInfo"
     Depending a bit on how you cloned your repository, you should be able to push your branch by
     running:
   </p>
-  <Code lang={bash}
-    >{`
+  <Code lang={bash}>
+    {`
 git push --set-upstream origin adding-my-definition
-  `}</Code
-  >
+  `}
+  </Code>
   <p>
-    In case you need further assistance with pushing the branch, see the GitHub documentation on <A
+    In case you need further assistance with pushing the branch, see the GitHub documentation on
+    <A
       href="https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository"
-      >pushing commits to a remote repository</A
-    >.
+    >
+      pushing commits to a remote repository
+    </A>.
   </p>
   <h3>Create a pull request</h3>
   <p>
-    Create a pull request to the <A href="https://github.com/ioxio-dataspace/sandbox-definitions"
-      >definition repository</A
-    > on GitHub from the branch you just created in your own fork of the repository.
+    Create a pull request to the <A href="https://github.com/ioxio-dataspace/sandbox-definitions">
+      definition repository
+    </A> on GitHub from the branch you just created in your own fork of the repository.
   </p>
   <p>
     See <A
       href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
-      >Creating a pull request</A
-    > in the GitHub documentation if you need more assistance with creating the pull request.
+    >
+      Creating a pull request
+    </A> in the GitHub documentation if you need more assistance with creating the pull request.
   </p>
   <p>The flow should look pretty much like this:</p>
   <GuideImage img={images.PULL_REQUEST} />
@@ -704,9 +711,9 @@ git push --set-upstream origin adding-my-definition
   <h3>Next steps</h3>
   <p>
     Once the definition has been merged you can start using it in data sources, for that you might
-    want to check out the <A href={GUIDES.BUILD_DATA_SOURCE.href}
-      >{GUIDES.BUILD_DATA_SOURCE.title}</A
-    > guide.
+    want to check out the <A href={GUIDES.BUILD_DATA_SOURCE.href}>
+      {GUIDES.BUILD_DATA_SOURCE.title}
+    </A> guide.
   </p>
   <p>
     If you spot things you want to change in the definition you can submit a pull request with
@@ -724,7 +731,8 @@ git push --set-upstream origin adding-my-definition
     path and name for this example would then become <em>src/Country/BasicInfo_v0.1.py</em>. You can
     read more about this in the <A
       href="https://github.com/ioxio-dataspace/sandbox-definitions/blob/main/CONTRIBUTING.md#versioning-of-definitions"
-      >versioning of definitions</A
-    > section of the contribution guidelines.
+    >
+      versioning of definitions
+    </A> section of the contribution guidelines.
   </p>
 </TableOfContents>

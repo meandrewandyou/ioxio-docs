@@ -10,13 +10,13 @@
     {
       title: "IOXIO Tags™",
       href: "/tags/",
-      alt: "QR code",
+      cardImageAlt: "QR code",
       img: QRCodeIcon,
     },
     {
       title: "Schemas for data objects",
       href: "/schemas/",
-      alt: "Data schemas",
+      cardImageAlt: "Data schemas",
       img: DataSchemasIcon,
     },
   ]
@@ -45,7 +45,7 @@
               <a class="link" href={card.href}>Read more <ArrowIcon /></a>
             </div>
             <div class="card-right">
-              <img class="card-icon" src={card.img} alt={card.alt} />
+              <img class="card-icon" src={card.img} alt={card.cardImageAlt} />
             </div>
           </div>
         </Grid>

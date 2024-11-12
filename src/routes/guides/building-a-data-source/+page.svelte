@@ -131,9 +131,9 @@
     Next, let's add the definition for the request and response to <em>app/models.py</em> . We can
     directly copy the <em>BasicCountryInfoRequest</em>, <em>Capital</em> and
     <em>BasicCountryInfoResponse</em>
-    classes from the final definition we created in the <A href={GUIDES.BUILD_DATA_DEF.href}
-      >{GUIDES.BUILD_DATA_DEF.title}</A
-    > guide. Note that we also need to add the necessary imports.
+    classes from the final definition we created in the <A href={GUIDES.BUILD_DATA_DEF.href}>
+      {GUIDES.BUILD_DATA_DEF.title}
+    </A> guide. Note that we also need to add the necessary imports.
   </p>
   <p>
     If you're building a data source for another definition, it's possible it was created using
@@ -232,10 +232,7 @@ class BasicCountryInfoResponse(CamelCaseModel):
     )
 `}
   </Code>
-  <SectionTitle
-    title="Add logic to retrieve data
-"
-  />
+  <SectionTitle title="Add logic to retrieve data" />
   <p>
     We can delete the file <em>app/openweathermap.py</em>. You might find it a useful example in
     case your productizer will fetch data from some other system, but in our case we won't need it.
@@ -285,16 +282,12 @@ async def get_data(country: str) -> Dict[str, Any]:
     This contains just a hardcoded dictionary of different values and a simple wrapper to fetch
     them. In practice you would want to change this to actually somehow fetch or generate the
     necessary data. Note that you might also need to install some Python packages for connecting to
-    and querying your database or other systems. The original implementation required an <em
-      >API_KEY</em
-    >
+    and querying your database or other systems. The original implementation required an
+    <em> API_KEY</em>
     and an <em>API_ENDPOINT</em>, which our data source does not require, so we can remove those
     from <em>settings.py</em>. Those can however be handy examples for your own implementation.
   </p>
-  <SectionTitle
-    title="Adding the route
-"
-  />
+  <SectionTitle title="Adding the route" />
   <p>
     Let's open the file <em>app/routers/dataproduct.py</em>. We start with emptying it, so we get
     rid of the old route. Let's add our new route like this:
@@ -345,18 +338,12 @@ async def data_product(params: BasicCountryInfoRequest):
     <A href="https://fastapi.tiangolo.com/tutorial/handling-errors/">handling errors</A>, so those
     resources are well worth a look if the explanation in this guide was too brief.
   </p>
-  <SectionTitle
-    title="Deploy and host your productizer
-"
-  />
+  <SectionTitle title="Deploy and host your productizer" />
   <p>
     Deploy and host your productizer. For the next steps we will need the base URL at which it is
     responding, for example <em>https://productizer.example.com/</em>.
   </p>
-  <SectionTitle
-    title="Register your data source in the Developer Portal
-"
-  />
+  <SectionTitle title="Register your data source in the Developer Portal" />
   <p>Log in to the Developer Portal.</p>
   <h3>Ensure you have a group</h3>
   <p>
@@ -419,9 +406,8 @@ content-length: 130
 `}
   </Code>
   <p>
-    Note: As long as your datasource is not published you will need to use the <em
-      >X-Preview-Token</em
-    >
+    Note: As long as your datasource is not published you will need to use the
+    <em>X-Preview-Token</em>
     header, once the datasource is published the header should be left out.
   </p>
   <p>
@@ -464,25 +450,19 @@ content-length: 95
     the Available data sources section and it will no longer require an <em>X-Preview-Token</em> header
     to be queried.
   </p>
-  <SectionTitle
-    title="Next steps
-"
-  />
+  <SectionTitle title="Next steps" />
   <p>
-    If you created the data source definition under your own <em>test/</em>
-    <your-own-name>
-      namespace, you likely want to submit a pull request to copy it outside the test namespace and
-      add a version or copy it to the repository used for definitions in a production Dataspace.
-      Note that you will also need to adjust your productizer to accept the request at the updated
-      path or ensure it will accept requests on multiple different paths.
-    </your-own-name>
+    If you created the data source definition under your own <em>test/&lt;your-own-name&gt;</em>
+    namespace, you likely want to submit a pull request to copy it outside the test namespace and add
+    a version or copy it to the repository used for definitions in a production Dataspace. Note that
+    you will also need to adjust your productizer to accept the request at the updated path or ensure
+    it will accept requests on multiple different paths.
   </p>
   <p>
     When the definition has been published, you will need to add the data source once more. This
     time using the definition in the new path. If you want the data source to appear in the list of
-    available data sources for other users of the Dataspace also switch the radio button to <em
-      >Published</em
-    >.
+    available data sources for other users of the Dataspace also switch the radio button to
+    <em>Published</em>.
   </p>
   <p>
     You might want to clean up by removing the old data source definition by submitting a pull

@@ -38,18 +38,17 @@
     decoding and verifying it.
   </p>
   <p>
-    For more details on how to request a consent and obtaining a consent token, check out the <A
-      href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A
-    > section of the <A href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.title}</A> guide.
+    For more details on how to request a consent and obtaining a consent token, check out the
+    <A href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A>
+    section of the
+    <A href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.title}</A> guide.
   </p>
   <SectionTitle title="Verifying the consent token in the productizer" />
   <h3>Get the X-Consent-Token header</h3>
   <p>
-    The productizer or data source needs to first extract the consent token from the <em
-      >X-Consent-Token</em
-    >
-    HTTP header of the request. Please note that the header is in many data source definitions optional,
-    so take that into account.
+    The productizer or data source needs to first extract the consent token from the
+    <em>X-Consent-Token</em> HTTP header of the request. Please note that the header is in many data
+    source definitions optional, so take that into account.
   </p>
   <h3>Reading the consent token</h3>
   <p>
@@ -58,17 +57,17 @@
     <A href="https://datatracker.ietf.org/doc/html/rfc7519">JSON Web Token (JWT)</A>.
   </p>
   <p>
-    If you are unfamiliar with JWTs you might want to check out the <A
-      href="https://jwt.io/introduction">JSON Web Token Introduction</A
-    >. The same site has a really good tool for decoding JWTs directly in the web browser at
+    If you are unfamiliar with JWTs you might want to check out the
+    <A href="https://jwt.io/introduction">JSON Web Token Introduction</A>. The same site has a
+    really good tool for decoding JWTs directly in the web browser at
     <A href="https://jwt.io">jwt.io</A>, as well as a fairly good list of different
     <A href="https://jwt.io/libraries">JWT libraries</A> for different programming languages.
   </p>
   <p>
     You most likely want to use one of the libraries for your programming language rather than try
     to implement it according to the <A href="https://datatracker.ietf.org/doc/html/rfc7519">
-      RFC 7519</A
-    >.
+      RFC 7519
+    </A>.
   </p>
   <p>
     Let's have a look at a valid example token from one of the applications on the IOXIO Sandbox
@@ -84,14 +83,13 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <p>
     At the time you are reading this guide the token will, unfortunately, have expired, so some of
     the verifications we will perform here won't work. If you need a valid token, you can follow the
-    steps in the <A href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A> section of the <A
-      href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.title}</A
-    > guide to set up your own application and request a consent token following the cURL examples in
-    that guide. If you're familiar with developer tools in your browser you can also go to the <A
-      href="https://mycompany.demos.ioxio.com/my-company/company/0522908-2/board"
-    >
-      board page of one of the companies in the MyCompany Demo App</A
-    > and extract the consent token from the Local Storage of your browser.
+    steps in the <A href="{GUIDES.BUILD_APP.href}#using-consent">Using Consent</A> section of the
+    <A href={GUIDES.BUILD_APP.href}>{GUIDES.BUILD_APP.title}</A> guide to set up your own application
+    and request a consent token following the cURL examples in that guide. If you're familiar with developer
+    tools in your browser you can also go to the
+    <A href="https://mycompany.demos.ioxio.com/my-company/company/0522908-2/board">
+      board page of one of the companies in the MyCompany Demo App
+    </A> and extract the consent token from the Local Storage of your browser.
   </p>
   <p>This is what the content of the above token looks like:</p>
   <GuideImage img={images.DECODED_CONSENT_TOKEN} />
@@ -105,9 +103,8 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   </p>
   <SectionTitle title="Find the JWKS URI" />
   <p>
-    The first step to find the key is to check the issuer of the token, which is found in the <em
-      >iss</em
-    > field in the body.
+    The first step to find the key is to check the issuer of the token, which is found in the
+    <em>iss</em> field in the body.
   </p>
   <p>
     Please note that you should check that the <em>iss</em> is one you want to trust. In a typical IOXIO
@@ -116,26 +113,27 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <p>
     In this example the <em>iss</em> (Issuer) is
     <em>https://consent.sandbox.ioxio-dataspace.com</em>, which is the consent provider of the
-    sandbox dataspace. The consent provider has a <A href="/schemas/consent-configuration/"
-      >consent configuration</A
-    > in a well-known path (inspired by the OpenID Connect configuration). The configuration for a consent
-    provider can be found in the path <em>/.well-known/dataspace/consent-configuration.json</em>
+    sandbox dataspace. The consent provider has a
+    <A href="/schemas/consent-configuration/">consent configuration</A> in a well-known path (inspired
+    by the OpenID Connect configuration). The configuration for a consent provider can be found in the
+    path <em>/.well-known/dataspace/consent-configuration.json</em>
     relative to the <em>iss</em>. Thus in this case the consent provider configuration can be
     fetched from
     <A
       href="https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json"
-      >https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json</A
-    >. At the time of writing this it returned this JSON content (formatted for readability):
+    >
+      https://consent.sandbox.ioxio-dataspace.com/.well-known/dataspace/consent-configuration.json
+    </A>. At the time of writing this it returned this JSON content (formatted for readability):
   </p>
-  <Code lang={json}
-    >{`
+  <Code lang={json}>
+    {`
 {
   "issuer": "https://consent.sandbox.ioxio-dataspace.com",
   "jwks_uri": "https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json",
   "consent_request_uri": "https://consent.sandbox.ioxio-dataspace.com/Consent/RequestConsents"
 }
-  `}</Code
-  >
+  `}
+  </Code>
   <p>The <em>jwks_uri</em> specify where we can find the keys of this consent provider.</p>
   <p>
     For convenience the JWT token also contains the <em>jku</em> (JSON Web Key Set URL) header with
@@ -152,13 +150,13 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
   <SectionTitle title="Find the key" />
   <p>
     At the time of writing this, the <em>jwks_uri</em>
-    <A href="https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json"
-      >https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json</A
-    >
+    <A href="https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json">
+      https://consent.sandbox.ioxio-dataspace.com/.well-known/jwks.json
+    </A>
     returned this JSON content (formatted for readability):
   </p>
-  <Code lang={json}
-    >{`
+  <Code lang={json}>
+    {`
 {
   "keys": [
     {
@@ -171,22 +169,23 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     }
   ]
 }
-  `}</Code
-  >
+  `}
+  </Code>
 
   <p>
     Use the key entry with a
     <em>kid</em> (Key ID) and <em>alg</em> (Algorithm) matching the values in the consent token and
-    has the <em>use</em> set to <em>sig</em> (signing). You can read more about JWKS in <A
-      href="https://datatracker.ietf.org/doc/html/rfc7517">RFC 7517: JSON Web Key (JWK)</A
-    >.
+    has the <em>use</em> set to <em>sig</em> (signing). You can read more about JWKS in
+    <A href="https://datatracker.ietf.org/doc/html/rfc7517">RFC 7517: JSON Web Key (JWK)</A>.
   </p>
   <p>
     Some JWT libraries, like
-    <A href="https://pyjwt.readthedocs.io/">PyJWT</A> has built in support for <A
+    <A href="https://pyjwt.readthedocs.io/">PyJWT</A> has built in support for
+    <A
       href="https://pyjwt.readthedocs.io/en/stable/usage.html#retrieve-rsa-signing-keys-from-a-jwks-endpoint"
-      >retrieving the keys from a JWKS endpoint</A
-    >, thus it's worth checking if the library you are using has support for that before
+    >
+      retrieving the keys from a JWKS endpoint
+    </A>, thus it's worth checking if the library you are using has support for that before
     implementing it yourself.
   </p>
   <SectionTitle title="Caching" />
@@ -219,9 +218,9 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     Also verify the <em>dsi</em> field. It contains a Data Product Protocol link of the form
     <em>dpp://&lt;source&gt;@&lt;dataspace-domain&gt;/&lt;definition&gt;</em>, which means you will
     have to parse it and check it against the data source you are implementing. For example
-    <em
-      >dpp://ioxio@sandbox.ioxio-dataspace.com/NSG/Agent/LegalEntity/NonListedCompany/SignatoryRights_v1.0</em
-    >
+    <em>
+      dpp://ioxio@sandbox.ioxio-dataspace.com/NSG/Agent/LegalEntity/NonListedCompany/SignatoryRights_v1.0
+    </em>
     would match a data source with the group <em>ioxio</em> for the
     <em>NSG/Agent/LegalEntity/NonListedCompany/SignatoryRights_v1.0</em>
     definition on the <em>sandbox.ioxio-dataspace.com</em> dataspace. Ensure all of these match with
@@ -235,9 +234,10 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     consent.
   </p>
   <p>
-    If your data source also requires authorization, you should also <A
-      href={GUIDES.VERIFY_ID_TOKEN.href}>{GUIDES.VERIFY_ID_TOKEN.title}</A
-    >. Check the
+    If your data source also requires authorization, you should also
+    <A href={GUIDES.VERIFY_ID_TOKEN.href}>
+      {GUIDES.VERIFY_ID_TOKEN.title}
+    </A>. Check the
     <em>sub</em> of both tokens match and ensure the <em>app</em> in the consent token matches the
     <em>aud</em>
     of the id_token and the <em>subiss</em> in the consent token matches the <em>iss</em> in the id_token.
@@ -245,11 +245,10 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
 
   <SectionTitle title="Using the token" />
   <p>
-    Once you've done all the verifications you know which user (<em>sub</em>+<em>subiss</em>+<em
-      >acr</em
-    >) gave the consent to request the data through which application (<em>app</em>+<em>appiss</em>)
-    and to which data source (<em>dsi</em>). Verify these match with what you want to provide and
-    what the user has permission to request and return the requested data.
+    Once you've done all the verifications you know which user (<em>sub</em>+<em>subiss</em>+
+    <em>acr</em>) gave the consent to request the data through which application (<em>app</em>+
+    <em>appiss</em>) and to which data source (<em>dsi</em>). Verify these match with what you want
+    to provide and what the user has permission to request and return the requested data.
   </p>
   <SectionTitle title="Verifying consent through API" />
   <p>
@@ -270,8 +269,8 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vY29uc2VudC5zYW5kYm94LmlveGlvLWRhdGFzcGFj
     Here is what the request would look like as a cURL command with the respective tokens shortened
     down for readability:
   </p>
-  <Code lang={bash}
-    >{`
+  <Code lang={bash}>
+    {`
 curl --request POST \\
   --url 'https://consent.sandbox.ioxio-dataspace.com/Consent/Verify' \\
   --header 'Content-Type: application/json' \\
@@ -280,28 +279,27 @@ curl --request POST \\
   --data '{
             "dataSource": "dpp://ioxio@sandbox.ioxio-dataspace.com/NSG/Agent/LegalEntity/NonListedCompany/SignatoryRights_v1.0"
           }'
-  `}</Code
-  >
+  `}
+  </Code>
   <p>
     You will get back a response indicating if the tokens passed the verification or not, in case of
     a success:
   </p>
-  <Code lang={json}
-    >{`
+  <Code lang={json}>
+    {`
 {"verified": true}
-  `}</Code
-  >
+  `}
+  </Code>
   <p>And in case of failure:</p>
-  <Code lang={json}
-    >{`
+  <Code lang={json}>
+    {`
 {"verified": false}
-  `}</Code
-  >
+  `}
+  </Code>
   <p>
     If you want to know who the user is (in case the data you return is depending on the user, which
-    is quite common) you will need to decode the consent token to extract the user details (<em
-      >sub+subiss+acr</em
-    >) from it. But since the tokens have already been verified you can decode them without any
-    verification.
+    is quite common) you will need to decode the consent token to extract the user details (
+    <em>sub+subiss+acr</em>) from it. But since the tokens have already been verified you can decode
+    them without any verification.
   </p>
 </TableOfContents>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Highlight, LineNumbers } from "svelte-highlight"
   import type { LanguageType } from "svelte-highlight/languages"
-  import "svelte-highlight/styles/tokyo-night-dark.css"
+  import tokyo from "svelte-highlight/styles/tokyo-night-dark"
 
   // https://svhe.onrender.com/languages
   export let lang: LanguageType<string>
@@ -18,6 +18,10 @@
     code = codeContainer ? codeContainer.innerHTML.trim() : ""
   }
 </script>
+
+<svelte:head>
+  {@html tokyo}
+</svelte:head>
 
 <article>
   <div aria-hidden="true" bind:this={codeContainer} class="code">
