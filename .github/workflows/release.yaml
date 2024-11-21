@@ -26,7 +26,6 @@ jobs:
 
       - name: Build
         run: |
-          pnpm run fetch-json-schema-docs
           pnpm run build
 
       - name: Deploy to GitHub Pages

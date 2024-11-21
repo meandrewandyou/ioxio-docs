@@ -7,7 +7,6 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "fetch-json-schema-docs": "node scripts/fetch_json_schema_docs.js",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
     "make-guide-images": "vite-node scripts/make_guide_images.ts"
