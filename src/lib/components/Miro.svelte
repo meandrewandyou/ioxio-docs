@@ -5,6 +5,7 @@
 </script>
 
 <iframe
+  title="Miro board"
   width="100%"
   height="432"
   src={`https://miro.com/app/live-embed/${board}/`}
