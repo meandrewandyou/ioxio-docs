@@ -18,5 +18,9 @@
   "DATA_FLOW": {
     "src": "/data-flow-schema.png",
     "alt": "Data flow between dataspace and external application schema"
+  },
+  "CONF_AND_DOCS": {
+    "src": "/conf-and-docs.png",
+    "alt": "Dataspace related products"
   }
 }

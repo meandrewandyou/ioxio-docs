@@ -20,7 +20,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`Dataspace`} />
+  <Title title={`IOXIO Dataspace™ overview`} />
 
   <Breadcrumbs path={data.path} />
 
@@ -185,6 +185,7 @@
     have issues or questions, our <A href="https://slack.ioxio.com/">IOXIO® Community Slack</A> is there
     for you.
   </p>
+  <GuideImage fullWidth img={images.CONF_AND_DOCS} />
 
   <SectionTitle title="Code examples" />
 
