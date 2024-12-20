@@ -8,6 +8,7 @@
   import SlackIcon from "$lib/images/slack-icon.svg"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import GitHubLogo from "$lib/images/github-icon.svg?dataurl"
+  import IconLink from "$lib/components/IconLink.svelte"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
@@ -21,15 +22,9 @@
         <Grid sm={12} md={6}>
           <div class="try-out-section">
             <h3>Try out our technologies for free on</h3>
-            <a
-              class="link"
-              href="https://sandbox.ioxio-dataspace.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>IOXIO Dataspace™ Sandbox</span>
-              <ArrowIcon />
-            </a>
+            <IconLink href="https://sandbox.ioxio-dataspace.com" icon={ArrowIcon}>
+              IOXIO Dataspace™ Sandbox
+            </IconLink>
           </div>
         </Grid>
         <Grid sm={0} lg={5} />
@@ -101,21 +96,6 @@
       display: flex;
       flex-direction: column;
       gap: $spacing-02;
-
-      .link {
-        display: flex;
-        width: max-content;
-        color: $color-success-main;
-        font-weight: 600;
-        line-height: 150%;
-        text-decoration: none;
-        align-items: center;
-        gap: $spacing-01;
-
-        span {
-          flex-shrink: 0;
-        }
-      }
     }
   }
 

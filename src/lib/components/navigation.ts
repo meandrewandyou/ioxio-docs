@@ -42,4 +42,9 @@ export const navigation: NavItem[] = [
       route: sch.route,
     })),
   },
+  {
+    name: "Dataspace",
+    icon: "dataspace-icon",
+    route: "dataspace",
+  },
 ]
