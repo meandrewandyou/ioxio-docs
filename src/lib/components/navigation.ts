@@ -43,7 +43,7 @@ export const navigation: NavItem[] = [
     })),
   },
   {
-    name: "IOXIO Dataspace™ overview",
+    name: "Dataspace",
     icon: "dataspace-icon",
     route: "dataspace",
   },
