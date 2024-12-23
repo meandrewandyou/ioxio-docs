@@ -2,11 +2,18 @@
   import A from "$lib/components/A.svelte"
   import FrontpageHeroImage from "$lib/images/frontpage-hero-image.svg?dataurl"
   import DataSchemasIcon from "$lib/images/card-schemas-icon.svg?dataurl"
+  import DataspaceIcon from "$lib/images/dataspace-card-icon.svg?dataurl"
   import QRCodeIcon from "$lib/images/card-qr-code-icon.svg?dataurl"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
 
   const cards = [
+    {
+      title: "IOXIO Dataspace™ overview",
+      href: "/dataspace/",
+      cardImageAlt: "Data schemas",
+      img: DataspaceIcon,
+    },
     {
       title: "IOXIO Tags™",
       href: "/tags/",
