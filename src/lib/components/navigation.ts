@@ -15,6 +15,11 @@ export const navigation: NavItem[] = [
     route: "",
   },
   {
+    name: "Dataspace",
+    icon: "dataspace-icon",
+    route: "dataspace",
+  },
+  {
     name: "IOXIO Tags™",
     icon: "qr-code-icon",
     route: "tags",
@@ -32,7 +37,6 @@ export const navigation: NavItem[] = [
       route: g.href.split("/").pop()!,
     })),
   },
-
   {
     name: "Schemas",
     icon: "schemas-icon",

@@ -1,0 +1,26 @@
+{
+  "HERO": {
+    "src": "/dataspace-hero-image.png",
+    "alt": "Abstract data sharing image"
+  },
+  "INTERNET_PRACTICIES": {
+    "src": "/practicies-schema.png",
+    "alt": "Internet practicies schema"
+  },
+  "STANDARTIZED_DATA": {
+    "src": "/standartizied-data-schema.png",
+    "alt": "Data standartization schema"
+  },
+  "DATASPACE_STRUCTURE": {
+    "src": "/dataspace-structure.png",
+    "alt": "Dataspace structure schema"
+  },
+  "DATA_FLOW": {
+    "src": "/data-flow-schema.png",
+    "alt": "Data flow between dataspace and external application schema"
+  },
+  "CONF_AND_DOCS": {
+    "src": "/conf-and-docs.png",
+    "alt": "Dataspace related products"
+  }
+}
