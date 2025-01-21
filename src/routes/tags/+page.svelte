@@ -11,7 +11,7 @@
 </script>
 
 <TableOfContents>
-  <Title title={`IOXIO Tags™️`} />
+  <Title title={`IOXIO Tags™`} />
 
   <Breadcrumbs path={data.path} />
 
