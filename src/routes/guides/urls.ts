@@ -51,3 +51,10 @@ export const GUIDES = {
     cardImage: GuidesIcon,
   },
 }
+
+export const NOTION_GUIDES = {
+  VERIFYING_API_TOKENS: {
+    title: "Verifying API tokens",
+    href: "https://ioxio.notion.site/Verifying-API-tokens-1528e3ae865b804c9f2dd354b143c743",
+  },
+}

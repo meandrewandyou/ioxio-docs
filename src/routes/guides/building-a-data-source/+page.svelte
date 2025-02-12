@@ -8,7 +8,7 @@
   import TableOfContents from "$lib/components/TableOfContents.svelte"
 
   import type { PageData } from "./$types"
-  import { GUIDES } from "../urls"
+  import { GUIDES, NOTION_GUIDES } from "../urls"
   import GuideImage from "$lib/components/GuideImage.svelte"
   import A from "$lib/components/A.svelte"
 
@@ -352,8 +352,8 @@ async def data_product(params: BasicCountryInfoRequest):
   </p>
   <h3>Add your data source</h3>
   <p>
-    Use the menu to navigate to My data sources. Press the + ADD A DATASOURCE button. In the Data
-    product definition, pick the definition you used for your productizer. Pick one of your groups
+    Use the menu to navigate to My data sources. Press the <em>+ Add a data source</em> button. In the
+    Data product definition, pick the definition you used for your productizer. Pick one of your groups
     in the dropdown for groups.
   </p>
   <p>
@@ -362,23 +362,64 @@ async def data_product(params: BasicCountryInfoRequest):
     this for your first data source. In the Base URL enter the base URL at which your deployment is
     available. The help text shows where the API endpoint is expected to be available. The Base URL
     will not be displayed to other users and is only used by the product gateway to connect to the
-    productizer. All other applications must connect through the product gateway. For the purpose of
-    this tutorial let's select "private" for the visibility options. The filled in form would look
-    like this:
+    productizer. All other applications must connect through the product gateway.
+  </p>
+  <p>There's three options for the visibility:</p>
+  <ul>
+    <li>
+      <b>Private</b> - The data source will be hidden from other users on the dataspace and
+      protected by an additional <em>X-Preview-Token</em> header. Should be used when you want to test
+      your own data source before making it available to others.
+    </li>
+    <li>
+      <b>Unlisted</b> - The data source can be accessed by anyone who knows it exists, but will not be
+      published in any listing of data sources on the dataspace.
+    </li>
+    <li>
+      <b>Published</b> - The data source will be published on the dataspace for others to see.
+    </li>
+  </ul>
+  <p>
+    The access to the data source can be controlled by different options (all options might not be
+    available on all dataspaces):
+  </p>
+  <ul>
+    <li>
+      <b>No access control</b> - The dataspace will allow anyone to request data from the data source.
+    </li>
+    <li>
+      <b>Self-managed API keys</b> - <em>X-API-Key</em> header will be required to be present, but its
+      contents will not be verified by the dataspace.
+    </li>
+    <li>
+      <b>Dataspace verified API tokens</b> - The <em>X-API-Key</em> header will be required and
+      verified by the dataspace. Once you save the data source with this setting you can manage
+      which groups are allowed to access the data source. The members of the allowed groups will
+      find the data source and instructions on generating valid API-tokens for this header in the
+      <em>Access control keys</em>
+      section of dataspace. The <A href={NOTION_GUIDES.VERIFYING_API_TOKENS.href}
+        >{NOTION_GUIDES.VERIFYING_API_TOKENS.title}</A
+      > guide explains how you can verify the tokens in your data source and know which group was requesting
+      the data.
+    </li>
+  </ul>
+  <p>
+    For this tutorial, let's for simplicity choose <em>Private</em> for the visibility and
+    <em>No access control</em>. The filled in form would look like this:
   </p>
   <GuideImage img={images.CREATE_NEW_DS} />
-  <p>Finally press the CREATE button to create the data source.</p>
+  <p>Finally press the <em>Create</em> button to create the data source.</p>
   <SectionTitle title="Test your data source" />
   <p>
     You should now be able to test your own data source by querying it through the product gateway.
-    From the list of your data sources, press EDIT next to the data source you just created. The
-    developer portal will show you the address at which you can query your own data source as well
-    as the <em>X-Preview-Token</em> necessary to use a data source until it has been published.
+    Once you've saved the data source, you should see the <em>X-Preview-Token</em>, which is
+    necessary to use as long as it's marked as private. You can also below the Source field see the
+    URL at which you can make requests to the data source.
   </p>
   <GuideImage img={images.EDIT_DS} />
   <p>
     You can for example use the cURL command line tool to query it like this (make sure the replace
-    the url and <em>X-Preview-Token</em> to the one shown to you in the developer portal and change the
+    the URL and <em>X-Preview-Token</em> to the one shown to you in the developer portal and change the
     data to match the expected payload of your own data source):
   </p>
   <Code lang={python}>
@@ -387,7 +428,7 @@ async def data_product(params: BasicCountryInfoRequest):
   --request POST \\
   --url 'https://gateway.sandbox.ioxio-dataspace.com/test/ioxio-dataspace-guides/Country/BasicInfo?source=ioxio_dataspace_guides' \\
   --header 'Content-Type: application/json' \\
-  --header 'X-Preview-Token: wgyhTXDAMa3uBwLIziBnpQ' \\
+  --header 'X-Preview-Token: m7Arq86bNPRO69GRieKG9A' \\
   --data '{"code": "FI"}'
 HTTP/2 200
 content-type: application/json
@@ -406,9 +447,9 @@ content-length: 130
 `}
   </Code>
   <p>
-    Note: As long as your datasource is not published you will need to use the
+    Note: As long as your datasource remains private you will need to use the
     <em>X-Preview-Token</em>
-    header, once the datasource is published the header should be left out.
+    header, once the datasource is switched to published or unlisted the header should be left out.
   </p>
   <p>
     In case you make a request that causes an unexpected response to be generated by the
@@ -424,8 +465,8 @@ content-length: 130
   --request POST \\
   --url 'https://gateway.sandbox.ioxio-dataspace.com/test/ioxio-dataspace-guides/Country/BasicInfo?source=ioxio_dataspace_guides' \\
   --header 'Content-Type: application/json' \\
-  --header 'X-Preview-Token: wgyhTXDAMa3uBwLIziBnpQ' \\
-  --data '{"code": "ZZ"}'
+  --header 'X-Preview-Token: m7Arq86bNPRO69GRieKG9A' \\
+  --data '{"code": "XYZ"}'
 HTTP/2 502
 content-type: application/json
 x-frame-options: DENY
@@ -445,10 +486,10 @@ content-length: 95
   <SectionTitle title="Publish the data source" />
   <p>
     When you've verified the data source works as intended you can publish the data source by
-    selecting it in the list, pressing the EDIT button and ticking the Published checkbox and press
-    the UPDATE button to save the changes. When it's published, it will be listed to all users in
-    the Available data sources section and it will no longer require an <em>X-Preview-Token</em> header
-    to be queried.
+    selecting it in the list of your data sources, pressing the <em>Edit</em> button and switching
+    the visibility setting to Published and press the Save button. When it's published, it will be
+    listed to all users in the Available data sources section and it will no longer require an
+    <em>X-Preview-Token</em> header to be queried.
   </p>
   <SectionTitle title="Next steps" />
   <p>
@@ -465,15 +506,10 @@ content-length: 95
     <em>Published</em>.
   </p>
   <p>
-    You might want to clean up by removing the old data source definition by submitting a pull
-    request to remove it as well as delete your old data source in the developer portal. Please note
+    You might want to clean up by removing your old data source in the developer portal, and
+    deleting the old data source definition by submitting a pull request to remove it. Please note
     that this will make it impossible to query it, so make sure to update any applications that
-    might be using it before deleting either one.
-  </p>
-  <p>
-    Due to this danger the deletion of the data source is slightly hard to reach. Open My data
-    sources page in the developer portal and press OPEN next to the data source to reveal the EDIT
-    button. Press it to go to the edit view, where you can press the DELETE button. You will still
-    be prompted to confirm the deletion.
+    might be using it before deleting either one. Due to this, the Delete button is only possible to
+    reach through the Edit view of the data source and requires an extra confirmation.
   </p>
 </TableOfContents>
