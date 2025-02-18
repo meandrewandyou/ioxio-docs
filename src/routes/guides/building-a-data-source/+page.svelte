@@ -123,7 +123,7 @@
   <SectionTitle title="Adding models for the request and response" />
   <p>
     Let's start by deleting the models related to the weather data (
-    <em>CurrentWeatherMetricRequest </em>
+    <em>CurrentWeatherMetricRequest</em>
     and <em>CurrentWeatherMetricResponse</em>) from the <em>app/models.py</em>, as we won't need
     them.
   </p>
