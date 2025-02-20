@@ -54,7 +54,13 @@
             <div class="card">
               <div class="card-left">
                 <h2>{card.title}</h2>
-                <a class="link" href={card.href}>Read more <ArrowIcon /></a>
+                <a
+                  class="link"
+                  href={card.href.startsWith("http") ? card.href : `/guides/${card.href}`}
+                  target={card.href.startsWith("http") ? "_blank" : null}
+                >
+                  Read more <ArrowIcon />
+                </a>
               </div>
               <div class="card-right">
                 <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />

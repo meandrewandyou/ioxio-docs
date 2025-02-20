@@ -38,7 +38,7 @@
     if (section.route !== "" && $page.url.pathname.startsWith(`/${section.route}`)) {
       currentSectionName = section.name
       subNavigation = (section.children || []).map((child) => ({
-        href: `/${section.route}/${child.route}`,
+        href: child.route.startsWith("http") ? child.route : `/${section.route}/${child.route}`,
         name: child.name,
       }))
     }
@@ -56,7 +56,9 @@
         <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
-            <a href={navItem.href}>{navItem.name}</a>
+            <a href={navItem.href} target={navItem.href.startsWith("http") ? "_blank" : null}>
+              {navItem.name}
+            </a>
           {/each}
         </div>
       </div>
