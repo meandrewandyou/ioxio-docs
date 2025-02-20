@@ -72,7 +72,9 @@
           </div>
           <div class="mobile-sidebar-right-column">
             {#each subNavigation as navItem}
-              <a href={navItem.href}>{navItem.name}</a>
+              <a href={navItem.href} target={navItem.href.startsWith("http") ? "_blank" : null}>
+                {navItem.name}
+              </a>
             {/each}
           </div>
         </div>
