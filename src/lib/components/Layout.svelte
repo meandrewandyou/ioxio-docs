@@ -10,9 +10,11 @@
   import breakpointObserver from "$lib/components/breakpointObserver.js"
   import Sidebar from "$lib/components/Sidebar.svelte"
   import { navigation } from "$lib/components/navigation"
+  import { isInternalLink } from "$lib/utils"
 
   const popover = createPopover({})
   const size = breakpointObserver()
+  const origin = $page.url.origin
   let isSmallScreen
   $: {
     isSmallScreen = size.smallerThan("md")
@@ -56,7 +58,7 @@
         <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
-            <a href={navItem.href} target={navItem.href.startsWith("http") ? "_blank" : null}>
+            <a href={navItem.href} target={isInternalLink(navItem.href, origin) ? null : "_blank"}>
               {navItem.name}
             </a>
           {/each}
@@ -72,7 +74,10 @@
           </div>
           <div class="mobile-sidebar-right-column">
             {#each subNavigation as navItem}
-              <a href={navItem.href} target={navItem.href.startsWith("http") ? "_blank" : null}>
+              <a
+                href={navItem.href}
+                target={isInternalLink(navItem.href, $page.url.origin) ? null : "_blank"}
+              >
                 {navItem.name}
               </a>
             {/each}

@@ -34,7 +34,7 @@ export const navigation: NavItem[] = [
     route: "guides",
     children: Object.values(GUIDES).map((g) => ({
       name: g.title,
-      route: g.href,
+      route: !g.href.startsWith("http") ? g.href.split("/").pop()! : g.href,
     })),
   },
   {

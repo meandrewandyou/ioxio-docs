@@ -11,11 +11,14 @@
   import Button from "$lib/components/Button.svelte"
   import { GUIDES } from "./urls"
   import type { PageData } from "./$types"
+  import { isInternalLink } from "$lib/utils"
+  import { page } from "$app/stores"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
 
   const cards = Object.values(GUIDES)
+  const origin = $page.url.origin
 
   const secondaryCards = [
     {
@@ -56,8 +59,8 @@
                 <h2>{card.title}</h2>
                 <a
                   class="link"
-                  href={card.href.startsWith("http") ? card.href : `/guides/${card.href}`}
-                  target={card.href.startsWith("http") ? "_blank" : null}
+                  href={card.href}
+                  target={isInternalLink(card.href, origin) ? null : "_blank"}
                 >
                   Read more <ArrowIcon />
                 </a>
