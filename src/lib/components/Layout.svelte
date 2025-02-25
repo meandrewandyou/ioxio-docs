@@ -40,7 +40,10 @@
     if (section.route !== "" && $page.url.pathname.startsWith(`/${section.route}`)) {
       currentSectionName = section.name
       subNavigation = (section.children || []).map((child) => ({
-        href: child.route.startsWith("http") ? child.route : `/${section.route}/${child.route}`,
+        href:
+          child.route.startsWith("http://") || child.route.startsWith("https://")
+            ? child.route
+            : `/${section.route}/${child.route}`,
         name: child.name,
       }))
     }
