@@ -1,7 +1,6 @@
-export function isInternalLink(url: string, currentOrigin: string): boolean {
+export function isInternalLink(url: string): boolean {
   if (url.startsWith("http://") || url.startsWith("https://")) {
-    const linkOrigin = new URL(url).origin
-    return linkOrigin === currentOrigin
+    return false
   } else {
     return true
   }

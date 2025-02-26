@@ -1,6 +1,7 @@
 <script lang="ts">
   import SectionTitle from "$lib/components/SectionTitle.svelte"
   import VideoGuideIcon from "$lib/images/video-guide-icon.svg?dataurl"
+  import GuidesIcon from "$lib/images/guides-card-icon.svg?dataurl"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
@@ -12,28 +13,20 @@
   import { GUIDES } from "./urls"
   import type { PageData } from "./$types"
   import { isInternalLink } from "$lib/utils"
-  import { page } from "$app/stores"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
 
   const cards = Object.values(GUIDES)
-  const origin = $page.url.origin
 
   const secondaryCards = [
     {
       title: "Defining Data Products",
       href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
-      cardImageAlt: "QR code",
-      target: "_blank",
-      cardImage: VideoGuideIcon,
     },
     {
       title: "Productizing Data",
       href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
-      cardImageAlt: "QR code",
-      target: "_blank",
-      cardImage: VideoGuideIcon,
     },
   ]
 
@@ -60,13 +53,13 @@
                 <a
                   class="link"
                   href={card.href}
-                  target={isInternalLink(card.href, origin) ? null : "_blank"}
+                  target={isInternalLink(card.href) ? null : "_blank"}
                 >
                   Read more <ArrowIcon />
                 </a>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
+                <img class="card-icon" src={GuidesIcon} alt="" />
               </div>
             </div>
           </Grid>
@@ -81,10 +74,10 @@
             <div class="card">
               <div class="card-left">
                 <h2>{card.title}</h2>
-                <a class="link" href={card.href} target={card.target}>Watch <ArrowIcon /></a>
+                <a class="link" href={card.href} target="_blank">Watch <ArrowIcon /></a>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
+                <img class="card-icon" src={VideoGuideIcon} alt="" />
               </div>
             </div>
           </Grid>

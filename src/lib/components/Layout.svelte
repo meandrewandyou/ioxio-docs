@@ -14,7 +14,6 @@
 
   const popover = createPopover({})
   const size = breakpointObserver()
-  const origin = $page.url.origin
   let isSmallScreen
   $: {
     isSmallScreen = size.smallerThan("md")
@@ -40,10 +39,7 @@
     if (section.route !== "" && $page.url.pathname.startsWith(`/${section.route}`)) {
       currentSectionName = section.name
       subNavigation = (section.children || []).map((child) => ({
-        href:
-          child.route.startsWith("http://") || child.route.startsWith("https://")
-            ? child.route
-            : `/${section.route}/${child.route}`,
+        href: isInternalLink(child.route) ? `/${section.route}/${child.route}` : child.route,
         name: child.name,
       }))
     }
@@ -61,7 +57,7 @@
         <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
-            <a href={navItem.href} target={isInternalLink(navItem.href, origin) ? null : "_blank"}>
+            <a href={navItem.href} target={isInternalLink(navItem.href) ? null : "_blank"}>
               {navItem.name}
             </a>
           {/each}
@@ -77,10 +73,7 @@
           </div>
           <div class="mobile-sidebar-right-column">
             {#each subNavigation as navItem}
-              <a
-                href={navItem.href}
-                target={isInternalLink(navItem.href, $page.url.origin) ? null : "_blank"}
-              >
+              <a href={navItem.href} target={isInternalLink(navItem.href) ? null : "_blank"}>
                 {navItem.name}
               </a>
             {/each}
