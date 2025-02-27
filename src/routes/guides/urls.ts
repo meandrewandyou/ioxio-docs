@@ -37,13 +37,13 @@ export const GUIDES = {
   },
 }
 
-export const VIDEOGUIDES = [
-  {
+export const VIDEO_GUIDES = {
+  DEFINING_DATA_PRODUCTS: {
     title: "Defining Data Products",
     href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
   },
-  {
+  PRODUCTIZING_DATA: {
     title: "Productizing Data",
     href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
   },
-]
+}

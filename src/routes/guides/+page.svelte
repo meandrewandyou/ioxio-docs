@@ -10,7 +10,7 @@
   import MailIcon from "$lib/images/mail-icon.svg"
   import SlackIcon from "$lib/images/slack-icon.svg"
   import Button from "$lib/components/Button.svelte"
-  import { GUIDES, VIDEOGUIDES } from "./urls"
+  import { GUIDES, VIDEO_GUIDES } from "./urls"
   import type { PageData } from "./$types"
   import { isInternalLink } from "$lib/utils"
 
@@ -18,7 +18,7 @@
   const EMAIL_URL = "mailto:support@ioxio.com"
 
   const guides = Object.values(GUIDES)
-
+  const videoGuides = Object.values(VIDEO_GUIDES)
   export let data: PageData
 </script>
 
@@ -59,7 +59,7 @@
         <Grid lg={12} sm={12} md={12}>
           <SectionTitle title="Video guides" />
         </Grid>
-        {#each VIDEOGUIDES as guide}
+        {#each videoGuides as guide}
           <Grid lg={4} sm={12} md={6}>
             <div class="card">
               <div class="card-left">
