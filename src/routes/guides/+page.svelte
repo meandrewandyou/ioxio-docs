@@ -10,25 +10,14 @@
   import MailIcon from "$lib/images/mail-icon.svg"
   import SlackIcon from "$lib/images/slack-icon.svg"
   import Button from "$lib/components/Button.svelte"
-  import { GUIDES } from "./urls"
+  import { GUIDES, VIDEOGUIDES } from "./urls"
   import type { PageData } from "./$types"
   import { isInternalLink } from "$lib/utils"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
 
-  const cards = Object.values(GUIDES)
-
-  const secondaryCards = [
-    {
-      title: "Defining Data Products",
-      href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
-    },
-    {
-      title: "Productizing Data",
-      href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
-    },
-  ]
+  const guides = Object.values(GUIDES)
 
   export let data: PageData
 </script>
@@ -45,15 +34,16 @@
 
     <div class="card-section">
       <Grid container>
-        {#each cards as card}
+        {#each guides as guide}
           <Grid lg={4} sm={12} md={6}>
             <div class="card">
               <div class="card-left">
-                <h2>{card.title}</h2>
+                <h2>{guide.title}</h2>
                 <a
                   class="link"
-                  href={card.href}
-                  target={isInternalLink(card.href) ? null : "_blank"}
+                  href={guide.href}
+                  target={isInternalLink(guide.href) ? null : "_blank"}
+                  rel={isInternalLink(guide.href) ? null : "noreferrer"}
                 >
                   Read more <ArrowIcon />
                 </a>
@@ -69,12 +59,12 @@
         <Grid lg={12} sm={12} md={12}>
           <SectionTitle title="Video guides" />
         </Grid>
-        {#each secondaryCards as card}
+        {#each VIDEOGUIDES as guide}
           <Grid lg={4} sm={12} md={6}>
             <div class="card">
               <div class="card-left">
-                <h2>{card.title}</h2>
-                <a class="link" href={card.href} target="_blank">Watch <ArrowIcon /></a>
+                <h2>{guide.title}</h2>
+                <a class="link" href={guide.href} target="_blank">Watch <ArrowIcon /></a>
               </div>
               <div class="card-right">
                 <img class="card-icon" src={VideoGuideIcon} alt="" />

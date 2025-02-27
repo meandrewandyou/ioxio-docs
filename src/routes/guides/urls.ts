@@ -36,3 +36,14 @@ export const GUIDES = {
     href: "https://ioxio.notion.site/Verifying-API-tokens-1528e3ae865b804c9f2dd354b143c743",
   },
 }
+
+export const VIDEOGUIDES = [
+  {
+    title: "Defining Data Products",
+    href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
+  },
+  {
+    title: "Productizing Data",
+    href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
+  },
+]

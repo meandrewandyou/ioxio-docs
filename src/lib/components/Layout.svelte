@@ -57,7 +57,11 @@
         <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
-            <a href={navItem.href} target={isInternalLink(navItem.href) ? null : "_blank"}>
+            <a
+              href={navItem.href}
+              target={isInternalLink(navItem.href) ? null : "_blank"}
+              rel={isInternalLink(navItem.href) ? null : "noreferrer"}
+            >
               {navItem.name}
             </a>
           {/each}
@@ -73,7 +77,11 @@
           </div>
           <div class="mobile-sidebar-right-column">
             {#each subNavigation as navItem}
-              <a href={navItem.href} target={isInternalLink(navItem.href) ? null : "_blank"}>
+              <a
+                href={navItem.href}
+                target={isInternalLink(navItem.href) ? null : "_blank"}
+                rel={isInternalLink(navItem.href) ? null : "noreferrer"}
+              >
                 {navItem.name}
               </a>
             {/each}
