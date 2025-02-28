@@ -86,7 +86,7 @@ a:visited {
   color: vars.$color-success-main;
   text-decoration: none;
 
-  &:hover:not(.button, .icon-link, .github-link, :visited) {
+  &:hover {
     color: vars.$color-success-main;
     text-decoration: underline;
   }

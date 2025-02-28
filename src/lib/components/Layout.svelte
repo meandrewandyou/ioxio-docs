@@ -143,15 +143,15 @@
       .section-title {
         font-weight: 600;
       }
+    }
+  }
 
-      :global(a) {
-        color: $color-neutral-gray;
-        text-decoration: none;
+  .second-level-navigation :global(a) {
+    color: $color-neutral-gray;
+    text-decoration: none;
 
-        &:hover {
-          color: $color-success-main;
-        }
-      }
+    &:hover {
+      color: $color-success-main;
     }
   }
 

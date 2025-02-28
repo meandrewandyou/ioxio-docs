@@ -148,7 +148,7 @@
     }
   }
 
-  :global(.github-link) {
+  .bottom-section-wrapper :global(.github-link) {
     display: flex;
     align-items: center;
     gap: $spacing-01;
@@ -158,7 +158,7 @@
     font-size: 0.75rem;
     width: max-content;
 
-    img {
+    :global(img) {
       width: 1rem;
       height: 1rem;
     }
