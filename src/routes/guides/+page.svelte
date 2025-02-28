@@ -158,19 +158,6 @@
             line-height: 150%;
             z-index: 99;
           }
-
-          :global(.link) {
-            display: flex;
-            flex-direction: row;
-            color: $color-success-main;
-            font-weight: 600;
-            line-height: 150%;
-            text-decoration: none;
-            align-items: center;
-            gap: $spacing-01;
-            z-index: 99;
-            white-space: nowrap;
-          }
         }
 
         .card-right {
@@ -186,5 +173,18 @@
         }
       }
     }
+  }
+
+  .card-section :global(.link) {
+    display: flex;
+    flex-direction: row;
+    color: $color-success-main;
+    font-weight: 600;
+    line-height: 150%;
+    text-decoration: none;
+    align-items: center;
+    gap: $spacing-01;
+    z-index: 99;
+    white-space: nowrap;
   }
 </style>
