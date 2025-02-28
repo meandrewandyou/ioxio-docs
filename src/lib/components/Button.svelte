@@ -9,29 +9,33 @@
 </script>
 
 {#if url}
-  <A className="button {monochromeIcon ? 'monochrome' : ''}" href={url}>
-    {#if icon}
-      <span><slot /></span>
-      <svelte:component this={icon} />
-    {:else}
-      <slot />
-    {/if}
-  </A>
+  <div class="button-wrapper">
+    <A className="button {monochromeIcon ? 'monochrome' : ''}" href={url}>
+      {#if icon}
+        <span><slot /></span>
+        <svelte:component this={icon} />
+      {:else}
+        <slot />
+      {/if}
+    </A>
+  </div>
 {:else}
-  <button class="button" class:monochrome={monochromeIcon}>
-    {#if icon}
-      <span><slot /></span>
-      <svelte:component this={icon} />
-    {:else}
-      <slot />
-    {/if}
-  </button>
+  <div class="button-wrapper">
+    <button class="button" class:monochrome={monochromeIcon}>
+      {#if icon}
+        <span><slot /></span>
+        <svelte:component this={icon} />
+      {:else}
+        <slot />
+      {/if}
+    </button>
+  </div>
 {/if}
 
 <style lang="scss">
   @import "$styles/setup";
 
-  :global(.button) {
+  .button-wrapper :global(.button) {
     padding: $spacing-01 $spacing-02;
     color: $color-secondary-light;
     background: transparent;
@@ -61,7 +65,7 @@
     }
   }
 
-  :global(.monochrome) {
+  .button-wrapper :global(.monochrome) {
     :global(svg path) {
       fill: $color-secondary-light;
     }
