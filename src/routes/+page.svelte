@@ -49,7 +49,7 @@
           <div class="card">
             <div class="card-left">
               <h2>{card.title}</h2>
-              <a class="link" href={card.href}>Read more <ArrowIcon /></a>
+              <A className="link" href={card.href}>Read more <ArrowIcon /></A>
             </div>
             <div class="card-right">
               <img class="card-icon" src={card.img} alt={card.cardImageAlt} />
@@ -135,7 +135,7 @@
             z-index: 99;
           }
 
-          .link {
+          :global(.link) {
             display: flex;
             flex-direction: row;
             color: $color-success-main;

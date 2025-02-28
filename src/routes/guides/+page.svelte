@@ -12,7 +12,7 @@
   import Button from "$lib/components/Button.svelte"
   import { GUIDES, VIDEO_GUIDES } from "./urls"
   import type { PageData } from "./$types"
-  import { isInternalLink } from "$lib/utils"
+  import A from "$lib/components/A.svelte"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
@@ -39,14 +39,9 @@
             <div class="card">
               <div class="card-left">
                 <h2>{guide.title}</h2>
-                <a
-                  class="link"
-                  href={guide.href}
-                  target={isInternalLink(guide.href) ? null : "_blank"}
-                  rel={isInternalLink(guide.href) ? null : "noreferrer"}
-                >
+                <A className="link" href={guide.href}>
                   Read more <ArrowIcon />
-                </a>
+                </A>
               </div>
               <div class="card-right">
                 <img class="card-icon" src={GuidesIcon} alt="" />
@@ -64,7 +59,7 @@
             <div class="card">
               <div class="card-left">
                 <h2>{guide.title}</h2>
-                <a class="link" href={guide.href} target="_blank">Watch <ArrowIcon /></a>
+                <A className="link" href={guide.href}>Watch <ArrowIcon /></A>
               </div>
               <div class="card-right">
                 <img class="card-icon" src={VideoGuideIcon} alt="" />
@@ -164,7 +159,7 @@
             z-index: 99;
           }
 
-          .link {
+          :global(.link) {
             display: flex;
             flex-direction: row;
             color: $color-success-main;

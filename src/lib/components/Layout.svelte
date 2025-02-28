@@ -11,6 +11,7 @@
   import Sidebar from "$lib/components/Sidebar.svelte"
   import { navigation } from "$lib/components/navigation"
   import { isInternalLink } from "$lib/utils"
+  import A from "./A.svelte"
 
   const popover = createPopover({})
   const size = breakpointObserver()
@@ -57,13 +58,9 @@
         <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
-            <a
-              href={navItem.href}
-              target={isInternalLink(navItem.href) ? null : "_blank"}
-              rel={isInternalLink(navItem.href) ? null : "noreferrer"}
-            >
+            <A href={navItem.href}>
               {navItem.name}
-            </a>
+            </A>
           {/each}
         </div>
       </div>
@@ -77,13 +74,9 @@
           </div>
           <div class="mobile-sidebar-right-column">
             {#each subNavigation as navItem}
-              <a
-                href={navItem.href}
-                target={isInternalLink(navItem.href) ? null : "_blank"}
-                rel={isInternalLink(navItem.href) ? null : "noreferrer"}
-              >
+              <A href={navItem.href}>
                 {navItem.name}
-              </a>
+              </A>
             {/each}
           </div>
         </div>
@@ -151,7 +144,7 @@
         font-weight: 600;
       }
 
-      a {
+      :global(a) {
         color: $color-neutral-gray;
         text-decoration: none;
 

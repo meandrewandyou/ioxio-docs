@@ -30,12 +30,12 @@
   </p>
   <p>
     The primary contents of the QR Code include 3 properties: the issuer, product type, and unique
-    identifier of the individual unit. The issuer is a domain where further <a
-      href="/tags/metadata/">metadata</a
-    > can be found, typically the manufacturer of the product. The product type is typically e.g. the
-    model number, or stock keeping unit, something that identifies clearly the product that is being
-    talked about, but not the individual unit. The unique identifier is then e.g. the serial number or
-    similar code that can be used to identify the individual unit as accurately as necessary.
+    identifier of the individual unit. The issuer is a domain where further
+    <A href="/tags/metadata/">metadata</A> can be found, typically the manufacturer of the product. The
+    product type is typically e.g. the model number, or stock keeping unit, something that identifies
+    clearly the product that is being talked about, but not the individual unit. The unique identifier
+    is then e.g. the serial number or similar code that can be used to identify the individual unit as
+    accurately as necessary.
   </p>
   <p>
     There are two types of QR Codes that can be used with IOXIO Tags™, a signed code, and a basic
@@ -48,7 +48,7 @@
   <p>
     The signed code is a bit more complicated, but provides additional benefits. As the name
     implies, it includes a
-    <a href="/tags/signatures/">digital signature</a> as a proof of authenticity of the properties. It
+    <A href="/tags/signatures/">digital signature</A> as a proof of authenticity of the properties. It
     is however up to whoever is printing the code to ensure that it has adequate anti-tamper measures
     in place to ensure it is not copied or modified in a malicious manner, and that it lasts in the environment
     it will be stored in. The digital signature can be verified via the metadata from the issuer.

@@ -1,20 +1,20 @@
 <script lang="ts">
+  import A from "./A.svelte"
   export let icon
   export let href
-  export let internal = false
 </script>
 
-<a class="icon-link" {href} target={!internal ? "_blank" : ""} rel="noreferrer">
+<A className="icon-link" {href}>
   <span>
     <slot />
   </span>
   <svelte:component this={icon} />
-</a>
+</A>
 
 <style lang="scss">
   @import "$styles/setup";
 
-  .icon-link {
+  :global(.icon-link) {
     display: flex;
     width: max-content;
     color: $color-success-main;

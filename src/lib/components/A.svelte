@@ -1,7 +1,15 @@
 <script lang="ts">
-  export let href
+  import { isInternalLink } from "$lib/utils"
+
+  export let href: string
+  export let className: string | undefined = undefined
 </script>
 
-<a {href} rel="noreferrer" target="_blank">
+<a
+  class={className}
+  {href}
+  target={isInternalLink(href) ? null : "_blank"}
+  rel={isInternalLink(href) ? null : "noreferrer"}
+>
   <slot />
 </a>
