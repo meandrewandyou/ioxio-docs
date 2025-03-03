@@ -14,7 +14,7 @@
 <style lang="scss">
   @import "$styles/setup";
 
-  :global(.icon-link) {
+  :global(a.icon-link) {
     display: flex;
     width: max-content;
     color: $color-success-main;
@@ -26,6 +26,10 @@
 
     span {
       flex-shrink: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 </style>

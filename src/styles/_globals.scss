@@ -80,18 +80,6 @@ img {
   max-width: 100%;
 }
 
-a,
-a:visited {
-  @include mixins.text-body();
-  color: vars.$color-success-main;
-  text-decoration: none;
-
-  &:hover {
-    color: vars.$color-success-main;
-    text-decoration: underline;
-  }
-}
-
 * {
   &:focus-visible {
     outline: 2px solid vars.$color-success-main;
