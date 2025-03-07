@@ -8,7 +8,7 @@
   import TableOfContents from "$lib/components/TableOfContents.svelte"
 
   import type { PageData } from "./$types"
-  import { GUIDES, NOTION_GUIDES } from "../urls"
+  import { GUIDES } from "../urls"
   import GuideImage from "$lib/components/GuideImage.svelte"
   import A from "$lib/components/A.svelte"
 
@@ -25,9 +25,10 @@
   <p>
     In this guide we will explain how to build a new data source or productizer and how to use the
     developer portal to publish it using the developer portal so it can be queried through the
-    product gateway using <A href="https://sandbox.ioxio-dataspace.com/">IOXIO Sandbox Dataspace</A
-    >. These steps are the same on all IOXIO Dataspaces, while some might miss the particular data
-    products mentioned here.
+    product gateway using <A href="https://sandbox.ioxio-dataspace.com/">
+      IOXIO Sandbox Dataspace
+    </A>. These steps are the same on all IOXIO Dataspaces, while some might miss the particular
+    data products mentioned here.
   </p>
   <SectionTitle title="Prerequisites" />
   <li>Data that you want to provide.</li>
@@ -43,17 +44,17 @@
   </p>
   <p>
     If there is no definition for the kind of data that you want to provide you can create your own
-    definition by following the <A href={GUIDES.BUILD_DATA_DEF.href}
-      >{GUIDES.BUILD_DATA_DEF.title}</A
-    > guide.
+    definition by following the <A href={GUIDES.BUILD_DATA_DEF.href}>
+      {GUIDES.BUILD_DATA_DEF.title}
+    </A> guide.
   </p>
   <SectionTitle title="What are we building?" />
   <p>
     In this guide we will build a productizer that provides an API matching the
-    <em>test/ioxio-dataspace-guides/Country/BasicInfo</em> definition that we created in the <A
-      href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A
-    > guide. As the definition is an OpenAPI spec you might want to use se some tool like the Swagger
-    Editor to view it in a more human friendly format.
+    <em>test/ioxio-dataspace-guides/Country/BasicInfo</em> definition that we created in the
+    <A href={GUIDES.BUILD_DATA_DEF.href}>{GUIDES.BUILD_DATA_DEF.title}</A> guide. As the definition is
+    an OpenAPI spec you might want to use se some tool like the Swagger Editor to view it in a more human
+    friendly format.
   </p>
   <p>
     In this case it means we will create an API that accepts a <em>POST</em> request at the path
@@ -121,9 +122,8 @@
   </p>
   <SectionTitle title="Adding models for the request and response" />
   <p>
-    Let's start by deleting the models related to the weather data (<em
-      >CurrentWeatherMetricRequest</em
-    >
+    Let's start by deleting the models related to the weather data (
+    <em>CurrentWeatherMetricRequest</em>
     and <em>CurrentWeatherMetricResponse</em>) from the <em>app/models.py</em>, as we won't need
     them.
   </p>
@@ -397,10 +397,10 @@ async def data_product(params: BasicCountryInfoRequest):
       which groups are allowed to access the data source. The members of the allowed groups will
       find the data source and instructions on generating valid API-tokens for this header in the
       <em>Access control keys</em>
-      section of dataspace. The <A href={NOTION_GUIDES.VERIFYING_API_TOKENS.href}
-        >{NOTION_GUIDES.VERIFYING_API_TOKENS.title}</A
-      > guide explains how you can verify the tokens in your data source and know which group was requesting
-      the data.
+      section of dataspace. The <A href={GUIDES.VERIFYING_API_TOKENS.href}>
+        {GUIDES.VERIFYING_API_TOKENS.title}
+      </A> guide explains how you can verify the tokens in your data source and know which group was
+      requesting the data.
     </li>
   </ul>
   <p>

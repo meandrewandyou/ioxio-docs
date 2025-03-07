@@ -1,6 +1,7 @@
 <script lang="ts">
   import SectionTitle from "$lib/components/SectionTitle.svelte"
   import VideoGuideIcon from "$lib/images/video-guide-icon.svg?dataurl"
+  import GuidesIcon from "$lib/images/guides-card-icon.svg?dataurl"
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
@@ -9,31 +10,15 @@
   import MailIcon from "$lib/images/mail-icon.svg"
   import SlackIcon from "$lib/images/slack-icon.svg"
   import Button from "$lib/components/Button.svelte"
-  import { GUIDES } from "./urls"
+  import { GUIDES, VIDEO_GUIDES } from "./urls"
   import type { PageData } from "./$types"
+  import A from "$lib/components/A.svelte"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
 
-  const cards = Object.values(GUIDES)
-
-  const secondaryCards = [
-    {
-      title: "Defining Data Products",
-      href: "https://www.youtube.com/watch?v=yPzN04ICsbw",
-      cardImageAlt: "QR code",
-      target: "_blank",
-      cardImage: VideoGuideIcon,
-    },
-    {
-      title: "Productizing Data",
-      href: "https://www.youtube.com/watch?v=f-f6P_-8zoQ",
-      cardImageAlt: "QR code",
-      target: "_blank",
-      cardImage: VideoGuideIcon,
-    },
-  ]
-
+  const guides = Object.values(GUIDES)
+  const videoGuides = Object.values(VIDEO_GUIDES)
   export let data: PageData
 </script>
 
@@ -49,15 +34,17 @@
 
     <div class="card-section">
       <Grid container>
-        {#each cards as card}
+        {#each guides as guide}
           <Grid lg={4} sm={12} md={6}>
             <div class="card">
               <div class="card-left">
-                <h2>{card.title}</h2>
-                <a class="link" href={card.href}>Read more <ArrowIcon /></a>
+                <h2>{guide.title}</h2>
+                <A className="link" href={guide.href}>
+                  Read more <ArrowIcon />
+                </A>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
+                <img class="card-icon" src={GuidesIcon} alt="" />
               </div>
             </div>
           </Grid>
@@ -67,15 +54,15 @@
         <Grid lg={12} sm={12} md={12}>
           <SectionTitle title="Video guides" />
         </Grid>
-        {#each secondaryCards as card}
+        {#each videoGuides as guide}
           <Grid lg={4} sm={12} md={6}>
             <div class="card">
               <div class="card-left">
-                <h2>{card.title}</h2>
-                <a class="link" href={card.href} target={card.target}>Watch <ArrowIcon /></a>
+                <h2>{guide.title}</h2>
+                <A className="link" href={guide.href}>Watch <ArrowIcon /></A>
               </div>
               <div class="card-right">
-                <img class="card-icon" src={card.cardImage} alt={card.cardImageAlt} />
+                <img class="card-icon" src={VideoGuideIcon} alt="" />
               </div>
             </div>
           </Grid>
@@ -171,19 +158,6 @@
             line-height: 150%;
             z-index: 99;
           }
-
-          .link {
-            display: flex;
-            flex-direction: row;
-            color: $color-success-main;
-            font-weight: 600;
-            line-height: 150%;
-            text-decoration: none;
-            align-items: center;
-            gap: $spacing-01;
-            z-index: 99;
-            white-space: nowrap;
-          }
         }
 
         .card-right {
@@ -199,5 +173,18 @@
         }
       }
     }
+  }
+
+  .card-section :global(.link) {
+    display: flex;
+    flex-direction: row;
+    color: $color-success-main;
+    font-weight: 600;
+    line-height: 150%;
+    text-decoration: none;
+    align-items: center;
+    gap: $spacing-01;
+    z-index: 99;
+    white-space: nowrap;
   }
 </style>

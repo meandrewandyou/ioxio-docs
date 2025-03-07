@@ -29,10 +29,14 @@
 
   h2 {
     a {
+      text-decoration: none;
       font-size: vars.$h2-font-size;
       font-weight: vars.$h2-font-weight;
       line-height: vars.$h2-line-height;
       color: vars.$color-neutral-light;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

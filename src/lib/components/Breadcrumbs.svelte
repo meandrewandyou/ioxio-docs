@@ -1,5 +1,6 @@
 <script lang="ts">
   import { navigation } from "$lib/components/navigation"
+  import A from "./A.svelte"
 
   type Breadcrumb = {
     name: string
@@ -39,7 +40,7 @@
 
 <div class="breadcrumbs">
   {#each breadcrumbs as breadcrumb, i}
-    <span class="breadcrumb"><a href={breadcrumb.link}>{breadcrumb.name}</a></span>
+    <span class="breadcrumb"><A href={breadcrumb.link}>{breadcrumb.name}</A></span>
     <span class="sep">/</span>
   {/each}
 </div>

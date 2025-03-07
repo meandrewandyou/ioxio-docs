@@ -2,6 +2,7 @@
   import { schemas } from "$lib/components/schemas"
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte"
   import Title from "$lib/components/Title.svelte"
+  import A from "$lib/components/A.svelte"
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -17,6 +18,6 @@
 
 <ul>
   {#each schemas as schema}
-    <li><a href={`/schemas/${schema.route}/`}>{schema.name}</a></li>
+    <li><A href={`/schemas/${schema.route}/`}>{schema.name}</A></li>
   {/each}
 </ul>

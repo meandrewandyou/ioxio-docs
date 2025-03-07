@@ -43,8 +43,8 @@
     By parsing the COSE signature without verifying it, you should be able to get the JWKS
     <em>kid</em> and <em>alg</em> from the COSE header, as well as the payload. You can use the
     <em>iss</em> from the payload to fetch the
-    <a href="/tags/metadata/#product-passport.json">product-passport.json</a>, which points to the
-    <a href="/tags/metadata/#jwks.json">jwks.json</a>. Once you load that file, you can use the
+    <A href="/tags/metadata/#product-passport.json">product-passport.json</A>, which points to the
+    <A href="/tags/metadata/#jwks.json">jwks.json</A>. Once you load that file, you can use the
     other properties to determine the correct key to verify the signature with.
   </p>
 
@@ -81,10 +81,10 @@
     </li>
     <li>
       Fetch <em>https://{"{"}payload.iss{"}"}/.well-known/product-passport.json</em>
-      <a href="/tags/metadata/#product-passport.json">metadata</a>
+      <A href="/tags/metadata/#product-passport.json">metadata</A>
     </li>
     <li>
-      Fetch the <a href="/tags/metadata/#jwks.json">JWKS keys</a> from <em>{"{"}jwks_url{"}"}</em> in
+      Fetch the <A href="/tags/metadata/#jwks.json">JWKS keys</A> from <em>{"{"}jwks_url{"}"}</em> in
       the product-passport.json
     </li>
     <li>Verify the COSE signature matches the key provided via JWKS</li>
@@ -93,7 +93,7 @@
       <em>
         https://{"{"}payload.iss{"}"}/.well-known/product-passport/{"{"}payload.product{"}"}.json
       </em>
-      for <a href="/tags/metadata/#%7Bproduct%7D.json">product metadata</a>
+      for <A href="/tags/metadata/#%7Bproduct%7D.json">product metadata</A>
     </li>
     <li>
       Fetch
@@ -103,7 +103,7 @@
     </li>
     <li>
       Proceed to do what you wish with the <em>supported_dataproducts</em> from the
-      <a href="/tags/metadata/#product-passport.json">{"{"}payload.product{"}"}.json</a>, including
+      <A href="/tags/metadata/#product-passport.json">{"{"}payload.product{"}"}.json</A>, including
       e.g. fetching the data products via the <em>product_gateway_url</em> from the
       <em>dataspace-configuration.json</em>
     </li>

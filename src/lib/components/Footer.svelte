@@ -9,6 +9,7 @@
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import GitHubLogo from "$lib/images/github-icon.svg?dataurl"
   import IconLink from "$lib/components/IconLink.svelte"
+  import A from "./A.svelte"
 
   const SLACK_URL = "https://slack.ioxio.com"
   const EMAIL_URL = "mailto:support@ioxio.com"
@@ -53,15 +54,10 @@
       <Grid container>
         <Grid sm={0} lg={1} />
         <Grid sm={12} lg={11}>
-          <a
-            class="github-link"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/ioxiocom/ioxio-docs"
-          >
+          <A className="github-link" href="https://github.com/ioxiocom/ioxio-docs">
             <img src={GitHubLogo} alt="GitHub repository" />
             <div>Contribute to these docs</div>
-          </a>
+          </A>
         </Grid>
       </Grid>
       <Grid container>
@@ -123,25 +119,6 @@
       }
     }
 
-    .github-link {
-      display: flex;
-      align-items: center;
-      gap: $spacing-01;
-      margin-bottom: $spacing-02;
-      color: $color-neutral-light;
-      text-decoration: none;
-      font-size: 0.75rem;
-      width: max-content;
-
-      img {
-        width: 1rem;
-        height: 1rem;
-      }
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
     .copyright-text {
       text-align: right;
 
@@ -168,6 +145,25 @@
 
     @include mobile() {
       background-position-x: 10rem;
+    }
+  }
+
+  .bottom-section-wrapper :global(.github-link) {
+    display: flex;
+    align-items: center;
+    gap: $spacing-01;
+    margin-bottom: $spacing-02;
+    color: $color-neutral-light;
+    text-decoration: none;
+    font-size: 0.75rem;
+    width: max-content;
+
+    :global(img) {
+      width: 1rem;
+      height: 1rem;
+    }
+    &:hover {
+      text-decoration: underline;
     }
   }
 </style>

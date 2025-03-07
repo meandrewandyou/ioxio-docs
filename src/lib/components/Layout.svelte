@@ -10,6 +10,8 @@
   import breakpointObserver from "$lib/components/breakpointObserver.js"
   import Sidebar from "$lib/components/Sidebar.svelte"
   import { navigation } from "$lib/components/navigation"
+  import { isInternalLink } from "$lib/utils"
+  import A from "./A.svelte"
 
   const popover = createPopover({})
   const size = breakpointObserver()
@@ -38,7 +40,7 @@
     if (section.route !== "" && $page.url.pathname.startsWith(`/${section.route}`)) {
       currentSectionName = section.name
       subNavigation = (section.children || []).map((child) => ({
-        href: `/${section.route}/${child.route}`,
+        href: isInternalLink(child.route) ? `/${section.route}/${child.route}` : child.route,
         name: child.name,
       }))
     }
@@ -56,7 +58,9 @@
         <div class="second-level-navigation">
           <div class="section-title">{currentSectionName}</div>
           {#each subNavigation as navItem}
-            <a href={navItem.href}>{navItem.name}</a>
+            <A href={navItem.href}>
+              {navItem.name}
+            </A>
           {/each}
         </div>
       </div>
@@ -70,7 +74,9 @@
           </div>
           <div class="mobile-sidebar-right-column">
             {#each subNavigation as navItem}
-              <a href={navItem.href}>{navItem.name}</a>
+              <A href={navItem.href}>
+                {navItem.name}
+              </A>
             {/each}
           </div>
         </div>
@@ -137,15 +143,15 @@
       .section-title {
         font-weight: 600;
       }
+    }
+  }
 
-      a {
-        color: $color-neutral-gray;
-        text-decoration: none;
+  .second-level-navigation :global(a) {
+    color: $color-neutral-gray;
+    text-decoration: none;
 
-        &:hover {
-          color: $color-success-main;
-        }
-      }
+    &:hover {
+      color: $color-success-main;
     }
   }
 

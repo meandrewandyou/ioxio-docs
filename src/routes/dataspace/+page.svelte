@@ -90,7 +90,7 @@
   </p>
   <p>
     Explore our
-    <a href="/guides/building-a-data-definition/"> data definition guide </a>
+    <A href="/guides/building-a-data-definition/">data definition guide</A>
     or the
     <A href="https://www.youtube.com/watch?v=f-f6P_-8zoQ">Youtube video tutorial</A> for productizing
     data.
@@ -169,12 +169,12 @@
     Our Dataspaces are built on the assumption that there will be multiple dataspaces, and we want
     to make it as easy as possible for you to start using a dataspace. There's little need for
     hard-coded magic, as we provide many public configuration files for the services, starting from
-    our <a href="/schemas/dataspace-configuration/">Dataspace configuration file</a> which tells your
+    our <A href="/schemas/dataspace-configuration/">Dataspace configuration file</A> which tells your
     applications how to talk to the Dataspace and where to discover the various services in it.
   </p>
   <p>
     All the parties on the Dataspace, including us, the application developers, and data vendors,
-    publish their own <a href="/schemas/party-configuration/">Party configuration file</a>, which
+    publish their own <A href="/schemas/party-configuration/">Party configuration file</A>, which
     documents things like where their public keys can be found. The data you share on our Dataspaces
     is configured via the
     <A href="https://github.com/ioxio-dataspace/sandbox-definitions">Data Product Definitions</A>.
@@ -212,9 +212,7 @@
         <IconLink href="https://github.com/ioxio-dataspace/example-productizer" icon={ArrowIcon}>
           Check the source
         </IconLink>
-        <IconLink internal href="/guides/building-a-data-source/" icon={ArrowIcon}>
-          Check the guide
-        </IconLink>
+        <IconLink href="/guides/building-a-data-source/" icon={ArrowIcon}>Check the guide</IconLink>
       </div>
     </div>
     <div class="example-card">
@@ -234,7 +232,7 @@
         <IconLink href="https://github.com/ioxio-dataspace/example-app" icon={ArrowIcon}>
           Check the source
         </IconLink>
-        <IconLink internal href="/guides/building-an-application/" icon={ArrowIcon}>
+        <IconLink href="/guides/building-an-application/" icon={ArrowIcon}>
           Check the guide
         </IconLink>
       </div>
