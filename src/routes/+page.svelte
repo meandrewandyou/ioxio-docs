@@ -4,6 +4,8 @@
   import DataSchemasIcon from "$lib/images/card-schemas-icon.svg?dataurl"
   import DataspaceIcon from "$lib/images/dataspace-card-icon.svg?dataurl"
   import QRCodeIcon from "$lib/images/card-qr-code-icon.svg?dataurl"
+  import GuidesIcon from "$lib/images/guides-card-icon.svg?dataurl"
+
   import ArrowIcon from "$lib/images/link-arrow-icon.svg"
   import Grid from "$lib/components/Grid.svelte"
 
@@ -11,19 +13,21 @@
     {
       title: "IOXIO Dataspace™ overview",
       href: "/dataspace/",
-      cardImageAlt: "Data schemas",
       img: DataspaceIcon,
     },
     {
       title: "IOXIO Tags™",
       href: "/tags/",
-      cardImageAlt: "QR code",
       img: QRCodeIcon,
+    },
+    {
+      title: "Guides",
+      href: "/guides/",
+      img: GuidesIcon,
     },
     {
       title: "Schemas for data objects",
       href: "/schemas/",
-      cardImageAlt: "Data schemas",
       img: DataSchemasIcon,
     },
   ]
@@ -52,7 +56,7 @@
               <A className="link" href={card.href}>Read more <ArrowIcon /></A>
             </div>
             <div class="card-right">
-              <img class="card-icon" src={card.img} alt={card.cardImageAlt} />
+              <img class="card-icon" src={card.img} alt="" />
             </div>
           </div>
         </Grid>
