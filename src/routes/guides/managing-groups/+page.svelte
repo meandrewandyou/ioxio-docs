@@ -27,6 +27,10 @@
     existing group without a party configuration you can find the group in your list of groups, edit
     it, add the party configuration domain and click the update button.
   </p>
+  <p>
+    Note that some dataspaces require groups to be created by staff, so if the page has a notice
+    saying so, please follow the instructions written on it.
+  </p>
   <GuideImage img={images.PAGE_FOR_CREATING_GROUPS} />
   <GuideImage img={images.EDITING_A_GROUP} />
   <SectionTitle title="Creating and hosting party configuration" />

@@ -17,6 +17,18 @@
     "EDIT_DS": {
       "src": "/guides/building-a-data-source/edit_ds.png",
       "alt": "Edit data source page in Developer Portal"
+    },
+    "DEFINITIONS": {
+      "src": "/guides/building-a-data-source/menu_definitions.png",
+      "alt": "Definitions item in menu"
+    },
+    "ALLOWED_GROUPS": {
+      "src": "/guides/building-a-data-source/allowed_groups.png",
+      "alt": "Allowed groups section in data source edit form"
+    },
+    "ERRORS": {
+      "src": "/guides/building-a-data-source/errors_section.png",
+      "alt": "Errors section in data source edit form"
     }
   },
   "BUILD_APP": {
