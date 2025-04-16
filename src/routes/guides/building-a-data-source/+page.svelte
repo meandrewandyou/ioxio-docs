@@ -207,9 +207,17 @@
 `}
   </Code>
   <p>Successful response will look something like:</p>
-  <Code lang={bash}>
+  <Code lang={json}>
     {`
-  {"temperature":-4.5,"humidity":56,"pressure":994,"windSpeed":7.4,"windDirection":33,"precipitation":0.9,"visibility":45130}'
+  {
+  "temperature":-4.5,
+  "humidity":56,
+  "pressure":994,
+  "windSpeed":7.4,
+  "windDirection":33,
+  "precipitation":0.9,
+  "visibility":45130
+}
 `}
   </Code>
 
