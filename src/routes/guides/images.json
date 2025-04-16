@@ -10,6 +10,14 @@
     }
   },
   "BUILD_DATA_SOURCE": {
+    "ALLOWED_GROUPS": {
+      "src": "/guides/building-a-data-source/allowed_groups.png",
+      "alt": "Allowed groups section in data source edit form"
+    },
+    "API_TOKEN": {
+      "src": "/guides/building-a-data-source/api_token.png",
+      "alt": "Access control keys of a data source"
+    },
     "CREATE_NEW_DS": {
       "src": "/guides/building-a-data-source/create_new_ds.png",
       "alt": "Create new data source page in Developer Portal"
@@ -18,29 +26,21 @@
       "src": "/guides/building-a-data-source/ds_source.png",
       "alt": "Data source's form Source field with the URL at which you can make requests to the data source."
     },
-    "DEFINITIONS": {
-      "src": "/guides/building-a-data-source/menu_definitions.png",
-      "alt": "Definitions item in menu"
+    "ERRORS": {
+      "src": "/guides/building-a-data-source/errors_section.png",
+      "alt": "Errors section in data source edit form"
     },
     "KEYS": {
       "src": "/guides/building-a-data-source/keys.png",
       "alt": "Access control keys item in menu"
     },
-    "ALLOWED_GROUPS": {
-      "src": "/guides/building-a-data-source/allowed_groups.png",
-      "alt": "Allowed groups section in data source edit form"
-    },
-    "ERRORS": {
-      "src": "/guides/building-a-data-source/errors_section.png",
-      "alt": "Errors section in data source edit form"
+    "DEFINITIONS": {
+      "src": "/guides/building-a-data-source/menu_definitions.png",
+      "alt": "Definitions item in menu"
     },
     "SOURCE_ACCESS_CONTROL": {
       "src": "/guides/building-a-data-source/source_access_control.png",
       "alt": "Data source in the list of data sources with Dataspace verified API keys"
-    },
-    "API_TOKEN": {
-      "src": "/guides/building-a-data-source/api_token.png",
-      "alt": "Access control keys of a data source"
     }
   },
   "BUILD_APP": {
