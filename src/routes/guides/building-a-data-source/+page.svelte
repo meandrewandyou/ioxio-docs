@@ -185,7 +185,7 @@
   </p>
   <p>Find your data source in the list, click <em>View</em>.</p>
   <GuideImage img={images.SOURCE_ACCESS_CONTROL} />
-  <p>Then you can generate API token clicking <em>Generate API token</em> button or using cURL.</p>
+  <p>Then you can generate an API token by clicking the <em>Generate API token</em> button or using the cURL example.</p>
   <GuideImage img={images.API_TOKEN} />
   <p>
     You can for example use the cURL command line tool to query it like this (make sure to replace
