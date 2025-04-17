@@ -57,8 +57,8 @@
   </p>
   <p>
     In this case it means API that accepts a <em>POST</em> request at the path
-    <em>Meteorology/Weather_v0_1</em> needs to be created. It could for example be hosted at
-    <em>https://data-source-guide-example.demos.ioxio.dev/Meteorology/Weather_v0_1</em>.
+    <em>/Meteorology/Weather_v0.1</em> needs to be created. It could for example be hosted at
+    <em>https://data-source-guide-example.demos.ioxio.dev/Meteorology/Weather_v0.1</em>.
   </p>
   <p>The <em>POST</em> request to that endpoint needs to accept a JSON payload, similar to this:</p>
   <Code lang={json}>
@@ -85,8 +85,8 @@
 `}
   </Code>
   <p>
-    You can build this using your own preferred tools, or take our
-    <A href="https://github.com/ioxio-dataspace/data-source-guide-example">integration</A> as a refference.
+    You can build this using your own preferred tools, or have a look at our
+    <A href="https://github.com/ioxio-dataspace/data-source-guide-example">simple example implementation</A>.
   </p>
   <SectionTitle title="Deploy and host your API" />
   <p>
@@ -95,7 +95,7 @@
     <em>https://data-source-guide-example.demos.ioxio.dev</em>.
   </p>
   <SectionTitle title="Register your data source in the Dataspace" />
-  <p>Go to the dataspace and click on <em>My groups</em></p>
+  <p>Go to the dataspace and click on <em>My groups</em>.</p>
   <h3>Ensure you have a group</h3>
   <p>
     If you don't yet have a group, create one. The name of the group should preferably relate to
@@ -168,8 +168,8 @@
   <GuideImage img={images.ALLOWED_GROUPS} />
   <p>
     Each group that wants to access data from this data source, including your group, needs to be in
-    this list. Click <em>+ Add</em>, type in the name of the group, click <em>+ Add</em> again. Group
-    will appear in the list, we're good to continue. Flow to add 3rd parties groups is the same.
+    this list. Click <em>+ Add</em>, type in the name of the group, click <em>+ Add</em> again. The group
+    will appear in the list, we're good to continue. Flow to add 3rd party groups is the same.
   </p>
   <SectionTitle title="Test your data source" />
   <p>
@@ -179,24 +179,24 @@
   </p>
   <GuideImage img={images.SOURCE} />
   <p>
-    As our data source uses Dataspace verified API tokens, we'll need one before making request. You
-    could generate one on <em>Access control keys</em> page.
+    As our data source uses Dataspace verified API tokens, we'll need one before making a request. You
+    can generate one on the <em>Access control keys</em> page.
     <GuideImage img={images.KEYS} />
   </p>
-  <p>Find your data source in the list, click <em>View</em></p>
+  <p>Find your data source in the list, click <em>View</em>.</p>
   <GuideImage img={images.SOURCE_ACCESS_CONTROL} />
-  <p>Then you can generate API token clicking <em>Generate API token</em> button or using cURL.</p>
+  <p>Then you can generate an API token by clicking the <em>Generate API token</em> button or using the cURL example.</p>
   <GuideImage img={images.API_TOKEN} />
   <p>
     You can for example use the cURL command line tool to query it like this (make sure to replace
     the URL and change the data to match the expected payload of your own data source, and add
-    recently generated token as <em>X-API-KEY</em> to the request).
+    a recently generated token in the <em>X-API-KEY</em> header to the request).
   </p>
   <p>
     Note: As long as your datasource remains published or unlisted, you will not need to use the
     <em>X-Preview-Token</em>
-    header, once the datasource is switched to private the header should be added to request (could be
-    found on data source <em>Edit</em> page).
+    header. If the access control mode is changed to private, the header should be added to the 
+    request (the value can be found on the data source <em>Edit</em> page).
   </p>
   <Code lang={bash}>
     {`
@@ -206,7 +206,7 @@
   -d '{"lat": 60.192059, "lon": 24.945831}'
 `}
   </Code>
-  <p>Successful response will look something like:</p>
+  <p>A successful response will look something like:</p>
   <Code lang={json}>
     {`
   {
