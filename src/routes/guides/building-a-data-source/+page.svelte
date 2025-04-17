@@ -169,7 +169,7 @@
   <p>
     Each group that wants to access data from this data source, including your group, needs to be in
     this list. Click <em>+ Add</em>, type in the name of the group, click <em>+ Add</em> again. The group
-    will appear in the list, we're good to continue. Flow to add 3rd parties groups is the same.
+    will appear in the list, we're good to continue. Flow to add 3rd party groups is the same.
   </p>
   <SectionTitle title="Test your data source" />
   <p>
