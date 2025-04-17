@@ -206,7 +206,7 @@
   -d '{"lat": 60.192059, "lon": 24.945831}'
 `}
   </Code>
-  <p>Successful response will look something like:</p>
+  <p>A successful response will look something like:</p>
   <Code lang={json}>
     {`
   {
