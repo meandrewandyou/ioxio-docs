@@ -195,8 +195,8 @@
   <p>
     Note: As long as your datasource remains published or unlisted, you will not need to use the
     <em>X-Preview-Token</em>
-    header, once the datasource is switched to private the header should be added to request (could be
-    found on data source <em>Edit</em> page).
+    header. If the access control mode is changed to private, the header should be added to the 
+    request (the value can be found on the data source <em>Edit</em> page).
   </p>
   <Code lang={bash}>
     {`
