@@ -190,7 +190,7 @@
   <p>
     You can for example use the cURL command line tool to query it like this (make sure to replace
     the URL and change the data to match the expected payload of your own data source, and add
-    recently generated token as <em>X-API-KEY</em> to the request).
+    a recently generated token in the <em>X-API-KEY</em> header to the request).
   </p>
   <p>
     Note: As long as your datasource remains published or unlisted, you will not need to use the
