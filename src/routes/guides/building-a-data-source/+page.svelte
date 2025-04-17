@@ -47,13 +47,20 @@
   <SectionTitle title="What are we building?" />
   <p>
     We need to build an integration that provides an API matching one of the available definitions.
-    For references, let's use
+    For references, let's use <em>Meteorology/Weather_v0.1</em> (view
     <A
-      href="https://github.com/ioxio-dataspace/sandbox-definitions/blob/main/src/Meteorology/Weather_v0.1.py"
+      href="https://raw.githubusercontent.com/ioxio-dataspace/sandbox-definitions/refs/heads/main/DataProducts/Meteorology/Weather_v0.1.json"
+      >OpenAPI Spec</A
+    >,
+    <A
+      href="https://gateway.sandbox.ioxio-dataspace.com/docs#/Data%20Products/Meteorology_Weather_v0_1_Meteorology_Weather_v0_1_post"
     >
-      Meteorology/Weather_v0.1
-    </A>. As the definition is an OpenAPI spec you might want to use some tool like the Swagger
-    Editor to view it in a more human friendly format.
+      SwaggerUI
+    </A> or
+    <A
+      href="https://gateway.sandbox.ioxio-dataspace.com/redoc#tag/Data-Products/operation/Meteorology_Weather_v0_1_Meteorology_Weather_v0_1_post"
+      >ReDoc</A
+    >)
   </p>
   <p>
     In this case it means API that accepts a <em>POST</em> request at the path
@@ -86,7 +93,9 @@
   </Code>
   <p>
     You can build this using your own preferred tools, or have a look at our
-    <A href="https://github.com/ioxio-dataspace/data-source-guide-example">simple example implementation</A>.
+    <A href="https://github.com/ioxio-dataspace/data-source-guide-example"
+      >simple example implementation</A
+    >.
   </p>
   <SectionTitle title="Deploy and host your API" />
   <p>
@@ -179,24 +188,27 @@
   </p>
   <GuideImage img={images.SOURCE} />
   <p>
-    As our data source uses Dataspace verified API tokens, we'll need one before making a request. You
-    can generate one on the <em>Access control keys</em> page.
+    As our data source uses Dataspace verified API tokens, we'll need one before making a request.
+    You can generate one on the <em>Access control keys</em> page.
     <GuideImage img={images.KEYS} />
   </p>
   <p>Find your data source in the list, click <em>View</em>.</p>
   <GuideImage img={images.SOURCE_ACCESS_CONTROL} />
-  <p>Then you can generate an API token by clicking the <em>Generate API token</em> button or using the cURL example.</p>
+  <p>
+    Then you can generate an API token by clicking the <em>Generate API token</em> button or using the
+    cURL example.
+  </p>
   <GuideImage img={images.API_TOKEN} />
   <p>
     You can for example use the cURL command line tool to query it like this (make sure to replace
-    the URL and change the data to match the expected payload of your own data source, and add
-    a recently generated token in the <em>X-API-KEY</em> header to the request).
+    the URL and change the data to match the expected payload of your own data source, and add a
+    recently generated token in the <em>X-API-KEY</em> header to the request).
   </p>
   <p>
     Note: As long as your datasource remains published or unlisted, you will not need to use the
     <em>X-Preview-Token</em>
-    header. If the access control mode is changed to private, the header should be added to the 
-    request (the value can be found on the data source <em>Edit</em> page).
+    header. If the access control mode is changed to private, the header should be added to the request
+    (the value can be found on the data source <em>Edit</em> page).
   </p>
   <Code lang={bash}>
     {`
