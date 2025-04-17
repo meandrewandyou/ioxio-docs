@@ -183,7 +183,7 @@
     can generate one on the <em>Access control keys</em> page.
     <GuideImage img={images.KEYS} />
   </p>
-  <p>Find your data source in the list, click <em>View</em></p>
+  <p>Find your data source in the list, click <em>View</em>.</p>
   <GuideImage img={images.SOURCE_ACCESS_CONTROL} />
   <p>Then you can generate API token clicking <em>Generate API token</em> button or using cURL.</p>
   <GuideImage img={images.API_TOKEN} />
