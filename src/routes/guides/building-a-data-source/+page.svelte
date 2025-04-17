@@ -85,8 +85,8 @@
 `}
   </Code>
   <p>
-    You can build this using your own preferred tools, or take our
-    <A href="https://github.com/ioxio-dataspace/data-source-guide-example">integration</A> as a refference.
+    You can build this using your own preferred tools, or have a look at our
+    <A href="https://github.com/ioxio-dataspace/data-source-guide-example">simple example implementation</A>.
   </p>
   <SectionTitle title="Deploy and host your API" />
   <p>
