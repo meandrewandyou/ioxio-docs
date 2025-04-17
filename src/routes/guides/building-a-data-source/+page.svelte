@@ -95,7 +95,7 @@
     <em>https://data-source-guide-example.demos.ioxio.dev</em>.
   </p>
   <SectionTitle title="Register your data source in the Dataspace" />
-  <p>Go to the dataspace and click on <em>My groups</em></p>
+  <p>Go to the dataspace and click on <em>My groups</em>.</p>
   <h3>Ensure you have a group</h3>
   <p>
     If you don't yet have a group, create one. The name of the group should preferably relate to
