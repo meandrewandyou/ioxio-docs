@@ -179,7 +179,7 @@
   </p>
   <GuideImage img={images.SOURCE} />
   <p>
-    As our data source uses Dataspace verified API tokens, we'll need one before making request. You
+    As our data source uses Dataspace verified API tokens, we'll need one before making a request. You
     could generate one on <em>Access control keys</em> page.
     <GuideImage img={images.KEYS} />
   </p>
