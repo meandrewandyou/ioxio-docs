@@ -57,7 +57,7 @@
   </p>
   <p>
     In this case it means API that accepts a <em>POST</em> request at the path
-    <em>Meteorology/Weather_v0_1</em> needs to be created. It could for example be hosted at
+    <em>/Meteorology/Weather_v0.1</em> needs to be created. It could for example be hosted at
     <em>https://data-source-guide-example.demos.ioxio.dev/Meteorology/Weather_v0_1</em>.
   </p>
   <p>The <em>POST</em> request to that endpoint needs to accept a JSON payload, similar to this:</p>
