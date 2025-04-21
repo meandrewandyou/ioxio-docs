@@ -120,7 +120,7 @@
   <p>
     If you want to publish multiple data sources for the same definition using the same group, you
     can add a variant name to distinguish them from each other. Most likely you don't want to use
-    this for your first data source. In the <em>Base URL</em> enter the base URL at which your deployment
+    this for your first data source and thus want to leave the field empty. In the <em>Base URL</em> enter the base URL at which your deployment
     is available. The help text shows where the API endpoint is expected to be available. The Base URL
     will not be displayed to other users and is only used by the product gateway to connect to your integration.
     All other applications must connect through the product gateway.
