@@ -60,7 +60,7 @@
     <A
       href="https://gateway.sandbox.ioxio-dataspace.com/redoc#tag/Data-Products/operation/Meteorology_Weather_v0_1_Meteorology_Weather_v0_1_post"
       >ReDoc</A
-    >)
+    >).
   </p>
   <p>
     In this case it means API that accepts a <em>POST</em> request at the path
