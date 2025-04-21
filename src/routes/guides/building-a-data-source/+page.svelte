@@ -37,7 +37,7 @@
   </li>
   <SectionTitle title="Choosing a data definition for your source" />
   <p>You can find the available <em>Data definitions</em> via menu.</p>
-  <GuideImage img={images.DEFINITIONS} />
+  <GuideImage compact img={images.DEFINITIONS} />
   <p>
     If there is no definition for the kind of data that you want to provide you can create your own
     definition by following the <A href={GUIDES.BUILD_DATA_DEF.href}>
@@ -122,8 +122,8 @@
     can add a variant name to distinguish them from each other. Most likely you don't want to use
     this for your first data source. In the <em>Base URL</em> enter the base URL at which your deployment
     is available. The help text shows where the API endpoint is expected to be available. The Base URL
-    will not be displayed to other users and is only used by the product gateway to connect to your integration.
-    All other applications must connect through the product gateway.
+    will not be displayed to other users and is only used by the dataspace to connect to your integration.
+    All other applications must connect through the dataspace.
   </p>
   <p>There's three options for the visibility:</p>
   <ul>
@@ -190,7 +190,7 @@
   <p>
     As our data source uses Dataspace verified API tokens, we'll need one before making a request.
     You can generate one on the <em>Access control keys</em> page.
-    <GuideImage img={images.KEYS} />
+    <GuideImage compact img={images.KEYS} />
   </p>
   <p>Find your data source in the list, click <em>View</em>.</p>
   <GuideImage img={images.SOURCE_ACCESS_CONTROL} />
