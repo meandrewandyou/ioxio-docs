@@ -29,8 +29,8 @@
     same on all IOXIO Dataspaces, while some might miss the particular data products mentioned here.
   </p>
   <SectionTitle title="Prerequisites" />
-  <li>Data that you want to provide.</li>
-  <li>A data source definition for the data.</li>
+  <li>Data that you want to provide available in a database.</li>
+  <li>A data product definition that matches the data you have available.</li>
   <li>
     Ability to host an API that responds to <em>POST</em> requests on the public internet over the https
     protocol.
@@ -39,7 +39,7 @@
   <p>You can find the available <em>Data definitions</em> via menu.</p>
   <GuideImage compact img={images.DEFINITIONS} />
   <p>
-    If there is no definition for the kind of data that you want to provide you can create your own
+    If there is no definition for the type of data you want to provide, you can create your own
     definition by following the <A href={GUIDES.BUILD_DATA_DEF.href}>
       {GUIDES.BUILD_DATA_DEF.title}
     </A> guide.
@@ -47,7 +47,7 @@
   <SectionTitle title="What are we building?" />
   <p>
     We need to build an integration that provides an API matching one of the available definitions.
-    For references, let's use <em>Meteorology/Weather_v0.1</em> (view
+    We'll use <em>Meteorology/Weather_v0.1</em> as our reference example (view
     <A
       href="https://raw.githubusercontent.com/ioxio-dataspace/sandbox-definitions/refs/heads/main/DataProducts/Meteorology/Weather_v0.1.json"
       >OpenAPI Spec</A
@@ -63,11 +63,12 @@
     >).
   </p>
   <p>
-    In this case it means API that accepts a <em>POST</em> request at the path
-    <em>/Meteorology/Weather_v0.1</em> needs to be created. It could for example be hosted at
+    In this case it means that an API which accepts a <em>POST</em> request at the path
+    <em>/Meteorology/Weather_v0.1</em>
+    needs to be created. It could for example be hosted at
     <em>https://data-source-guide-example.demos.ioxio.dev/Meteorology/Weather_v0.1</em>.
   </p>
-  <p>The <em>POST</em> request to that endpoint needs to accept a JSON payload, similar to this:</p>
+  <p>This endpoint will expect a <em>POST</em> request with a JSON payload, like this:</p>
   <Code lang={json}>
     {`
 {
@@ -99,31 +100,35 @@
   </p>
   <SectionTitle title="Deploy and host your API" />
   <p>
-    Deploy and host your API. For the next steps we will need the base URL (the prefix before the
-    data product path) at which it is responding, for example
-    <em>https://data-source-guide-example.demos.ioxio.dev</em>.
+    Deploy and host your API yourself anywhere you prefer. Note that IOXIO doesn't offer API
+    hosting. For the next steps, you'll need the base URL (i.e., the part before the data product
+    path) where your API is accessible, for example:
+    <em>https://data-source-guide-example.demos.ioxio.dev </em>.
   </p>
   <SectionTitle title="Register your data source in the Dataspace" />
   <p>Go to the dataspace and click on <em>My groups</em>.</p>
   <h3>Ensure you have a group</h3>
   <p>
-    If you don't yet have a group, create one. The name of the group should preferably relate to
-    yourself, your company or the data source. Some dataspaces require groups to be created by
-    staff, so if the page has a notice saying so, please follow the instructions written on it.
+    Go to the dataspace and click on <em>My groups</em>. If you don't have a group, you will need to
+    create one. The name of the group should relate to yourself, your company, or the data source.
+    Some dataspaces have moderated group creation. If the page has a notice saying so, and you are
+    unable to create the group yourself, please follow the instructions visible in the page to get
+    yourself a group. Note, that if your organization already has a group, you will need to ask your
+    group's administrator to invite you to the existing group.
   </p>
   <h3>Add your data source</h3>
   <p>
-    Use the menu to navigate to <em>My data sources</em>. Press the <em>+ Add a data source</em>
-    button. In the <em>Data product</em> dropdown pick the definition you used for your API. Pick one
+    Use the menu to navigate to <em>My data sources</em>. Press the <em>+ Add</em> a data source
+    button. In the <em>Data product</em> dropdown pick the definition that matches your API. Pick one
     of your groups in the dropdown for groups.
   </p>
   <p>
     If you want to publish multiple data sources for the same definition using the same group, you
     can add a variant name to distinguish them from each other. Most likely you don't want to use
-    this for your first data source and thus want to leave the field empty. In the <em>Base URL</em> enter the base URL at which your deployment
-    is available. The help text shows where the API endpoint is expected to be available. The Base URL
-    will not be displayed to other users and is only used by the dataspace to connect to your integration.
-    All other applications must connect through the dataspace.
+    this for your first data source and thus want to leave the field empty. In the <em>Base URL</em>
+    enter the base URL at which your deployment is available. The help text shows where the API endpoint
+    is expected to be available. The Base URL will not be displayed to other users and is only used by
+    the dataspace to connect to your integration. All other applications must connect through the dataspace.
   </p>
   <p>There's three options for the visibility:</p>
   <ul>
@@ -177,13 +182,13 @@
   <GuideImage img={images.ALLOWED_GROUPS} />
   <p>
     Each group that wants to access data from this data source, including your group, needs to be in
-    this list. Click <em>+ Add</em>, type in the name of the group, click <em>+ Add</em> again. The group
-    will appear in the list, we're good to continue. Flow to add 3rd party groups is the same.
+    this list. Click <em>+ Add</em>, type in the name of the group, click <em>+ Add</em> again. Once
+    the group appears in the list we're good to continue. The flow for adding other groups is the same.
   </p>
   <SectionTitle title="Test your data source" />
   <p>
     You should now be able to test your own data source by querying it through the product gateway.
-    You can also below the <em>Source</em> field see the URL at which you can make requests to the data
+    Below the <em>Source</em> field, you can also see the URL where you can make requests to the data
     source.
   </p>
   <GuideImage img={images.SOURCE} />
@@ -200,9 +205,9 @@
   </p>
   <GuideImage img={images.API_TOKEN} />
   <p>
-    You can for example use the cURL command line tool to query it like this (make sure to replace
-    the URL and change the data to match the expected payload of your own data source, and add a
-    recently generated token in the <em>X-API-KEY</em> header to the request).
+    For example, you can use the <em>cURL</em> command-line tool to query it like this. Make sure to
+    replace the URL, adjust the data to match your data source's expected payload, and include a
+    recently generated token in the <em>X-API-KEY</em> header.
   </p>
   <p>
     Note: As long as your datasource remains published or unlisted, you will not need to use the
