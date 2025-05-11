@@ -29,7 +29,7 @@
     same on all IOXIO Dataspaces, while some might miss the particular data products mentioned here.
   </p>
   <SectionTitle title="Prerequisites" />
-  <li>Data that you want to provide available in a database.</li>
+  <li>Data that you want to provide.</li>
   <li>A data product definition that matches the data you have available.</li>
   <li>
     Ability to host an API that responds to <em>POST</em> requests on the public internet over the https
@@ -100,21 +100,20 @@
   </p>
   <SectionTitle title="Deploy and host your API" />
   <p>
-    Deploy and host your API yourself anywhere you prefer. Note that IOXIO doesn't offer API
-    hosting. For the next steps, you'll need the base URL (i.e., the part before the data product
-    path) where your API is accessible, for example:
-    <em>https://data-source-guide-example.demos.ioxio.dev </em>.
+    Deploy and host your API anywhere you prefer. Note that IOXIO doesn't offer API hosting. For the
+    next steps, you'll need the base URL (i.e., the part before the data product path) where your
+    API is accessible, for example:
+    <em>https://data-source-guide-example.demos.ioxio.dev</em>.
   </p>
   <SectionTitle title="Register your data source in the Dataspace" />
-  <p>Go to the dataspace and click on <em>My groups</em>.</p>
   <h3>Ensure you have a group</h3>
   <p>
     Go to the dataspace and click on <em>My groups</em>. If you don't have a group, you will need to
     create one. The name of the group should relate to yourself, your company, or the data source.
     Some dataspaces have moderated group creation. If the page has a notice saying so, and you are
-    unable to create the group yourself, please follow the instructions visible in the page to get
-    yourself a group. Note, that if your organization already has a group, you will need to ask your
-    group's administrator to invite you to the existing group.
+    unable to create the group yourself, please follow the instructions visible in the page to get a
+    group. Note, that if your organization already has a group, you will need to ask your group's
+    administrator to invite you to the existing group.
   </p>
   <h3>Add your data source</h3>
   <p>
